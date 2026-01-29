@@ -1,0 +1,27 @@
+---
+
+{{ if .Vars.az2023stig_001310 }}
+command:
+  azlx_23_001310_check:
+    title: AZLX-23-001310 | MEDIUM | Amazon Linux 2023, for PKI-based authentication, must validate certificates by constructing a certification path (which includes status information) to an accepted trust anchor.
+    exec: openssl x509 -text -in /etc/sssd/pki/sssd_auth_ca_db.pem
+    exit-status: 0
+    stdout:
+    - 'True'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274063r1120712_rule
+      STIG_ID: AZLX-23-001310
+      Vul_ID: V-274063
+      Group_Title:
+      - SRG-OS-000066-GPOS-00034
+      - SRG-OS-000384-GPOS-00167
+      - SRG-OS-000775-GPOS-00230
+      - SRG-OS-000403-GPOS-00182
+      CCI:
+      - CCI-000185
+      - CCI-002470
+      NIST800-53R4:
+      - IA-5
+      - SC-23
+{{ end }}

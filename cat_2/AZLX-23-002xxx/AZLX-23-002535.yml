@@ -1,0 +1,47 @@
+---
+
+{{ if .Vars.az2023stig_002535 }}
+command:
+  azlx_23_002535_check_protected_hardlinks:
+    title: AZLX-23-002535 | MEDIUM | Amazon Linux 2023 must enable discretionary access control on hardlinks.
+    exec: sysctl fs.protected_hardlinks
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - 'fs.protected_hardlinks = 1'
+    - '!/fs.protected_hardlinks = 0/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274169r1120495_rule
+      STIG_ID: AZLX-23-002535
+      Vul_ID: V-274169
+      Group_Title:
+      - SRG-OS-000324-GPOS-00125
+      - SRG-OS-000312-GPOS-00123
+      CCI:
+      - CCI-002165
+      - CCI-002235
+      NIST800-53R4:
+      - AC-3
+      - AC-6
+kernel-param:
+  fs.protected_hardlinks:
+    title: AZLX-23-002535 | MEDIUM | Amazon Linux 2023 must enable discretionary access control on hardlinks.
+    value: '1'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274169r1120495_rule
+      STIG_ID: AZLX-23-002535
+      Vul_ID: V-274169
+      Group_Title:
+      - SRG-OS-000324-GPOS-00125
+      - SRG-OS-000312-GPOS-00123
+      CCI:
+      - CCI-002165
+      - CCI-002235
+      NIST800-53R4:
+      - AC-3
+      - AC-6
+{{ end }}

@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_001200 }}
+command:
+  azlx_23_001200_config:
+    title: AZLX-23-001200 | MEDIUM | Amazon Linux 2023 SSH server must be configured to use systemwide crypto policies.
+    exec: grep Include /etc/ssh/sshd_config  | grep -v '^#'
+    exit-status: 0
+    stdout:
+    - '/^Include (\/etc\/ssh\/sshd_config\.d\/\*\.conf|\/etc\/crypto-policies\/back-ends\/opensshserver\.config|\/etc\/ssh\/sshd_config\.d\/50-redhat\.conf)$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274041r1120111_rule
+      STIG_ID: AZLX-23-001200
+      Vul_ID: V-274041
+      Group_Title: SRG-OS-000250-GPOS-00093
+      CCI: CCI-001453
+      NIST800-53R4: AC-17
+{{ end }}

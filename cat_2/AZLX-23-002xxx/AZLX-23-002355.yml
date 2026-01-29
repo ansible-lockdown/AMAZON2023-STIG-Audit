@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.az2023stig_002355 }}
+command:
+  azlx_23_002355_config_ucredit:
+    title: AZLX-23-002355 | MEDIUM | Amazon Linux 2023 must enforce password complexity by requiring that at least one uppercase character be used.
+    exec: grep ucredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/.*\:ucredit\s*=\s*-\d/'
+    - '!/.*\:ucredit\s*=\s*\d/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274133r1120387_rule
+      STIG_ID: AZLX-23-002355
+      Vul_ID: V-274133
+      Group_Title: SRG-OS-000069-GPOS-00037
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

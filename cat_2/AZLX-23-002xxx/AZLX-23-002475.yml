@@ -1,0 +1,28 @@
+---
+
+{{ if .Vars.az2023stig_002475 }}
+command:
+  azlx_23_002475_check_firewalld_services:
+    title: AZLX-23-002475 | MEDIUM | Amazon Linux 2023 must be configured to prohibit or restrict the use of functions, ports, protocols, and/or services, as defined in the Ports, Protocols, and Services Management Category Assurance List (PPSM CAL) and vulnerability assessments. | Manual
+    exec: echo "Manual audit check required"
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/Manual audit check required/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274158r1120727_rule
+      STIG_ID: AZLX-23-002475
+      Vul_ID: V-274158
+      Group_Title:
+      - SRG-OS-000096-GPOS-00050
+      - SRG-OS-000297-GPOS-00115
+      CCI:
+      - CCI-000382
+      - CCI-002314
+      NIST800-53R4:
+      - CM-7
+      - AC-17
+{{ end }}

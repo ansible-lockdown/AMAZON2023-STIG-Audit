@@ -1,0 +1,41 @@
+---
+
+{{ if .Vars.az2023stig_002515 }}
+command:
+  azlx_23_002515_check_audit_processes:
+    title: AZLX-23-002515 | MEDIUM | Amazon Linux 2023 must enable auditing of processes that start prior to the audit daemon.
+    exec: grubby --info=ALL | grep args
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^audit=1/'
+    - '!/^audit=0/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274167r1120489_rule
+      STIG_ID: AZLX-23-002515
+      Vul_ID: V-274167
+      Group_Title:
+      - SRG-OS-000254-GPOS-00095
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000473-GPOS-00218
+      CCI:
+      - CCI-000130
+      - CCI-000135
+      - CCI-000169
+      - CCI-000172
+      - CCI-001464
+      - CCI-002884
+      NIST800-53R4:
+      - AU-3
+      - AU-12
+      - AU-14
+      - MA-4
+{{ end }}

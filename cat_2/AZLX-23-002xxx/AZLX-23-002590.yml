@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002590 }}
+file:
+  azlx_23_002590_check_nosuid_dev_shm:
+    title: AZLX-23-002590 | MEDIUM | Amazon Linux 2023 must mount /dev/shm with the nosuid option.
+    path: /etc/fstab
+    exists: true
+    contents:
+    - '/^\/dev\/shm\s+.*\s+defaults\s+.*nosuid/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274180r1120528_rule
+      STIG_ID: AZLX-23-002590
+      Vul_ID: V-274180
+      Group_Title: SRG-OS-000368-GPOS-00154
+      CCI: CCI-001764
+      NIST800-53R4: CM-7
+{{ end }}

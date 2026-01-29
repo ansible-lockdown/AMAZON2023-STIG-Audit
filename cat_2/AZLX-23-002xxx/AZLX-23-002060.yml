@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002060 }}
+file:
+  azlx_23_002060_config:
+    title: AZLX-23-002060 | MEDIUM | Amazon Linux 2023 must be configured to off-load audit records onto a different system from the system being audited via syslog.
+    path: /etc/audit/plugins.d/syslog.conf
+    exists: true
+    contents:
+    - '/^active\s*=\s*yes$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274076r1120216_rule
+      STIG_ID: AZLX-23-002060
+      Vul_ID: V-274076
+      Group_Title: SRG-OS-000479-GPOS-000224
+      CCI: CCI-001851
+      NIST800-53R4: AU-4
+{{ end }}

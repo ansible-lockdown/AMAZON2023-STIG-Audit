@@ -1,0 +1,28 @@
+---
+
+{{ if .Vars.az2023stig_001195 }}
+package:
+  crypto_policies:
+    title: AZLX-23-001195 | MEDIUM | Amazon Linux 2023 must have the crypto-policies package installed.
+    name: crypto-policies
+    installed: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274040r1120108_rule
+      STIG_ID: AZLX-23-001195
+      Vul_ID: V-274040
+      Group_Title:
+      - SRG-OS-000396-GPOS-000176
+      - SRG-OS-000393-GPOS-000173
+      - SRG-OS-000394-GPOS-000174
+      - SRG-OS-000424-GPOS-000188
+      CCI:
+      - CCI-002450
+      - CCI-002890
+      - CCI-003123
+      - CCI-002421
+      NIST800-53R4:
+      - SC-13
+      - MA-4
+      - SC-8
+{{ end }}

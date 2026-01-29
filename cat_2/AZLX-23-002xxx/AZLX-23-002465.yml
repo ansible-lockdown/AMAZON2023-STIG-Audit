@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_002465 }}
+file:
+  azlx_23_002465_config_fail_interval:
+    title: AZLX-23-002465 | MEDIUM | Amazon Linux 2023 must automatically lock an account until the locked account is released by an administrator when three unsuccessful logon attempts in 15 minutes occur.
+    path: /etc/security/faillock.conf
+    exists: true
+    contents:
+    - '/^fail_interval\s*=\s*([0-9]|[1-9][0-9]|[1-8][0-9][0-9]|900)$/'
+    - '!/^fail_interval\s*=\s*(0|[1-8][0-9]{2,})/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274156r1120456_rule
+      STIG_ID: AZLX-23-002465
+      Vul_ID: V-274156
+      Group_Title: SRG-OS-000329-GPOS-00128
+      CCI: CCI-002238
+      NIST800-53R4: AC-7
+{{ end }}

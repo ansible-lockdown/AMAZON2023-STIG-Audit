@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.az2023stig_002595 }}
+service:
+  azlx_23_002595_check_pcscd_service:
+    title: AZLX-23-002595 | MEDIUM | Amazon Linux 2023 must ensure the pcscd service is active.
+    name: pcscd
+    enabled: true
+    running: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274181r1120531_rule
+      STIG_ID: AZLX-23-002595
+      Vul_ID: V-274181
+      Group_Title: SRG-OS-000375-GPOS-00160
+      NIST800-53R4: Na
+{{ end }}

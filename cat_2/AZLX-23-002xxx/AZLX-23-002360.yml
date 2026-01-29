@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.az2023stig_002360 }}
+command:
+  azlx_23_002360_config_lcredit:
+    title: AZLX-23-002360 | MEDIUM | Amazon Linux 2023 must enforce password complexity by requiring that at least one lowercase character be used.
+    exec: grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/.*\:lcredit\s*=\s*-\d/'
+    - '!/.*\:lcredit\s*=\s*\d/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274134r1120390_rule
+      STIG_ID: AZLX-23-002360
+      Vul_ID: V-274134
+      Group_Title: SRG-OS-000070-GPOS-00038
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

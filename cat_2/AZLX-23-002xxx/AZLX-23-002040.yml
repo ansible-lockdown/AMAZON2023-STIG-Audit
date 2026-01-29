@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002040 }}
+file:
+  azlx_23_002040_config:
+    title: AZLX-23-002040 | MEDIUM | Amazon Linux 2023 must notify the system administrator (SA) and information system security officer (ISSO) (at a minimum) when allocated audit record storage volume 75 percent utilization.
+    path: /etc/audit/auditd.conf
+    exists: true
+    contents:
+    - '/^^space_left_action\s*=\s*email$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274072r1120204_rule
+      STIG_ID: AZLX-23-002040
+      Vul_ID: V-274072
+      Group_Title: SRG-OS-000343-GPOS-000134
+      CCI: CCI-001851
+      NIST800-53R4: AU-5
+{{ end }}

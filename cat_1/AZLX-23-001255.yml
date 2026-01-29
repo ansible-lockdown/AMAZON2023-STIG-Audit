@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_001255 }}
+file:
+  azlx_23_001255_config:
+    title: AZLX-23-001255 | HIGH | Amazon Linux 2023 must enable the Pluggable Authentication Module (PAM) interface for SSHD.
+    path: /etc/ssh/sshd_config
+    exists: true
+    contents:
+    - '/^UsePAM yes/'
+    - '!/UsePAM no/'
+    meta:
+      Cat: 1
+      Rule_ID: SV-274052r1120144_rule
+      STIG_ID: AZLX-23-001255
+      Vul_ID: V-274052
+      Group_Title: SRG-OS-000125-GPOS-00065
+      CCI: CCI-000877
+      NIST800-53R4: MA-4
+{{ end }}

@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.az2023stig_001005 }}
+command:
+  azlx_23_001005_check:
+    title: AZLX-23-001005 | MEDIUM | Amazon Linux 2023 must not be configured to bypass password requirements for privilege escalation.
+    exec: grep pam_succeed_if /etc/pam.d/sudo
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/^pam_succeed_if/'
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274013r1120027_rule
+      STIG_ID: AZLX-23-001005
+      Vul_ID: V-274013
+      Group_Title: SRG-OS-000312-GPOS-00123
+      CCI: CCI-002165
+      NIST800-53R4: AC-3
+{{ end }}

@@ -1,0 +1,31 @@
+---
+
+{{ if .Vars.az2023stig_002480 }}
+command:
+  azlx_23_002480_check_interactive_users_primary_group:
+    title: AZLX-23-002480 | Amazon Linux 2023 must insure all interactive users have a primary group that exists.
+    exec: pwck -qr
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274159r1120465_rule
+      STIG_ID: AZLX-23-002480
+      Vul_ID: V-274159
+      Group_Title:
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000104-GPOS-00051
+      - SRG-OS-000121-GPOS-00062
+      CCI:
+      - CCI-000764
+      - CCI-000804
+      - CCI-000135
+      NIST800-53R4:
+      - IA-2
+      - IA-8
+      - AU-3
+{{ end }}

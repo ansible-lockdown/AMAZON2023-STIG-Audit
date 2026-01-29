@@ -1,0 +1,35 @@
+---
+
+{{ if .Vars.az2023stig_002575 }}
+command:
+  azlx_23_002575_check_kexec_load_disabled:
+    title: AZLX-23-002575 | MEDIUM | Amazon Linux 2023 must prevent the loading of a new kernel for later execution.
+    exec: sysctl kernel.kexec_load_disabled
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - 'kernel.kexec_load_disabled = 1'
+    - '!/kernel.kexec_load_disabled = 0/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274177r1120519_rule
+      STIG_ID: AZLX-23-002575
+      Vul_ID: V-274177
+      Group_Title: SRG-OS-000366-GPOS-00153
+      CCI: NA
+      NIST800-53R4: NA
+kernel-param:
+  kernel.kexec_load_disabled:
+    title: AZLX-23-002575 | MEDIUM | Amazon Linux 2023 must prevent the loading of a new kernel for later execution.
+    value: '1'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274177r1120519_rule
+      STIG_ID: AZLX-23-002575
+      Vul_ID: V-274177
+      Group_Title: SRG-OS-000366-GPOS-00153
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

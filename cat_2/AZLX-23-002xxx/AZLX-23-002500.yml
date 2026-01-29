@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002500 }}
+command:
+  azlx_23_002500_check_public_dirs_stickybit:
+    title: AZLX-23-002500 | MEDIUM | Amazon Linux 2023 must ensure a sticky bit be set on all public directories.
+    exec: df --local -P | awk {'if (NR!=1) print $6'} | xargs -I '{}' find '{}' -xdev -type d -perm -0002 -a ! -perm -1000 2>/dev/null
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274164r1120480_rule
+      STIG_ID: AZLX-23-002500
+      Vul_ID: V-274164
+      Group_Title: SRG-OS-000138-GPOS-00069
+      CCI: CCI-001090
+      NIST800-53R4: SC-4
+{{ end }}

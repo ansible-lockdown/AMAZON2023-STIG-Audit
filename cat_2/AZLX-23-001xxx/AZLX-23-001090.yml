@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_001090 }}
+file:
+  azlx_23_001090_config:
+    title: AZLX-23-001090 | MEDIUM | Amazon Linux 2023 must manage excess capacity, bandwidth, or other redundancy to limit the effects of information flooding types of denial-of-service (DoS) attacks.
+    path: /etc/firewalld/firewalld.conf
+    exists: true
+    contents:
+    - '/^(?i)firewallbackend.*.*nftables$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274030r1120078_rule
+      STIG_ID: AZLX-23-001090
+      Vul_ID: V-274030
+      Group_Title: SRG-OS-000142-GPOS-00071
+      CCI: CCI-001095
+      NIST800-53R4: SC-5
+{{ end }}

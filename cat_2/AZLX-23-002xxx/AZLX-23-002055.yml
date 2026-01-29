@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002055 }}
+file:
+  azlx_23_002055_config:
+    title: AZLX-23-002055 | Amazon Linux 2023 must immediately notify the system administrator (SA) and information system security officer (ISSO), at a minimum, of an audit processing failure event.
+    path: /etc/audit/auditd.conf
+    exists: true
+    contents:
+    - '/^action_mail_acct\s*=\s*root$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274075r1120700_rule
+      STIG_ID: AZLX-23-002055
+      Vul_ID: V-274075
+      Group_Title: SRG-OS-000343-GPOS-000134
+      CCI: CCI-001855
+      NIST800-53R4: AU-5
+{{ end }}

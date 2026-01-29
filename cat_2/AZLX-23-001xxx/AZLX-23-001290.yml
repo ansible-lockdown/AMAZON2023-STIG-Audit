@@ -1,0 +1,25 @@
+---
+
+{{ if .Vars.az2023stig_001290 }}
+command:
+  azlx_23_001290_check:
+    title: AZLX-23-001290 | MEDIUM | Amazon Linux 2023 must enable certificate-based smart card authentication.
+    exec: grep -ir pam_cert_auth /etc/sssd/sssd.conf /etc/sssd/conf.d/
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/.*:pam_cert_auth = True/'
+    - '!/(?i)^pam_cert_auth = False/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274059r1120165_rule
+      STIG_ID: AZLX-23-001290
+      Vul_ID: V-274059
+      Group_Title:
+      - SRG-OS-000705-GPOS-00150
+      - SRG-OS-000375-GPOS-00160
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

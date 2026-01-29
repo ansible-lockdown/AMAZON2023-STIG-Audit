@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002050 }}
+file:
+  azlx_23_002050_config:
+    title: AZLX-23-002050 | MEDIUM | Amazon Linux 2023 must take action when allocated audit record storage volume reaches 95 percent of the repository maximum audit record storage capacity.
+    path: /etc/audit/auditd.conf
+    exists: true
+    contents:
+    - '/^admin_space_left_action\s*=\s*single$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274074r1120210_rule
+      STIG_ID: AZLX-23-002050
+      Vul_ID: V-274074
+      Group_Title: SRG-OS-000343-GPOS-000134
+      CCI: CCI-001855
+      NIST800-53R4: AU-5
+{{ end }}

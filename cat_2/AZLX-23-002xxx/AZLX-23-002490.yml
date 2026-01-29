@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.az2023stig_002490 }}
+file:
+  azlx_23_002490_config_password_hashing_rounds:
+    title: AZLX-23-002490 | MEDIUM | Amazon Linux 2023 password-auth must be configured to use a sufficient number of hashing rounds.
+    path: /etc/pam.d/password-auth
+    exists: true
+    contents:
+    - '/^password\s+(required|requisite|sufficient)\s+pam_unix.so\s+sha512.*rounds=10000'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274162r1120474_rule
+      STIG_ID: AZLX-23-002490
+      Vul_ID: V-274162
+      Group_Title:
+      - SRG-OS-000120-GPOS-00061
+      - SRG-OS-000073-GPOS-00041
+      CCI: CCI-000803
+      NIST800-53R4: IA-7
+{{ end }}

@@ -1,0 +1,33 @@
+---
+
+{{ if .Vars.az2023stig_000220 }}
+command:
+  azlx_23_000220_sysctl:
+    title: AZLX-23-000220 | MEDIUM | Amazon Linux 2023 must restrict usage of ptrace to descendant processes.
+    exec: sysctl kernel.yama.ptrace_scope
+    exit-status: 0
+    stdout:
+    - '/^kernel.yama.ptrace_scope = 1$/'
+    - '!/^kernel.yama.ptrace_scope = 0$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274005r1120003_rule
+      STIG_ID: AZLX-23-000220
+      Vul_ID: V-274005
+      Group_Title: SRG-OS-000132-GPOS-00067
+      CCI: CCI-001082
+      NIST800-53R4: SC-2
+kernel-param:
+  kernel.yama.ptrace_scope:
+    title: AZLX-23-000220 | MEDIUM | Amazon Linux 2023 must restrict usage of ptrace to descendant processes.
+    name: kernel.yama.ptrace_scope
+    value: 1
+    meta:
+      Cat: 2
+      Rule_ID: SV-274005r1120003_rule
+      STIG_ID: AZLX-23-000220
+      Vul_ID: V-274005
+      Group_Title: SRG-OS-000132-GPOS-00067
+      CCI: CCI-001082
+      NIST800-53R4: SC-2
+{{ end }}

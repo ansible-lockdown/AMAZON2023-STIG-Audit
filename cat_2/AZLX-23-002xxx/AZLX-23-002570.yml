@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_002570 }}
+file:
+  azlx_23_002570_check_aide_cron:
+    title: AZLX-23-002570 | Amazon Linux 2023 must routinely check the baseline configuration for unauthorized changes and notify the system administrator when anomalies in the operation of any security functions are discovered.
+    path: /etc/cron.daily/aide
+    exists: true
+    contents:
+    - '/^\d* \d*.*root \/usr\/sbin\/aide --check \| \/bin\/mail -s \"\$HOSTNAME - Daily aide integrity check run\" .*@.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274176r1120655_rule
+      STIG_ID: AZLX-23-002570
+      Vul_ID: V-274176
+      Group_Title: SRG-OS-000363-GPOS-00150
+      CCI: CCI-001744
+      NIST800-53R4: CM-3
+{{ end }}
+

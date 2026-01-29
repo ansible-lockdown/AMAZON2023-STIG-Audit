@@ -1,0 +1,32 @@
+---
+
+{{ if .Vars.az2023stig_002235 }}
+command:
+  azlx_23_002235_file:
+    title: AZLX-23-002235 | MEDIUM | Amazon Linux 2023 audit logs file must have mode "0600" or less permissive to prevent unauthorized access to the audit log
+    exec: find /var/log/audit/ -type f -perm /177
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274110r1120318_rule
+      STIG_ID: AZLX-23-002235
+      Vul_ID: V-274110
+      Group_Title:
+      - SRG-OS-000057-GPOS-00027
+      - SRG-OS-000058-GPOS-00028
+      - SRG-OS-000059-GPOS-00029
+      - SRG-OS-000206-GPOS-00084
+      CCI:
+      - CCI-000162
+      - CCI-000163
+      - CCI-000164
+      - CCI-001314
+      NIST800-53R4:
+      - AU-9
+      - SI-11
+{{ end }}

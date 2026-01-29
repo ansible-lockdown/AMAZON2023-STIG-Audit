@@ -1,0 +1,26 @@
+---
+
+{{ if .Vars.az2023stig_001060 }}
+package:
+  aide:
+    title: AZLX-23-001060 | MEDIUM | Amazon Linux 2023 must have the Advanced Intrusion Detection Environment (AIDE) package installed.
+    name: aide
+    installed: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274024r1120060_rule
+      STIG_ID: AZLX-23-001060
+      Vul_ID: V-274024
+      Group_Title:
+      - SRG-OS-000363-GPOS-00150
+      - SRG-OS-000445-GPOS-00199
+      - SRG-OS-000358-GPOS-00145
+      CCI:
+      - CCI-001744
+      - CCI-002696
+      - CCI-001889
+      NIST800-53R4:
+      - CM-3
+      - SI-6
+      - AU-8
+{{ end }}

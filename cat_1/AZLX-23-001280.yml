@@ -1,0 +1,30 @@
+---
+{{ if .Vars.az2023stig_001280 }}
+command:
+  fips_enabled:
+    title: AZLX-23-001280 | HIGH | Amazon Linux 2023 must enable FIPS mode.
+    exec: fips-mode-setup --check
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/FIPS mode is enabled./'
+    - '!/FIPS mode is disabled./'
+    - '!/Inconsistent state detected./'
+    meta:
+      Cat: 1
+      Rule_ID: SV-274057r1120159_rule
+      STIG_ID: AZLX-23-001280
+      Vul_ID: V-274057
+      Group_Title: SRG-OS-000478-GPOS-00223
+      CCI:
+      - CCI-000068
+      - CCI-000877
+      - CCI-002450
+      - CCI-002418
+      NIST800-53R4:
+      - AC-17
+      - MA-4
+      - SC-13
+{{ end }}

@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.az2023stig_002315 }}
+file:
+  var_log_dir_mode:
+    title: AZLX-23-002315 | MEDIUM | Amazon Linux 2023 must ensure the /var/log directory have mode "0755" or less permissive.
+    path: /var/log
+    exists: true
+    filetype: directory
+    mode:
+      or:
+      - '0755'
+      - '0750'
+      - '0700'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274125r1120363_rule
+      STIG_ID: AZLX-23-002315
+      Vul_ID: V-274125
+      Group_Title: SRG-OS-000259-GPOS-00084
+      CCI: CCI-001314
+      NIST800-53R4: SI-11
+{{ end }}

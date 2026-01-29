@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.az2023stig_001110 }}
+package:
+  policycoreutils:
+    title: AZLX-23-001110 | MEDIUM | Amazon Linux 2023 must have the policycoreutils package installed.
+    name: policycoreutils
+    installed: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274033r1120087_rule
+      STIG_ID: AZLX-23-001110
+      Vul_ID: V-274033
+      Group_Title: SRG-OS-000134-GPOS-00068
+      CCI: CCI-001804
+      NIST800-53R4: SC-3
+{{ end }}

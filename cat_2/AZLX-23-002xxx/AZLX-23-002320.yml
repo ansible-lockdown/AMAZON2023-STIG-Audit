@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002320 }}
+file:
+  azlx_23_002320_file:
+    title: AZLX-23-002320 | Amazon Linux 2023 must ensure the /var/log directory be owned by root.
+    path: /var/log
+    exists: true
+    filetype: directory
+    owner: root
+    meta:
+      Cat: 2
+      Rule_ID: SV-274126r1120366_rule
+      STIG_ID: AZLX-23-002320
+      Vul_ID: V-274126
+      Group_Title: SRG-OS-000259-GPOS-00084
+      CCI: CCI-001314
+      NIST800-53R4: SI-11
+{{ end }}

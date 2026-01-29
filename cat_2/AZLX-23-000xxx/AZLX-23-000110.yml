@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_000110 }}
+command:
+  azlx_23_000110_check:
+    title: AZLX-23-000110 | MEDIUM | Amazon Linux 2023 must ensure cryptographic verification of vendor software packages. | Manual
+    exec: echo "MANUAL - Please check manually for gpg keys"
+    stdout:
+    - '!/^MANUAL.*/'
+    exit-status: 0
+    meta:
+      Cat: 2
+      Rule_ID: SV-273995r1119973_rule
+      STIG_ID: AZLX-23-000110
+      Vul_ID: V-273995
+      Group_Title: SRG-OS-000366-GPOS-00153
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}
+

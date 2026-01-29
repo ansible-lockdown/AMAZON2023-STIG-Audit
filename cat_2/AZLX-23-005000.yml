@@ -1,0 +1,30 @@
+---
+
+{{ if .Vars.az2023stig_005000 }}
+command:
+  azlx_23_005000_audit_rules_live:
+    title: AZLX-23-005000 | MEDIUM | Amazon Linux 2023 audit system must protect logon user identifiers (UIDs) from unauthorized change.
+    exec: grep -i immutable /etc/audit/audit.rules
+    exit-status: 0
+    stdout:
+    - '--loginuid-immutable'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274187r1120715_rule
+      STIG_ID: AZLX-23-005000
+      Vul_ID: V-274187
+      Group_Title:
+      - SRG-OS-000059-GPOS-00029
+      - SRG-OS-000057-GPOS-00027
+      - SRG-OS-000058-GPOS-00028
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000475-GPOS-00220
+      CCI:
+      - CCI-000172
+      - CCI-000162
+      - CCI-000163
+      - CCI-000164
+      NIST800-53R4:
+      - AU-9
+      - AU-12
+{{ end }}

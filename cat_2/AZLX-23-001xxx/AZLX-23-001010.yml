@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.az2023stig_001010 }}
+command:
+  azlx_23_001010_config:
+    title: AZLX-23-001010 | MEDIUM | Amazon Linux 2023 must require reauthentication when using the "sudo" command.
+    exec: grep -ir 'timestamp_timeout' /etc/sudoers /etc/sudoers.d/
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:Defaults\s*timestamp_timeout=[0-9]\d*$/'
+    - '!/^.*:Defaults\s*timestamp_timeout\s*=\s*-\d/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274043r1120030_rule
+      STIG_ID: AZLX-23-001010
+      Vul_ID: V-274014
+      Group_Title: SRG-OS-000373-GPOS-00157
+      CCI: CCI-002038
+      NIST800-53R4: IA-11
+{{ end }}

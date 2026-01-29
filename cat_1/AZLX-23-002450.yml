@@ -1,0 +1,28 @@
+---
+
+{{ if .Vars.az2023stig_002450 }}
+command:
+  azlx_23_002450_check:
+    title: AZLX-23-002450 | HIGH | Amazon Linux 2023 must use a Linux Security Module configured to enforce limits on system services.
+    exec: getenforce
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/Enforcing/'
+    - '!/Permissive/'
+    - '!/Disabled/'
+    meta:
+      Cat: 1
+      Rule_ID: SV-274153r1120713_rule
+      STIG_ID: AZLX-23-002450
+      Vul_ID: V-274153
+      Group_Title: SRG-OS-000445-GPOS-00199
+      CCI:
+      - CCI-001084
+      - CCI-002696
+      NIST800-53R4:
+      - SC-3
+      - SI-6
+{{ end }}

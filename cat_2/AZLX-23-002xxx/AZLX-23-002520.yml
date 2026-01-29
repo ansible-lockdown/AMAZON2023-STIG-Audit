@@ -1,0 +1,29 @@
+---
+
+{{ if .Vars.az2023stig_002520 }}
+command:
+  azlx_23_002520_check_audit_backlog_limit:
+    title: AZLX-23-002520 | MEDIUM | Amazon Linux 2023 must allocate an audit_backlog_limit of sufficient size to capture processes that start prior to the audit daemon.
+    exec: grubby --info=ALL | grep args
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^audit_backlog_limit=(8192|819[3-9]|8[2-9]{,2}|9[0-9]{3,9}|[1-9]{5,9}).*/'
+    - '!/^audit_backlog_limit=(0|[1-7][0-9]{,2}|80[0-9]{,2}|81[0-8][0-9]{,2}|819[0-1][0-9]{,2}).*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274168r1120492_rule
+      STIG_ID: AZLX-23-002520
+      Vul_ID: V-274168
+      Group_Title:
+      - SRG-OS-000341-GPOS-00132
+      - SRG-OS-000254-GPOS-00095
+      CCI:
+      - CCI-001464
+      - CCI-001849
+      NIST800-53R4:
+      - AU-4
+      - AU-14
+{{ end }}

@@ -1,0 +1,54 @@
+---
+
+{{ if .Vars.az2023stig_001065 }}
+command:
+  azlx_23_001065_check:
+    title: AZLX-23-001065 | MEDIUM | Amazon Linux 2023 must routinely check the baseline configuration for unauthorized changes and notify the system administrator when anomalies in the operation of any security functions are discovered.
+    exec: grep -R aide /etc/cron.* /etc/crontab etc/cron.d/* /var/spool/cron/*
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/^\/(etc|var).*\:(0|[0-5][0-9]) (0|[0-2][0-9]) \* \* \* root \/usr\/sbin\/aide --check/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274025r1120723_rule
+      STIG_ID: AZLX-23-001065
+      Vul_ID: V-274025
+      Group_Title:
+      - SRG-OS-000363-GPOS-00150
+      - SRG-OS-000446-GPOS-00200
+      - SRG-OS-000447-GPOS-00201
+      CCI:
+      - CCI-001744
+      - CCI-002699
+      - CCI-002702
+      NIST800-53R4:
+      - CM-3
+      - SI-6
+file:
+  azlx_23_001065_config:
+    title: AZLX-23-001065 | MEDIUM | Amazon Linux 2023 must routinely check the baseline configuration for unauthorized changes and notify the system administrator when anomalies in the operation of any security functions are discovered.
+    path: {{ .Vars.az2023stig_aide_cron_file }}
+    exists: true
+    contents:
+    - '/^\/usr\/sbin\/aide --check \| \/bin\/mail -s \"\$HOSTNAME - Daily aide integrity check run\" .*@.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274025r1120723_rule
+      STIG_ID: AZLX-23-001065
+      Vul_ID: V-274025
+      Group_Title:
+      - SRG-OS-000363-GPOS-00150
+      - SRG-OS-000446-GPOS-00200
+      - SRG-OS-000447-GPOS-00201
+      CCI:
+      - CCI-001744
+      - CCI-002699
+      - CCI-002702
+      NIST800-53R4:
+      - CM-3
+      - SI-6
+      - AU-8
+{{ end }}

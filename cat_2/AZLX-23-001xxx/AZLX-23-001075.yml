@@ -1,0 +1,32 @@
+---
+
+{{ if .Vars.az2023stig_001075 }}
+package:
+  firewalld:
+    title: AZLX-23-001075 | MEDIUM | Amazon Linux 2023 must have the firewalld package installed.
+    name: firewalld
+    installed: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274027r1120069_rule
+      STIG_ID: AZLX-23-001075
+      Vul_ID: V-274027
+      Group_Title:
+      - SRG-OS-000096-GPOS-00050
+      - SRG-OS-000297-GPOS-00115
+      - SRG-OS-000298-GPOS-00116
+      - SRG-OS-000480-GPOS-00227
+      - SRG-OS-000480-GPOS-00232
+      - SRG-OS-000304-GPOS-00121
+      CCI:
+      - CCI-000382
+      - CCI-002314
+      - CCI-002322
+      - CCI-000366
+      - CCI-000015
+      NIST800-53R4:
+      - CM-7
+      - AC-17
+      - CM-6
+      - AC-2
+{{ end }}

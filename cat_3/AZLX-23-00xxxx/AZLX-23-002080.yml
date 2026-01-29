@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002080 }}
+file:
+  azlx_23_002080_check_syslog_upload:
+    title: AZLX-23-002080 | LOW | Amazon Linux 2023 must be configured to off-load audit records onto a different system from the system being audited via syslog.
+    path: /etc/systemd/journal-upload.conf
+    exists: true
+    contents:
+    - '/TrustedCertificateFile={{ .Vars.az2023stig_syslog_trustedcertificatefile }}/'
+    - '/ServerCertificateFile={{ .Vars.az2023stig_syslog_servercertificatefile }}/'
+    - '/ServerKeyFile={{ .Vars.az2023stig_syslog_serverkeyfile }}/'
+    - '/URL={{ .Vars.az2023stig_syslog_remote_log_server }}/'
+    meta:
+      Cat: 3
+      Rule_ID: SV-274080r1120228_rule
+      STIG_ID: AZLX-23-002080
+      Vul_ID: V-274080
+      Group_Title: SRG-OS-000342-GPOS-00133
+      CCI: CCI-001851
+      NIST800-53R4: AU-4
+{{ end }}

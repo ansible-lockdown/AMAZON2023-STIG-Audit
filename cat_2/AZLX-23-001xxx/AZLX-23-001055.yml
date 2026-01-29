@@ -1,0 +1,18 @@
+---
+
+{{ if .Vars.az2023stig_001055 }}
+service:
+  chronyd_service:
+    title: AZLX-23-001055 | MEDIUM | Amazon Linux 2023 chronyd service must be enabled.
+    name: chronyd
+    enabled: true
+    running: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274023r1120057_rule
+      STIG_ID: AZLX-23-001055
+      Vul_ID: V-274023
+      Group_Title: SRG-OS-000355-GPOS-00143
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002025 }}
+file:
+  azlx_23_002025_config:
+    title: AZLX-23-002025 | MEDIUM | Amazon Linux 2023 must label all off-loaded audit logs before sending them to the central log server.
+    path: /etc/audit/auditd.conf
+    exists: true
+    contents:
+    - '/^name_format\s*=\s*hostname$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274069r1120195_rule
+      STIG_ID: AZLX-23-002025
+      Vul_ID: V-274069
+      Group_Title: SRG-OS-000342-GPOS-000133
+      CCI: CCI-001851
+      NIST800-53R4: AU-4
+{{ end }}

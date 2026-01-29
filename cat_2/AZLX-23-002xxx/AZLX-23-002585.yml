@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002585 }}
+file:
+  azlx_23_002585_check_nodev_dev_shm:
+    title: AZLX-23-002585 | MEDIUM | Amazon Linux 2023 must mount /dev/shm with the nodev option.
+    path: /etc/fstab
+    exists: true
+    contents:
+    - '/^\/dev\/shm\s+.*\s+defaults\s+.*nodev/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274179r1120525_rule
+      STIG_ID: AZLX-23-002585
+      Vul_ID: V-274179
+      Group_Title: SRG-OS-000368-GPOS-00154
+      CCI: CCI-001764
+      NIST800-53R4: CM-7
+{{ end }}

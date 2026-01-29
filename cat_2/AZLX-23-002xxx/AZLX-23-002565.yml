@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_002565 }}
+file:
+  azlx_23_002565_check_chrony_interval:
+    title: AZLX-23-002565 | Amazon Linux 2023 must synchronize internal information system clocks to the authoritative time source at least every 24 hours.
+    path: /etc/chrony.conf
+    exists: true
+    contents:
+    - '/^server(tick|tock|ntp2).(usno|usnogps).navy.mil.*maxpoll ([0-9]|1[0-6])$/'
+    - '!/^server(tick|tock|ntp2).(usno|usnogps).navy.mil.*maxpoll (1[7-9]|[2-9][0-9]|1[0-6])$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274175r1120659_rule
+      STIG_ID: AZLX-23-002565
+      Vul_ID: V-274175
+      Group_Title: SRG-OS-000359-GPOS-00146
+      CCI: CCI-001890
+      NIST800-53R4: AU-8
+{{ end }}

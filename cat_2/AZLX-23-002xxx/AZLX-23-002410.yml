@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002410 }}
+file:
+  azlx_23_002410_config_umask:
+    title: AZLX-23-002410 | Amazon Linux 2023 must define default permissions for all authenticated users in such a way that the user can only read and modify their own files.
+    path: /etc/login.defs
+    exists: true
+    contents:
+    - '/^UMASK 077/'
+    - '!/^UMASK 0[1-6]{2;}'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274145r1120423_rule
+      STIG_ID: AZLX-23-002410
+      Vul_ID: V-274145
+      Group_Title:
+      - SRG-OS-000480-GPOS-00228
+      - SRG-OS-000480-GPOS-00230
+      CCI: CCI-000366
+      NIST800-53R4: CM-6
+{{ end }}

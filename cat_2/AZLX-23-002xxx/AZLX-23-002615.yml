@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_002615 }}
+file:
+  azlx_23_002615_config:
+    title: AZLX-23-002615 | Amazon Linux 2023 must remove all software components after updated versions have been installed.
+    path: /etc/dnf/dnf.conf
+    exists: true
+    contents:
+    - '/(?i)^clean_requirements_on_remove\s*=\s*(1|true|yes|on)$/'
+    - '!/(?i)^clean_requirements_on_remove\s*=\s*(0|false|no|off)$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274185r1120543_rule
+      STIG_ID: AZLX-23-002615
+      Vul_ID: V-274185
+      Group_Title: SRG-OS-000437-GPOS-00194
+      CCI: CCI-0002617
+      NIST800-53R4: SI-2
+{{ end }}

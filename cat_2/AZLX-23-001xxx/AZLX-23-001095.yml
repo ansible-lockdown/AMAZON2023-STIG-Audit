@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.az2023stig_001095 }}
+package:
+  s-nail:
+    title: AZLX-23-001095 | MEDIUM | Amazon Linux 2023 must have the s-nail package installed.
+    name: s-nail
+    installed: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274031r1120081_rule
+      STIG_ID: AZLX-23-001095
+      Vul_ID: V-274031
+      Group_Title: SRG-OS-000363-GPOS-00150
+      CCI: CCI-001744
+      NIST800-53R4: CM-3
+{{ end }}

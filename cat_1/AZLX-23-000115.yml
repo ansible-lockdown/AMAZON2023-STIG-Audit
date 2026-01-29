@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_000115 }}
+command:
+  azlx_23_000115_ini:
+    title: AZLX-23-000115 | HIGH | Amazon Linux 2023 must check the GPG signature of locally installed software packages before installation.
+    exec: grep localpkg_gpgcheck /etc/dnf/dnf.conf
+    exit-status: 0
+    stdout:
+    - '/^localpkg_gpgcheck.*(1|[tT]rue|yes)/'
+    - '!/^localpkg_gpgcheck.*(0|[fF]alse|no)/'
+    meta:
+      Cat: 1
+      Rule_ID: SV-273996r1119976_rule
+      STIG_ID: AZLX-23-000115
+      Vul_ID: V-273996
+      Group_Title: SRG-OS-000366-GPOS-00153
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

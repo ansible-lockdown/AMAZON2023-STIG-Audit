@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.az2023stig_001220 }}
+command:
+  azlx_23_001220_config:
+    title: AZLX-23-001220 | MEDIUM | Amazon Linux 2023 SSH daemon must not allow Kerberos authentication.
+    exec: grep -i Kerberos  /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/.*:KerberosAuthentication no/'
+    - '!/(^?i)KerberosAuthentication yes/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274045r1120123_rule
+      STIG_ID: AZLX-23-001220
+      Vul_ID: V-274045
+      Group_Title: SRG-OS-000364-GPOS-00151
+      CCI: CCI-001813
+      NIST800-53R4: CM-5
+{{ end }}

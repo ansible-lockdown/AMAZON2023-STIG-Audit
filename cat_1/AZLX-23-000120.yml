@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.az2023stig_000120 }}
+command:
+  azlx_23_000120_ini:
+    title: AZLX-23-000120 | HIGH | Amazon Linux 2023 must check the GPG signature of software packages originating from external software repositories before installation.
+    exec: grep gpgcheck /etc/dnf/dnf.conf
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^gpgcheck.*(1|[tT]rue|yes)/'
+    - '!/^gpgcheck.*(0|[fF]alse|no)/'
+    meta:
+      Cat: 1
+      Rule_ID: SV-273997r1119979_rule
+      STIG_ID: AZLX-23-000120
+      Vul_ID: V-273997
+      Group_Title: SRG-OS-000366-GPOS-00153
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.az2023stig_001120 }}
+package:
+  rsyslog_openssl:
+    title: AZLX-23-001120 | MEDIUM | Amazon Linux 2023 must have the packages required for encrypting off-loaded audit logs installed.
+    name: rsyslog-openssl
+    installed: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274035r1120093_rule
+      STIG_ID: AZLX-23-001120
+      Vul_ID: V-274035
+      Group_Title: SRG-OS-000120-GPOS-00061
+      CCI: CCI-000803
+      NIST800-53R4: IA-7
+{{ end }}

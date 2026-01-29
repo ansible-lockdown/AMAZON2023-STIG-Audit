@@ -1,0 +1,18 @@
+---
+
+{{ if .Vars.az2023stig_002270 }}
+file:
+  auditd_conf_log_file_directory_owner:
+    title: AZLX-23-002270 | MEDIUM | Amazon Linux 2023 must ensure the audit log directory be owned by root to prevent unauthorized read access.
+    exists: true
+    path: /var/log/audit
+    group: root
+    meta:
+      Cat: 2
+      Rule_ID: SV-274117r1120339_rule
+      STIG_ID: AZLX-23-002270
+      Vul_ID: V-274117
+      Group_Title: SRG-OS-000206-GPOS-00084
+      CCI: CCI-0001314
+      NIST800-53R4: SI-11
+{{ end }}

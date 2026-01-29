@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.az2023stig_000310 }}
+package:
+  nfs_utils:
+    title: AZLX-23-000310 | MEDIUM | Amazon Linux 2023 must not have the nfs-utils package installed
+    name: nfs-utils
+    installed: false
+    meta:
+      Cat: 2
+      Rule_ID: SV-274009r1120015_rule
+      STIG_ID: AZLX-23-000310
+      Vul_ID: V-274009
+      Group_Title: SRG-OS-000095-GPOS-00049
+      CCI: CCI-000381
+      NIST800-53R4: CM-7
+{{ end }}

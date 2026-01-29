@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_002445 }}
+file:
+  azlx_23_002445_config_selinux_policy:
+    title: AZLX-23-002445 | MEDIUM | Amazon Linux 2023 must enable the SELinux targeted policy.
+    path: /etc/selinux/config
+    exists: true
+    contents:
+    - '/^SELINUXTYPE\s*=\s*targeted/'
+    - '!/^SELINUXTYPE\s*=\s*(minimum|mls|permissive)/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274152r1120738_rule
+      STIG_ID: AZLX-23-002445
+      Vul_ID: V-274152
+      Group_Title: SRG-OS-000445-GPOS-00199
+      CCI: CCI-002696
+      NIST800-53R4: SI-6
+{{ end }}

@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_002470 }}
+file:
+  azlx_23_002470_config_unlock_time:
+    title: AZLX-23-002470 | MEDIUM | Amazon Linux 2023 must maintain an account lock until the locked account is released by an administrator.
+    path: /etc/security/faillock.conf
+    exists: true
+    contents:
+    - '/^unlock_time\s*=\s*0$/'
+    - '!/^unlock_time\s*=\s*(-|[1-9])/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274157r1120459_rule
+      STIG_ID: AZLX-23-002470
+      Vul_ID: V-274157
+      Group_Title: SRG-OS-000329-GPOS-00128
+      CCI: CCI-002238
+      NIST800-53R4: AC-7
+{{ end }}

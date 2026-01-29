@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_001015 }}
+command:
+  azlx_23_001015_check:
+    title: AZLX-23-001015 | MEDIUM | Amazon Linux 2023 must require users to reauthenticate for privilege escalation.
+    exec: grep -Ei '!authenticate' /etc/sudoers /etc/sudoers.d/*
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/^.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274015r1120033_rule
+      STIG_ID: AZLX-23-001015
+      Vul_ID: V-274015
+      Group_Title: SRG-OS-000373-GPOS-00156
+      CCI: CCI-002038
+      NIST800-53R4: IA-11
+{{ end }}

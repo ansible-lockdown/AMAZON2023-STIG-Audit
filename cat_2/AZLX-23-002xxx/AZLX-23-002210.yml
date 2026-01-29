@@ -1,0 +1,73 @@
+---
+
+{{ if .Vars.az2023stig_002210 }}
+command:
+  azlx_23_002210_audit_rules_live:
+    title: AZLX-23-002210 | MEDIUM | Amazon Linux 2023 must audit all successful/unsuccessful uses of the chage command.
+    exec: auditctl -l | grep chage
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^-a always,exit -S all -F path=/usr/bin/chage -F perm=x -F auid>=1000 -F auid!=-1 -F key=privileged-chage/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274105r1120661_rule
+      STIG_ID: AZLX-23-002210
+      Vul_ID: V-274105
+      Group_Title:
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000064-GPOS-00033
+      - SRG-OS-000466-GPOS-00210
+      - SRG-OS-000458-GPOS-00203
+      CCI:
+      - CCI-000130
+      - CCI-000135
+      - CCI-000169
+      - CCI-002884
+      - CCI-000172
+      NIST800-53R4:
+      - AU-3
+      - AU-12
+      - MA-4
+  azlx_23_002210_audit_rules_conf:
+    title: AZLX-23-002210 | MEDIUM | Amazon Linux 2023 must audit all successful/unsuccessful uses of the chage command.
+    exec: grep -w chage /etc/audit/rules.d/*
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:-a always,exit -F path=/usr/bin/chage -F perm=x -F auid>=1000 -F auid!=unset -k privileged-chage/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274105r1120661_rule
+      STIG_ID: AZLX-23-002210
+      Vul_ID: V-274105
+      Group_Title:
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000064-GPOS-00033
+      - SRG-OS-000466-GPOS-00210
+      - SRG-OS-000458-GPOS-00203
+      CCI:
+      - CCI-000130
+      - CCI-000135
+      - CCI-000169
+      - CCI-002884
+      - CCI-000172
+      NIST800-53R4:
+      - AU-3
+      - AU-12
+      - MA-4
+{{ end }}

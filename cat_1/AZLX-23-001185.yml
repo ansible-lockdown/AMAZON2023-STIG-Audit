@@ -1,0 +1,25 @@
+---
+
+{{ if .Vars.az2023stig_001185 }}
+service:
+  sshd_service:
+    title: AZLX-23-001185 | HIGH | Amazon Linux 2023 must have SSH installed.
+    name: sshd
+    enabled: true
+    running: true
+    meta:
+      Cat: 1
+      Rule_ID: SV-274039r1120105_rule
+      STIG_ID: AZLX-23-001185
+      Vul_ID: V-274039
+      Group_Title: SRG-OS-000426-GPOS-00190
+      CCI:
+      - CCI-001941
+      - CCI-002418
+      - CCI-002421
+      - CCI-002420
+      - CCI-002422
+      NIST800-53R4:
+      - IA-2
+      - SC-8
+{{ end }}

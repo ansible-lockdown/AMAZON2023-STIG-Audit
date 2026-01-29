@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_002400 }}
+file:
+  azlx_23_002400_config_pass_min_days:
+    title: AZLX-23-002400 | MEDIUM | Amazon Linux 2023 must enforce 24 hours/1 day as the minimum password lifetime.
+    path: /etc/login.defs
+    exists: true
+    contents:
+    - '/^PASS_MIN_DAYS [1-9]/'
+    - '!/^PASS_MIN_DAYS (-[1-9]|0)/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274143r1120417_rule
+      STIG_ID: AZLX-23-002400
+      Vul_ID: V-274143
+      Group_Title: SRG-OS-000075-GPOS-00043
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

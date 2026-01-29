@@ -1,0 +1,32 @@
+---
+
+{{ if .Vars.az2023stig_001070 }}
+file:
+  azlx_23_001070_check:
+    title: AZLX-23-001070 | MEDIUM | Amazon Linux 2023 must use cryptographic mechanisms to protect the integrity of audit tools.
+    path: /etc/aide.conf
+    exists: true
+    contents:
+    - '/\/usr\/sbin\/auditctl p+i+n+u+g+s+b+acl+xattrs+sha512/'
+    - '/\/usr\/sbin\/auditd p+i+n+u+g+s+b+acl+xattrs+sha512/'
+    - '/\/usr\/sbin\/ausearch p+i+n+u+g+s+b+acl+xattrs+sha512/'
+    - '/\/usr\/sbin\/aureport p+i+n+u+g+s+b+acl+xattrs+sha512/'
+    - '/\/usr\/sbin\/autrace p+i+n+u+g+s+b+acl+xattrs+sha512/'
+    - '/\/usr\/sbin\/augenrules p+i+n+u+g+s+b+acl+xattrs+sha512/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274026r1120066_rule
+      STIG_ID: AZLX-23-001070
+      Vul_ID: V-274026
+      Group_Title:
+      - SRG-OS-000256-GPOS-00097
+      - SRG-OS-000257-GPOS-00098
+      - SRG-OS-000258-GPOS-00099
+      - SRG-OS-000278-GPOS-00108
+      CCI:
+      - CCI-001493
+      - CCI-001494
+      - CCI-001495
+      - CCI-001496
+      NIST800-53R4: AU-9
+{{ end }}

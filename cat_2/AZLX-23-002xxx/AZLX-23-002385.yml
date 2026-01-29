@@ -1,0 +1,28 @@
+---
+
+{{ if .Vars.az2023stig_002385 }}
+command:
+  azlx_23_002385_config_enforce_for_root:
+    title: AZLX-23-002385 | MEDIUM | Amazon Linux 2023 must enforce password complexity rules for the root account.
+    exec: grep -rs enforce_for_root /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/^(?#)enforce_for_root/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274139r1120405_rule
+      STIG_ID: AZLX-23-002385
+      Vul_ID: V-274139
+      Group_Title:
+      - SRG-OS-000069-GPOS-00037
+      - SRG-OS-000070-GPOS-00038
+      - SRG-OS-000071-GPOS-00039
+      - SRG-OS-000072-GPOS-00040
+      - SRG-OS-000072-GPOS-00046
+      - SRG-OS-000266-GPOS-00101
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

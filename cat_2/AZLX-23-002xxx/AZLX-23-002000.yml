@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002000 }}
+file:
+  azlx_23_002000_check:
+    title: AZLX-23-002000 | MEDIUM | Amazon Linux 2023 must display the Standard Mandatory DOD Notice and Consent Banner before granting local or remote access to the system.
+    path: /etc/issue.net
+    exists: true
+    contents:
+    - '/^banner-message-text={{ range .Vars.az2023stig_logon_banner }}{{ . }}{{ end }}/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274065r1120699_rule
+      STIG_ID: AZLX-23-002000
+      Vul_ID: V-274065
+      Group_Title: SRG-OS-000023-GPOS-000006
+      CCI: CCI-000048
+      NIST800-53R4: AC-8
+{{ end }}

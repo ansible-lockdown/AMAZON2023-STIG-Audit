@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.az2023stig_001040 }}
+package:
+  rsyslog:
+    title: AZLX-23-001040 | MEDIUM | Amazon Linux 2023 must have the rsyslog package installed.
+    name: rsyslog
+    installed: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274020r1120048_rule
+      STIG_ID: AZLX-23-001040
+      Vul_ID: V-274020
+      Group_Title:
+      - SRG-OS-000051-GPOS-00024
+      - SRG-OS-000479-GPOS-00224
+      CCI:
+      - CCI-000154
+      - CCI-001851
+      NIST800-53R4:
+      - AU-4
+      - AU-6
+{{ end }}

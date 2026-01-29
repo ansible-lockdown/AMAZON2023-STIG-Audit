@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.az2023stig_001050 }}
+package:
+  chrony:
+    title: AZLX-23-001050 | MEDIUM | Amazon Linux 2023 must have the chrony package installed.
+    name: chrony
+    installed: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274022r1120054_rule
+      STIG_ID: AZLX-23-001050
+      Vul_ID: V-274022
+      Group_Title: SRG-OS-000355-GPOS-00143
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

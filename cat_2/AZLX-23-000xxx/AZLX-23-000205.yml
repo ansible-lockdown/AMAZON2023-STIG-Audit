@@ -1,0 +1,39 @@
+---
+
+{{ if .Vars.az2023stig_000205 }}
+command:
+  azlx_23_000205_sysctl:
+    title: AZLX-23-000205 | MEDIUM | Amazon Linux 2023 must prevent kernel profiling by nonprivileged users.
+    exec: sysctl kernel.perf_event_paranoid
+    exit-status: 0
+    stdout:
+    - '/^kernel.perf_event_paranoid = 2$/'
+    - '!/^kernel.perf_event_paranoid = ([[0-1]|[3-9])$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274002r1119994_rule
+      STIG_ID: AZLX-23-000205
+      Vul_ID: V-274002
+      Group_Title:
+      - SRG-OS-000132-GPOS-00067
+      - SRG-OS-000138-GPOS-00069
+      CCI:
+      - CCI-001082
+      - CCI-001090
+      NIST800-53R4:
+      - SC-2
+      - SC-4
+kernel-param:
+  kernel.perf_event_paranoid:
+    title: AZLX-23-000205 | MEDIUM | Amazon Linux 2023 must prevent kernel profiling by nonprivileged users.
+    name: kernel.perf_event_paranoid
+    value: 2
+    meta:
+      Cat: 2
+      Rule_ID: SV-274002r1119994_rule
+      STIG_ID: AZLX-23-000205
+      Vul_ID: V-274002
+      Group_Title: SRG-OS-000138-GPOS-00069
+      CCI: CCI-001082, CCI-001090
+      NIST800-53R4: SC-2, SC-4
+{{ end }}

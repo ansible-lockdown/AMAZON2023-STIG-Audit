@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_002405 }}
+file:
+  azlx_23_002405_config_fail_delay:
+    title: AZLX-23-002405 | MEDIUM | Amazon Linux 2023 must enforce a delay of at least four seconds between logon prompts following a failed logon attempt.
+    path: /etc/login.defs
+    exists: true
+    contents:
+    - '/^FAIL_DELAY ([4-9]|[1-9][0-9])/'
+    - '!/^FAIL_DELAY [0-3]/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274144r1120420_rule
+      STIG_ID: AZLX-23-002405
+      Vul_ID: V-274144
+      Group_Title: SRG-OS-000480-GPOS-00226
+      CCI: CCI-000366
+      NIST800-53R4: CM-6
+{{ end }}

@@ -1,0 +1,29 @@
+---
+
+{{ if .Vars.az2023stig_001250 }}
+command:
+  azlx_23_001250_config:
+    title: AZLX-23-001250 | MEDIUM | Amazon Linux 2023 must be configured so that all network connections associated with SSH traffic are terminated after 10 minutes of becoming unresponsive.
+    exec: grep -i "ClientAliveCountMax" /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/.*:ClientAliveCountMax (1|[2-9]|[1-9][0-9])/'
+    - '!/(?i)ClientAliveCountMax ([2-9]|[1-9][0-9])$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274051r1120141_rule
+      STIG_ID: AZLX-23-001250
+      Vul_ID: V-274051
+      Group_Title:
+      - SRG-OS-000163-GPOS-00072
+      - SRG-OS-000279-GPOS-00109
+      CCI:
+      - CCI-001133
+      - CCI-002361
+      NIST800-53R4:
+      - SC-10
+      - AC-12
+{{ end }}

@@ -1,0 +1,16 @@
+---
+
+{{ if .Vars.az2023stig_001000 }}
+package:
+  sudo:
+    title: AZLX-23-001000 | MEDIUM | Amazon Linux 2023 must have the sudo package installed.
+    installed: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274012r1120710_rule
+      STIG_ID: AZLX-23-001000
+      Vul_ID: V-274012
+      Group_Title: SRG-OS-000324-GPOS-00125
+      CCI: CCI-002235
+      NIST800-53R4: AC-6
+{{ end }}

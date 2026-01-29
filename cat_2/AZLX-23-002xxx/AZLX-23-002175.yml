@@ -1,0 +1,39 @@
+---
+
+{{ if .Vars.az2023stig_002175 }}
+command:
+  azlx_23_002175_audit_rules_live:
+    title: AZLX-23-002175 | Amazon Linux 2023 must audit all uses of the init command.
+    exec: auditctl -l | grep init
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^-a always,exit -S all -F path=/usr/sbin/init -F perm=x -F auid>=1000 -F auid!=-1 -F key=privileged-init/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274098r1120282_rule
+      STIG_ID: AZLX-23-002175
+      Vul_ID: V-274098
+      Group_Title: SRG-OS-000477-GPOS-00222
+      CCI: CCI-000172
+      NIST800-53R4: AU-12
+  azlx_23_002175_audit_rules_conf:
+    title: AZLX-23-002175 | MEDIUM | Amazon Linux 2023 must audit all uses of the init command.
+    exec: grep -w init /etc/audit/rules.d/*
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:-a always,exit -F path=/usr/sbin/init -F perm=x -F auid>=1000 -F auid!=unset -k privileged-init/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274098r1120282_rule
+      STIG_ID: AZLX-23-002175
+      Vul_ID: V-274098
+      Group_Title: SRG-OS-000477-GPOS-00222
+      CCI: CCI-000172
+      NIST800-53R4: AU-12
+{{ end }}

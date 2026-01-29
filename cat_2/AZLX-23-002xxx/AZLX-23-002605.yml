@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002605 }}
+command:
+  azlx_23_002605_check_rate_limiting_measures:
+    title: AZLX-23-002605 | Amazon Linux 2023 must protect against or limit the effects of denial-of-service (DoS) attacks by ensuring rate-limiting measures are configured on impacted network interfaces. | Manual
+    exec: echo "Manual audit check required"
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274183r1120714_rule
+      STIG_ID: AZLX-23-002605
+      Vul_ID: V-274183
+      Group_Title: SRG-OS-000420-GPOS-00186
+      CCI: CCI-002385
+      NIST800-53R4: SC-5
+{{ end }}

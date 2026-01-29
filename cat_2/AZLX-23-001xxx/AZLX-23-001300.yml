@@ -1,0 +1,24 @@
+---
+
+{{ if .Vars.az2023stig_001300 }}
+command:
+  azlx_23_001300_config:
+    title: AZLX-23-001300 | MEDIUM | Amazon Linux 2023 must implement certificate status checking for multifactor authentication.
+    exec: grep -ir certificate_verification /etc/sssd/sssd.conf /etc/sssd/conf.d/ | grep -v "^#"
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/^certificate_verification = ocsp_dgst=sha512/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274061r1120171_rule
+      STIG_ID: AZLX-23-001300
+      Vul_ID: V-274061
+      Group_Title:
+      - SRG-OS-000375-GPOS-00160
+      - SRG-OS-000377-GPOS-00162
+      CCI: CCI-001954
+      NIST800-53R4: IA-2
+{{ end }}

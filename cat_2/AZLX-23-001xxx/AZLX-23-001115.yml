@@ -1,0 +1,16 @@
+---
+
+{{ if .Vars.az2023stig_001115 }}
+package:
+  pcsc_lite:
+    title: AZLX-23-001115 | MEDIUM | Amazon Linux 2023 must have the pcsc-lite package installed.
+    name: pcsc-lite
+    installed: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274034r1120090_rule
+      STIG_ID: AZLX-23-001115
+      Vul_ID: V-274034
+      Group_Title: SRG-OS-000375-GPOS-00160
+      NIST800-53R4: NA
+{{ end }}

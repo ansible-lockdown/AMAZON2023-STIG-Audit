@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002580 }}
+file:
+  azlx_23_002580_check_setuid_setgid_boot_efi:
+    title: AZLX-23-002580 | Amazon Linux 2023 must prevent files with the setuid and setgid bit set from being executed on the /boot/efi directory.
+    path: /etc/fstab
+    exists: true
+    contents:
+    - '/^.*\/boot\/efi\s*.*defaults.*nosuid/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274178r1120522_rule
+      STIG_ID: AZLX-23-002580
+      Vul_ID: V-274178
+      Group_Title: SRG-OS-000368-GPOS-00154
+      CCI: CCI-001764
+      NIST800-53R4: CM-7
+{{ end }}

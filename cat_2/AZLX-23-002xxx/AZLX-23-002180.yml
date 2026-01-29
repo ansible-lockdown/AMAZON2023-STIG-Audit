@@ -1,0 +1,39 @@
+---
+
+{{ if .Vars.az2023stig_002180 }}
+command:
+  azlx_23_002180_audit_rules_live:
+    title: AZLX-23-002180 | Amazon Linux 2023 must audit all uses of the reboot command.
+    exec: auditctl -l | grep reboot
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^-a always,exit -S all -F path=/usr/sbin/reboot -F perm=x -F auid>=1000 -F auid!=-1 -F key=privileged-reboot/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274099r1120285_rule
+      STIG_ID: AZLX-23-002180
+      Vul_ID: V-274099
+      Group_Title: SRG-OS-000477-GPOS-00222
+      CCI: CCI-000172
+      NIST800-53R4: AU-12
+  azlx_23_002180_audit_rules_conf:
+    title: AZLX-23-002180 | Amazon Linux 2023 must audit all uses of the reboot command.
+    exec: grep -w reboot /etc/audit/rules.d/*
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:-a always,exit -F path=/usr/sbin/reboot -F perm=x -F auid>=1000 -F auid!=unset -k privileged-reboot/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274099r1120285_rule
+      STIG_ID: AZLX-23-002180
+      Vul_ID: V-274099
+      Group_Title: SRG-OS-000477-GPOS-00222
+      CCI: CCI-000172
+      NIST800-53R4: AU-12
+{{ end }}

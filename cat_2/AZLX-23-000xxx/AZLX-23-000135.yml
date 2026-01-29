@@ -1,0 +1,18 @@
+---
+
+{{ if .Vars.az2023stig_000135 }}
+service:
+  systemd-journald_service:
+    title: AZLX-23-000135 | MEDIUM | Amazon Linux 2023 systemd-journald service must be enabled.
+    name: systemd-journald
+    enabled: true
+    running: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274000r1119991_rule
+      STIG_ID: AZLX-23-000135
+      Vul_ID: V-274000
+      Group_Title: SRG-OS-000269-GPOS-00103
+      CCI: CCI-001665
+      NIST800-53R4: SC-2
+{{ end }}

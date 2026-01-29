@@ -1,0 +1,36 @@
+---
+
+{{ if .Vars.az2023stig_001285 }}
+file:
+  {{- range mkSlice "bind" "gnutls" "java" "javasystem" "krb5" "libreswan" "libssh" "openssh" "opensshserver" "openssl" "openssl_fips" "opensslcnf" }}
+  {{ . }}:
+    title: AZLX-23-001285 | MEDIUM | Amazon Linux 2023 crypto policy must not be overridden.
+    path: /etc/crypto-policies/back-ends/{{ . }}.config
+    exists: true
+    filetype: symlink
+    linked-to: /usr/share/crypto-policies/FIPS/{{ . }}.txt
+    meta:
+      Cat: 2
+      Rule_ID: SV-274058r1120162_rule
+      STIG_ID: AZLX-23-001285
+      Vul_ID: V-274058
+      Group_Title:
+      - SRG-OS-000073-GPOS-00041
+      - SRG-OS-000120-GPOS-00061
+      - SRG-OS-000396-GPOS-00176
+      - SRG-OS-000393-GPOS-00173
+      - SRG-OS-000394-GPOS-00174
+      - SRG-OS-000424-GPOS-00188
+      CCI:
+      - CCI-002450
+      - CCI-002890
+      - CCI-003123
+      - CCI-002421
+      - CCI-000803
+      NIST800-53R4:
+      - IA-7
+      - SC-13
+      - MA-4
+      - SC-8
+  {{ end }}
+{{ end }}

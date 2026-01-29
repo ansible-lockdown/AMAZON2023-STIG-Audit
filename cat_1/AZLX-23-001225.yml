@@ -1,0 +1,24 @@
+---
+
+{{ if .Vars.az2023stig_001225 }}
+command:
+  azlx_23_001225_config:
+    title: AZLX-23-001225 | HIGH | Amazon Linux 2023 must force a frequent session key renegotiation for SSH connections to the server.
+    exec: grep -E "RekeyLimit" /etc/ssh/sshd_config | grep -v '^#'
+    exit-status: 0
+    stdout:
+    - "RekeyLimit 1G 1h"
+    meta:
+      Cat: 1
+      Rule_ID: SV-274046r1120126_rule
+      STIG_ID: AZLX-23-001225
+      Vul_ID: V-274046
+      Group_Title: SRG-OS-000424-GPOS-00188
+      CCI:
+      - CCI-002418
+      - CCI-000068
+      - CCI-002421
+      NIST800-53R4:
+      - SC-8
+      - AC-17
+{{ end }}

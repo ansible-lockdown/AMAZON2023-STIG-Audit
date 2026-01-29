@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002560 }}
+file:
+  azlx_23_002560_check_chrony_interval:
+    title: AZLX-23-002560 | MEDIUM | Amazon Linux 2023 chrony must be configured with a maximum interval of 24 hours between requests sent to a USNO server or a time server designated for the appropriate DOD network.
+    path: /etc/chrony.conf
+    exists: true
+    contents:
+    - '/^server(tick|tock|ntp2).(usno|usnogps).navy.mil.*maxpoll ([0-9]|1[0-6])$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274174r1120510_rule
+      STIG_ID: AZLX-23-002560
+      Vul_ID: V-274174
+      Group_Title: SRG-OS-000355-GPOS-00143
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

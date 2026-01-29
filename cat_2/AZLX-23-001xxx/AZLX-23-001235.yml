@@ -1,0 +1,26 @@
+---
+
+{{ if .Vars.az2023stig_001235 }}
+command:
+  azlx_23_001235_config:
+    title: AZLX-23-001235 | MEDIUM | Amazon Linux 2023 SSHD must not allow blank passwords.
+    exec: grep -E "PermitEmptyPasswords" /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf
+    exit-status: 0
+    stdout:
+    - '/.*:PermitEmptyPasswords no/'
+    - '!/(?i)^PermitEmptyPasswords yes/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274048r1120132_rule
+      STIG_ID: AZLX-23-001235
+      Vul_ID: V-274048
+      Group_Title:
+      - SRG-OS-000106-GPOS-00053
+      - SRG-OS-000480-GPOS-00229
+      CCI:
+      - CCI-000766
+      - CCI-000366
+      NIST800-53R4:
+      - CM-6
+      - IA-2
+{{ end }}

@@ -1,0 +1,31 @@
+---
+
+{{ if .Vars.az2023stig_002485 }}
+command:
+  azlx_23_002485_check_unique_uids:
+    title: AZLX-23-002485 | Amazon Linux 2023 must insure all interactive users have a unique user ID (UIDs).
+    exec: awk -F ":" 'list[$3]++{print $1, $3}' /etc/passwd
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274160r1120468_rule
+      STIG_ID: AZLX-23-002485
+      Vul_ID: V-274160
+      Group_Title:
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000104-GPOS-00051
+      - SRG-OS-000121-GPOS-00062
+      CCI:
+      - CCI-000764
+      - CCI-000804
+      - CCI-000135
+      NIST800-53R4:
+      - IA-2
+      - IA-8
+      - AU-3
+{{ end }}

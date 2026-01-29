@@ -1,0 +1,24 @@
+---
+
+{{ if .Vars.az2023stig_001180 }}
+package:
+  openssh_server:
+    title: AZLX-23-001180 | HIGH | Amazon Linux 2023 must have SSH installed.
+    name: openssh-server
+    installed: true
+    meta:
+      Cat: 1
+      Rule_ID: SV-274038r1120102_rule
+      STIG_ID: AZLX-23-001180
+      Vul_ID: V-274038
+      Group_Title: SRG-OS-000426-GPOS-00190
+      CCI:
+      - CCI-001941
+      - CCI-002418
+      - CCI-002421
+      - CCI-002420
+      - CCI-002422
+      NIST800-53R4:
+      - IA-2
+      - SC-8
+{{ end }}

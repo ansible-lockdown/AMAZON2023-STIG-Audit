@@ -1,0 +1,27 @@
+---
+
+{{ if .Vars.az2023stig_002396 }}
+command:
+  azlx_23_002396_config_declare:
+    title: AZLX-23-002396 | MEDIUM | Amazon Linux 2023 must automatically exit interactive command shell user sessions after 15 minutes of inactivity.
+    exec: grep -i tmout /etc/profile /etc/profile.d/*.sh
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/(?i).*\:declare -xr TMOUT=([0-9]|[1-9][0-9]|[1-5][0-9][0-9]|600)\d*/'
+    - '!/(?i).*\:declare -xr TMOUT=(6[0-9][0-9]|[7-9][0-9][0-9]|[1-5][0-9][0-9][0-9])\d*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274142r1120414_rule
+      STIG_ID: AZLX-23-002396
+      Vul_ID: V-274142
+      Group_Title: SRG-OS-000163-GPOS-00072
+      CCI:
+      - CCI-000057
+      - CCI-001133
+      NIST800-53R4:
+      - AC-11
+      - SC-10
+{{ end }}

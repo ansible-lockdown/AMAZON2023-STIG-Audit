@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002440 }}
+file:
+  azlx_23_002440_config_su_use_uid:
+    title: AZLX-23-002440 | MEDIUM | Amazon Linux 2023 must restrict the use of the "su" command.
+    path: /etc/pam.d/su
+    exists: true
+    contents:
+    - '/^auth required pam_wheel.so use_uid/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274151r1120441_rule
+      STIG_ID: AZLX-23-002440
+      Vul_ID: V-274151
+      Group_Title: SRG-OS-000312-GPOS-00123
+      CCI: CCI-002165
+      NIST800-53R4: AC-3
+{{ end }}

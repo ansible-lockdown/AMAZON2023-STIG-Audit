@@ -1,0 +1,34 @@
+---
+
+{{ if .Vars.az2023stig_002225 }}
+file:
+  azlx_23_002225_file:
+    title: AZLX-23-002225 | MEDIUM | Amazon Linux 2023 audit logs must be group-owned by root or by a restricted logging group to prevent unauthorized read access.
+    path: /var/log/audit/audit.log
+    exists: true
+    mode:
+      or:
+      - '0644'
+      - '0640'
+      - '0600'
+      - '0400'
+    group: root
+    meta:
+      Cat: 2
+      Rule_ID: SV-274108r1120312_rule
+      STIG_ID: AZLX-23-002225
+      Vul_ID: V-274108
+      Group_Title:
+      - SRG-OS-000057-GPOS-00027
+      - SRG-OS-000058-GPOS-00028
+      - SRG-OS-000059-GPOS-00029
+      - SRG-OS-000206-GPOS-00084
+      CCI:
+      - CCI-000162
+      - CCI-000163
+      - CCI-000164
+      - CCI-001314
+      NIST800-53R4:
+      - AU-9
+      - SI-11
+{{ end }}

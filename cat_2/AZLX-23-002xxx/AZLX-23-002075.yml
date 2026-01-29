@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002075 }}
+command:
+  azlx_23_002075_config:
+    title: AZLX-23-002075 | MEDIUM | Amazon Linux 2023 must encrypt via the gtls driver the transfer of audit records off-loaded onto a different system or media from the system being audited via rsyslog.
+    exec: grep -i '$DefaultNetstreamDriver' /etc/rsyslog.conf /etc/rsyslog.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:$DefaultNetstreamDriver ossl/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274079r1120724_rule
+      STIG_ID: AZLX-23-002075
+      Vul_ID: V-274079
+      Group_Title: SRG-OS-000479-GPOS-00224
+      CCI: CCI-001851
+      NIST800-53R4: AU-4
+{{ end }}

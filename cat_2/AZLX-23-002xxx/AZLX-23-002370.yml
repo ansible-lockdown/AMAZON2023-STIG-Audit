@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002370 }}
+command:
+  azlx_23_002370_config_difok:
+    title: AZLX-23-002370 | MEDIUM | Amazon Linux 2023 must require the change of at least 50 percent of the total number of characters when passwords are changed.
+    exec: grep difok /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/.*\:difok\s*=\s*([8-9]|1[0-9])/'
+    - '!/.*\:difok\s*=\s*(0-7)/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274136r1120697_rule
+      STIG_ID: AZLX-23-002370
+      Vul_ID: V-274136
+      Group_Title: SRG-OS-000072-GPOS-00040
+      NIST800-53R4: NA
+{{ end }}

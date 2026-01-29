@@ -1,0 +1,250 @@
+## metadata for Audit benchmark
+benchmark_version: 'v1r1'
+benchmark: AMAZON2023-STIG
+
+# turn the categories on/off
+az2023stig_cat1: true
+az2023stig_cat2: true
+az2023stig_cat3: true
+
+# Some tests may need to scan every filesystem or have an impact on a system
+run_heavy_tests: true
+timeout_ms: 120000
+
+# CAT_1 rules
+az2023stig_000100: true
+az2023stig_000115: true
+az2023stig_000120: true
+az2023stig_000125: true
+az2023stig_000130: true
+az2023stig_000300: true
+az2023stig_001180: true
+az2023stig_001185: true
+az2023stig_001225: true
+az2023stig_001255: true
+az2023stig_001275: true
+az2023stig_001280: true
+az2023stig_002450: true
+
+# CAT_2 rules
+az2023stig_000110: true
+az2023stig_000135: true
+az2023stig_000200: true
+az2023stig_000205: true
+az2023stig_000210: true
+az2023stig_000215: true
+az2023stig_000220: true
+az2023stig_000225: true
+az2023stig_000305: true
+az2023stig_000310: true
+az2023stig_000315: true
+az2023stig_000320: true
+# CAT_2 rules 001xxx
+az2023stig_001000: true
+az2023stig_001005: true
+az2023stig_001010: true
+az2023stig_001015: true
+az2023stig_001020: true
+az2023stig_001025: true
+az2023stig_001030: true
+az2023stig_001035: true
+az2023stig_001040: true
+az2023stig_001045: true
+az2023stig_001050: true
+az2023stig_001055: true
+az2023stig_001060: true
+az2023stig_001065: true
+az2023stig_001070: true
+az2023stig_001075: true
+az2023stig_001080: true
+az2023stig_001085: true
+az2023stig_001090: true
+az2023stig_001095: true
+az2023stig_001105: true
+az2023stig_001110: true
+az2023stig_001115: true
+az2023stig_001120: true
+az2023stig_001125: true
+az2023stig_001130: true
+az2023stig_001195: true
+az2023stig_001200: true
+az2023stig_001205: true
+az2023stig_001210: true
+az2023stig_001215: true
+az2023stig_001220: true
+az2023stig_001230: true
+az2023stig_001235: true
+az2023stig_001240: true
+az2023stig_001245: true
+az2023stig_001250: true
+az2023stig_001260: true
+az2023stig_001265: true
+az2023stig_001270: true
+az2023stig_001285: true
+az2023stig_001290: true
+az2023stig_001300: true
+az2023stig_001305: true
+az2023stig_001310: true
+az2023stig_001315: true
+
+# CAT_2 rules 002xxx
+az2023stig_002000: true
+az2023stig_002005: true
+az2023stig_002015: true
+az2023stig_002025: true
+az2023stig_002030: true
+az2023stig_002035: true
+az2023stig_002040: true
+az2023stig_002045: true
+az2023stig_002050: true
+az2023stig_002055: true
+az2023stig_002060: true
+az2023stig_002065: true
+az2023stig_002070: true
+az2023stig_002075: true
+az2023stig_002085: true
+az2023stig_002090: true
+az2023stig_002095: true
+az2023stig_002100: true
+az2023stig_002105: true
+az2023stig_002110: true
+az2023stig_002115: true
+az2023stig_002120: true
+az2023stig_002125: true
+az2023stig_002130: true
+az2023stig_002135: true
+az2023stig_002140: true
+az2023stig_002145: true
+az2023stig_002150: true
+az2023stig_002155: true
+az2023stig_002160: true
+az2023stig_002165: true
+az2023stig_002175: true
+az2023stig_002180: true
+az2023stig_002185: true
+az2023stig_002190: true
+az2023stig_002195: true
+az2023stig_002200: true
+az2023stig_002205: true
+az2023stig_002210: true
+az2023stig_002215: true
+az2023stig_002220: true
+az2023stig_002225: true
+az2023stig_002230: true
+az2023stig_002235: true
+az2023stig_002240: true
+az2023stig_002245: true
+az2023stig_002250: true
+az2023stig_002255: true
+az2023stig_002260: true
+az2023stig_002265: true
+az2023stig_002270: true
+az2023stig_002275: true
+az2023stig_002280: true
+az2023stig_002285: true
+az2023stig_002290: true
+az2023stig_002295: true
+az2023stig_002300: true
+az2023stig_002305: true
+az2023stig_002315: true
+az2023stig_002320: true
+az2023stig_002325: true
+az2023stig_002330: true
+az2023stig_002335: true
+az2023stig_002340: true
+az2023stig_002345: true
+az2023stig_002350: true
+az2023stig_002355: true
+az2023stig_002360: true
+az2023stig_002365: true
+az2023stig_002370: true
+az2023stig_002375: true
+az2023stig_002380: true
+az2023stig_002385: true
+az2023stig_002390: true
+az2023stig_002396: true
+az2023stig_002400: true
+az2023stig_002405: true
+az2023stig_002410: true
+az2023stig_002415: true
+az2023stig_002420: true
+az2023stig_002425: true
+az2023stig_002430: true
+az2023stig_002435: true
+az2023stig_002440: true
+az2023stig_002445: true
+az2023stig_002455: true
+az2023stig_002460: true
+az2023stig_002465: true
+az2023stig_002470: true
+az2023stig_002475: true
+az2023stig_002480: true
+az2023stig_002485: true
+az2023stig_002489: true
+az2023stig_002490: true
+az2023stig_002495: true
+az2023stig_002500: true
+az2023stig_002505: true
+az2023stig_002510: true
+az2023stig_002515: true
+az2023stig_002520: true
+az2023stig_002535: true
+az2023stig_002540: true
+az2023stig_002555: true
+az2023stig_002560: true
+az2023stig_002565: true
+az2023stig_002570: true
+az2023stig_002575: true
+az2023stig_002580: true
+az2023stig_002585: true
+az2023stig_002590: true
+az2023stig_002595: true
+az2023stig_002600: true
+az2023stig_002605: true
+az2023stig_002610: true
+az2023stig_002615: true
+az2023stig_002620: true
+# CAT_2 rules 0050xx
+az2023stig_005000: true
+
+# CAT_3 rules
+az2023stig_002020: true
+az2023stig_002080: true
+az2023stig_002395: true
+
+# Variables
+
+# The following variable represents a setting for periodical checking of the filesystem's
+# integrity using AIDE. It provides a parameter required to configure the cron job on
+# the target system. Cron is a time-based job scheduling program in Unix OS, which
+# allows tasks to be scheduled and executed automatically at a certain point in time.
+# This variable represents the path to the AIDE crontab file.
+az2023stig_aide_cron_file: /etc/cron.d/aide
+
+
+az2023stig_syslog_trustedcertificatefile: /etc/pki/tls/certs/ca-bundle.crt
+az2023stig_syslog_servercertificatefile: /etc/pki/tls/certs/localhost.crt
+az2023stig_syslog_serverkeyfile: /etc/pki/tls/private/localhost.key
+az2023stig_syslog_remote_log_server: syslog+tcp://127.0.0.1:514
+
+az2023stig_dod_ciphers:  aes256-gcm@openssh.com,aes256-ctr,aes128-gcm@openssh.com,aes128-ctr
+
+az2023stig_dod_macs: hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha2-256,hmac-sha2-512
+
+
+az2023stig_selinux_policy: targeted
+
+az2023stig_maxlogins: 10
+
+az2023stig_logon_banner:
+  - You are accessing a U.S. Government (USG) Information System (IS) that is provided for USG-authorized use only.
+  - By using this IS (which includes any device attached to this IS), you consent to the following conditions
+  - -The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.
+  - -At any time, the USG may inspect and seize data stored on this IS.
+  - -Communications using, or data stored on, this IS are not private, are subject to routine monitoring, interception, and search, and may be disclosed or used for any USG-authorized purpose.
+  - -This IS includes security measures (e.g., authentication and access controls) to protect USG interests--not for your personal benefit or privacy.
+  - -Notwithstanding the above, using this IS does not constitute consent to PM, LE or CI investigative searching or monitoring of the content of privileged communications, or work product, related to personal representation or services by attorneys, psychotherapists, or clergy, and their assistants. Such communications and work product are private and confidential. See User Agreement for details.
+
+az2023stig_audit_log_filesystem: /var/log/audit
+
+az2023stig_pass_max_days: 60

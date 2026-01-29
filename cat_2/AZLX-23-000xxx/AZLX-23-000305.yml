@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.az2023stig_000305 }}
+package:
+  sendmail:
+    title: AZLX-23-000305 | MEDIUM | Amazon Linux 2023 must not have the sendmail package installed.
+    name: sendmail
+    installed: false
+    meta:
+      Cat: 2
+      Rule_ID: SV-274008r1120012_rule
+      STIG_ID: AZLX-23-000305
+      Vul_ID: V-274008
+      Group_Title: SRG-OS-000095-GPOS-00049
+      CCI: CCI-000381
+      NIST800-53R4: CM-7
+{{ end }}

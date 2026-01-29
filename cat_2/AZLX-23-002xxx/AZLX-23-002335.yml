@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002335 }}
+file:
+  var_log_messages_group:
+    title: AZLX-23-002335 | MEDIUM | Amazon Linux 2023 must ensure the /var/log/messages file be group-owned by root.
+    path: /var/log/messages
+    exists: true
+    filetype: file
+    group: root
+    meta:
+      Cat: 2
+      Rule_ID: SV-274129r1120375_rule
+      STIG_ID: AZLX-23-002335
+      Vul_ID: V-274129
+      Group_Title: SRG-OS-000259-GPOS-00084
+      CCI: CCI-001314
+      NIST800-53R4: SI-11
+{{ end }}

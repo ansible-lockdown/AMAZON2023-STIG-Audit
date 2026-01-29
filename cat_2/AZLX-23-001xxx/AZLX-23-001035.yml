@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.az2023stig_001035 }}
+package:
+  audispd_plugins:
+    title: AZLX-23-001035 | MEDIUM | Amazon Linux 2023 audispd-plugins package must be installed.
+    name: audispd-plugins
+    installed: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-274019r1120045_rule
+      STIG_ID: AZLX-23-001035
+      Vul_ID: V-274019
+      Group_Title: SRG-OS-000342-GPOS-00133
+      CCI: CCI-001851
+      NIST800-53R4: AU-4
+{{ end }}

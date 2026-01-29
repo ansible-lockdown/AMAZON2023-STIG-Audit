@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_001215 }}
+command:
+  azlx_23_001215_config:
+    title: AZLX-23-001215 | Amazon Linux 2023 SSH daemon must not allow Generic Security Service Application Program Interface (GSSAPI) authentication.
+    exec: grep -E "GSSAPIAuthentication" /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf
+    exit-status: 0
+    stdout:
+    - "GSSAPIAuthentication no"
+    - '!/(?i)^GSSAPIAuthentication yes/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274044r1120120_rule
+      STIG_ID: AZLX-23-001215
+      Vul_ID: V-274044
+      Group_Title: SRG-OS-000364-GPOS-00151
+      CCI: CCI-001813
+      NIST800-53R4: CM-5
+{{ end }}

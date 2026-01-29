@@ -1,0 +1,73 @@
+---
+
+{{ if .Vars.az2023stig_002140 }}
+command:
+  azlx_23_002140_audit_rules_live:
+    title: AZLX-23-002140 | MEDIUM | Amazon Linux 2023 must audit all uses of the create_module system call.
+    exec: auditctl -l | grep create_module
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/-a always,exit -F arch=b64 -S create_module -F auid>=1000 -F auid!=-1 -F key=module-change/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274092r1120264_rule
+      STIG_ID: AZLX-23-002140
+      Vul_ID: V-274092
+      Group_Title:
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000064-GPOS-00033
+      - SRG-OS-000466-GPOS-00210
+      - SRG-OS-000458-GPOS-00203
+      CCI:
+      - CCI-000130
+      - CCI-000135
+      - CCI-000169
+      - CCI-000172
+      - CCI-002884
+      NIST800-53R4:
+      - AU-3
+      - AU-12
+      - MA-4
+  azlx_23_002140_audit_rules_conf:
+    title: AZLX-23-002140 | MEDIUM | Amazon Linux 2023 must audit all uses of the create_module system call.
+    exec: grep -w create_module /etc/audit/rules.d/*
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:-a always,exit -F arch=b64 -S create_module -F auid>=1000 -F auid!=unset -k module-change/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274092r1120264_rule
+      STIG_ID: AZLX-23-002140
+      Vul_ID: V-274092
+      Group_Title:
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000064-GPOS-00033
+      - SRG-OS-000466-GPOS-00210
+      - SRG-OS-000458-GPOS-00203
+      CCI:
+      - CCI-000130
+      - CCI-000135
+      - CCI-000169
+      - CCI-000172
+      - CCI-002884
+      NIST800-53R4:
+      - AU-3
+      - AU-12
+      - MA-4
+{{ end }}

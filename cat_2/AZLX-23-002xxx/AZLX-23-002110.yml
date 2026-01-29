@@ -1,0 +1,53 @@
+---
+
+{{ if .Vars.az2023stig_002110 }}
+command:
+  azlx_23_002110_audit_rules_live:
+    title: AZLX-23-002110 | MEDIUM |  Amazon Linux 2023 must audit uses of the "execve" system call.
+    exec: auditctl -l | grep execpriv
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/-a always,exit -F arch=b64 -S execve -C uid!=euid -F euid=0 -F key=execpriv/'
+    - '/-a always,exit -F arch=b64 -S execve -C gid!=egid -F egid=0 -F key=execpriv/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274086r1120246_rule
+      STIG_ID: AZLX-23-002110
+      Vul_ID: V-274086
+      Group_Title:
+      - SRG-OS-000326-GPOS-00126
+      - SRG-OS-000327-GPOS-00127
+      CCI:
+      - CCI-002233
+      - CCI-002234
+      NIST800-53R4:
+      - AC-6
+      - AC-7
+azlx_23_002110_audit_rules_conf:
+    title: AZLX-23-002110 | MEDIUM |  Amazon Linux 2023 must audit uses of the "execve" system call.
+    exec: grep -w execpriv /etc/audit/rules.d/*
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:-a always,exit -F arch=b64 -S execve -C uid!=euid -F euid=0 -F key=execpriv/'
+    - '/^.*:-a always,exit -F arch=b64 -S execve -C gid!=egid -F egid=0 -F key=execpriv/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274086r1120246_rule
+      STIG_ID: AZLX-23-002110
+      Vul_ID: V-274086
+      Group_Title:
+      - SRG-OS-000326-GPOS-00126
+      - SRG-OS-000327-GPOS-00127
+      CCI:
+      - CCI-002233
+      - CCI-002234
+      NIST800-53R4:
+      - AC-6
+      - AC-7
+{{ end }}

@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_001045 }}
+file:
+  azlx_23_001045_config:
+    title: AZLX-23-001045 | MEDIUM | Amazon Linux 2023 must monitor remote access methods.
+    path: /etc/rsyslog.conf
+    exists: true
+    contents:
+    - '/^auth.\*;authpriv.\*;daemon.\* /var/log/secure/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274021r1120695_rule
+      STIG_ID: AZLX-23-001045
+      Vul_ID: V-274021
+      Group_Title: SRG-OS-000032-GPOS-00013
+      CCI: CCI-000067
+      NIST800-53R4: AC-17
+{{ end }}

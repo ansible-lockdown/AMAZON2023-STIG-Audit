@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.az2023stig_002190 }}
+command:
+  azlx_23_002190_check:
+    title: AZLX-23-002190 | MEDIUM | Amazon Linux 2023 audit tools must have a mode of "0755" or less permissive.
+    exec: stat -c "%a" /sbin/auditctl /sbin/aureport /sbin/ausearch /sbin/autrace /sbin/auditd /sbin/rsyslogd /sbin/augenrules
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^[6,7][0,5][0,5]$/'
+    - '!/^[6,7][6,7][6,7]$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274101r1120291_rule
+      STIG_ID: AZLX-23-002190
+      Vul_ID: V-274101
+      Group_Title: SRG-OS-000256-GPOS-00097
+      CCI: CCI-001493
+      NIST800-53R4: AU-9
+{{ end }}

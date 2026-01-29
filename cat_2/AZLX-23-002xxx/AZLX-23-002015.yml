@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002015 }}
+command:
+  azlx_23_002015_check:
+    title: AZLX-23-002015 | MEDIUM | Amazon Linux 2023 must allocate audit record storage capacity to store at least one week's worth of audit records, when audit records are not immediately sent to a central audit record storage facility. | Manual
+    exec: echo -e "MANUAL - Ensure the disk space is sufficient for 1 week of audit logs\n`df -h {{ .Vars.az2023stig_audit_log_filesystem }}`"
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/^MANUAL - Ensure the disk space is sufficient for 1 week of audit logs/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274067r1120653_rule
+      STIG_ID: AZLX-23-002015
+      Vul_ID: V-274067
+      Group_Title: SRG-OS-000341-GPOS-000132
+      CCI: CCI-001849
+      NIST800-53R4: AU-4
+{{ end }}

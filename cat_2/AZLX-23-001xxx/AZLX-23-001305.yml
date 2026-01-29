@@ -1,0 +1,25 @@
+---
+
+{{ if .Vars.az2023stig_001305 }}
+command:
+  azlx_23_001305_config:
+    title: AZLX-23-001305 | MEDIUM | Amazon Linux 2023 must prohibit the use of cached authenticators after one day
+    exec: grep -ir _credentials /etc/sssd/sssd.conf /etc/sssd/conf.d/ | grep -v "^#"
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/(?i).*:cache_credentials = true/'
+    - '!/(?i).*:cache_credentials = false/'
+    - '/(?i).*:offline_credentials_expiration = 1/'
+    - '!/(?i).*:offline_credentials_expiration = (0|2-9)/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274062r1120174_rule
+      STIG_ID: AZLX-23-001305
+      Vul_ID: V-274062
+      Group_Title: SRG-OS-000383-GPOS-00166
+      CCI: CCI-002007
+      NIST800-53R4: NIST800_53R4_IA-5
+{{ end }}

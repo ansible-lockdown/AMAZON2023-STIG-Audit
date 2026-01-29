@@ -1,0 +1,45 @@
+---
+
+{{ if .Vars.az2023stig_000210 }}
+command:
+  azlx_23_000210_sysctl:
+    title: AZLX-23-000210 | MEDIUM | Amazon Linux 2023 must restrict exposed kernel pointer addresses access.
+    exec: sysctl kernel.kptr_restrict
+    exit-status: 0
+    stdout:
+    - '/^kernel.kptr_restrict = 1$/'
+    - '!/^kernel.kptr_restrict = 0$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274003r1119997_rule
+      STIG_ID: AZLX-23-000210
+      Vul_ID: V-274003
+      Group_Title:
+      - SRG-OS-000433-GPOS-00192
+      - SRG-OS-000132-GPOS-00067
+      CCI:
+      - CCI-001082
+      - CCI-002824
+      NIST800-53R4:
+      - SC-2
+      - SI-16
+kernel-param:
+  kernel.kptr_restrict:
+    title: AZLX-23-000210 | MEDIUM | Amazon Linux 2023 must restrict exposed kernel pointer addresses access.
+    name: kernel.kptr_restrict
+    value: 1
+    meta:
+      Cat: 2
+      Rule_ID: SV-274003r1119997_rule
+      STIG_ID: AZLX-23-000210
+      Vul_ID: V-274003
+      Group_Title:
+      - SRG-OS-000132-GPOS-00067
+      - SRG-OS-000433-GPOS-00192
+      CCI:
+      - CCI-001082
+      - CCI-002824
+      NIST800-53R4:
+      - SC-2
+      - SI-16
+{{ end }}

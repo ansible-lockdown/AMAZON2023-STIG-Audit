@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.az2023stig_001085 }}
+command:
+  azlx_23_001085_check:
+    title: AZLX-23-001085 | MEDIUM | Amazon Linux 2023 must be configured to disable nonessential capabilities.
+    exec: echo "Manual audit check required"
+    exit-status: 0
+    meta:
+      Cat: 2
+      Rule_ID: SV-274029r1120075_rule
+      STIG_ID: AZLX-23-001085
+      Vul_ID: V-274029
+      Group_Title: SRG-OS-000095-GPOS-00049
+      CCI: CCI-000381
+      NIST800-53R4: CM-7
+{{ end }}

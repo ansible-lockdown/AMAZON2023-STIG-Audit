@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002610 }}
+command:
+  azlx_23_002610_check_nonexecutable_data:
+    title: AZLX-23-002610 | Amazon Linux 2023 must implement nonexecutable data to protect its memory from unauthorized code execution.
+    exec: dmesg | grep -i "execute disable"
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - 'NX (Execute Disable) protection: active'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274184r1120540_rule
+      STIG_ID: AZLX-23-002610
+      Vul_ID: V-274184
+      Group_Title: SRG-OS-000433-GPOS-00192
+      CCI: CCI-002824
+      NIST800-53R4: SI-16
+{{ end }}

@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.az2023stig_002489 }}
+file:
+  azlx_23_002489_config_password_complexity_module:
+    title: AZLX-23-002489 | MEDIUM | Amazon Linux 2023 must ensure the password complexity module is enabled in the password-auth file.
+    path: /etc/pam.d/password-auth
+    exists: true
+    contents:
+    - '/^password\s+(required|requisite)\s+pam_pwquality.so/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274161r1120471_rule
+      STIG_ID: AZLX-23-002489
+      Vul_ID: V-274161
+      Group_Title: SRG-OS-000069-GPOS-00037
+      CCI:
+      - CCI-000192
+      - CCI-000193
+      NIST800-53R4: IA-5
+{{ end }}

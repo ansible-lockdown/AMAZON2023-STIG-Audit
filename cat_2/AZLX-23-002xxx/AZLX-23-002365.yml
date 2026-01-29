@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.az2023stig_002365 }}
+command:
+  azlx_23_002365_config_dcredit:
+    title: AZLX-23-002365 | MEDIUM | Amazon Linux 2023 must enforce password complexity by requiring that at least one numeric character be used.
+    exec: grep dcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/.*\:dcredit\s*=\s*-\d/'
+    - '!/.*\:dcredit\s*=\s*\d/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274135r1120393_rule
+      STIG_ID: AZLX-23-002365
+      Vul_ID: V-274135
+      Group_Title: SRG-OS-000071-GPOS-00039
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

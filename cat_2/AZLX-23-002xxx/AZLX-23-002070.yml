@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002070 }}
+command:
+  azlx_23_002070_config:
+    title: AZLX-23-002070 | MEDIUM | Amazon Linux 2023 must encrypt the transfer of audit records off-loaded onto a different system or media from the system being audited via rsyslog.
+    exec: grep -i '$ActionSendStreamDriverMode' /etc/rsyslog.conf /etc/rsyslog.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:$ActionSendStreamDriverMode 1/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274078r1120222_rule
+      STIG_ID: AZLX-23-002070
+      Vul_ID: V-274078
+      Group_Title: SRG-OS-000479-GPOS-000224
+      CCI: CCI-001851
+      NIST800-53R4: AU-4
+{{ end }}

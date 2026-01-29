@@ -1,0 +1,61 @@
+---
+
+{{ if .Vars.az2023stig_002160 }}
+command:
+  azlx_23_002160_audit_rules_live:
+    title: AZLX-23-002160 | MEDIUM | Amazon Linux 2023 must generate audit records for all account creations, modifications, disabling, and termination events that affect /var/log/faillock
+    exec: auditctl -l | grep faillock
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^-w /var/log/faillock -p wa -k logins/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274096r1120276_rule
+      STIG_ID: AZLX-23-002160
+      Vul_ID: V-274096
+      Group_Title:
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000470-GPOS-00214
+      - SRG-OS-000473-GPOS-00218
+      CCI:
+      - CCI-000130
+      - CCI-000135
+      - CCI-000169
+      - CCI-002884
+      - CCI-000172
+      NIST800-53R4:
+      - AU-3
+      - AU-12
+      - MA-4
+  azlx_23_002160_audit_rules_conf:
+    title: AZLX-23-002160 | MEDIUM | Amazon Linux 2023 must generate audit records for all account creations, modifications, disabling, and termination events that affect /var/log/faillock
+    exec: grep -w faillock /etc/audit/rules.d/*
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:-w /var/log/faillock -p wa -k logins/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274096r1120276_rule
+      STIG_ID: AZLX-23-002160
+      Vul_ID: V-274096
+      Group_Title:
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000470-GPOS-00214
+      - SRG-OS-000473-GPOS-00218
+      CCI:
+      - CCI-000130
+      - CCI-000135
+      - CCI-000169
+      - CCI-002884
+      - CCI-000172
+      NIST800-53R4:
+      - AU-3
+      - AU-12
+      - MA-4
+{{ end }}

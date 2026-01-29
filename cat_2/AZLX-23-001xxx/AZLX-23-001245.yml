@@ -1,0 +1,32 @@
+---
+
+{{ if .Vars.az2023stig_001245 }}
+command:
+  azlx_23_001245_config:
+    title: AZLX-23-001245 | MEDIUM | Amazon Linux 2023 must configure SSH to only allow session key renegotiation after 15 minutes or less.
+    exec: grep -i ClientAliveInterval /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/.*:ClientAliveInterval (600|[1-5][0-9]{2,}|[3-5][0-9])/'
+    - '!/(?i)^ClientAliveInterval ([1-5][0-9]{2,}|[3-5][0-9])/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274050r1120138_rule
+      STIG_ID: AZLX-23-001245
+      Vul_ID: V-274050
+      Group_Title:
+      - SRG-OS-000163-GPOS-00072
+      - SRG-OS-000279-GPOS-00109
+      - SRG-OS-000395-GPOS-00175
+      CCI:
+      - CCI-001133
+      - CCI-002361
+      - CCI-002891
+      NIST800-53R4:
+      - SC-10
+      - AC-12
+      - MA-4
+{{ end }}

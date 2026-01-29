@@ -1,0 +1,27 @@
+---
+
+{{ if .Vars.az2023stig_001230 }}
+command:
+  azlx_23_001230_config:
+    title: AZLX-23-001230 | MEDIUM | Amazon Linux 2023 SSHD must accept public key authentication.
+    exec: grep -i PubkeyAuthentication /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf
+    exit-status: 0
+    stdout:
+    - '/.*:PubkeyAuthentication yes/'
+    - '!/(?i)^PubkeyAuthentication no/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274047r1120129_rule
+      STIG_ID: AZLX-23-001230
+      Vul_ID: V-274047
+      Group_Title:
+      - SRG-OS-000105-GPOS-00052
+      - SRG-OS-000106-GPOS-00053
+      - SRG-OS-000107-GPOS-00054
+      - SRG-OS-000108-GPOS-00055
+      CCI:
+      - CCI-000765
+      - CCI-000766
+      NIST800-53R4:
+      - IA-2
+{{ end }}

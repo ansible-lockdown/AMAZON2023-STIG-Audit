@@ -1,0 +1,30 @@
+---
+
+{{ if .Vars.az2023stig_001315 }}
+command:
+  azlx_23_001315_check:
+    title: AZLX-23-001315 | MEDIUM | Amazon Linux 2023, for PKI-based authentication, must enforce authorized access to the corresponding private key.
+    exec: |
+      error_found=0
+      while IFS= read -r -d '' keyfile; do
+        if output=$(ssh-keygen -y -P "" -f "$keyfile" 2>/dev/null) && [ -n "$output" ]; then
+          echo "ERROR: Unprotected private key found: $keyfile" >&2
+          error_found=1
+        fi
+      done < <(find /home/*/.ssh /root/.ssh /etc/ssh -type f ! -name "*.pub" ! -name "known_hosts" ! -name "authorized_keys" ! -name "config" ! -name "*.bak" -print0 2>/dev/null)
+      exit $error_found
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - 'ERROR: Unprotected private key found: '
+    meta:
+      Cat: 2
+      Rule_ID: SV-274064r1120180_rule
+      STIG_ID: AZLX-23-001315
+      Vul_ID: V-274064
+      Group_Title: SRG-OS-000067-GPOS-00035
+      CCI: CCI-000186
+      NIST800-53R4: IA-5
+{{ end }}

@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.az2023stig_002020 }}
+mount:
+  azlx_23_002020_check_audit_data_path:
+    title: AZLX-23-002020 | LOW| Amazon Linux 2023 must use a separate file system for the system audit data path.
+    mountpoint: /var/log/audit
+    exists: true
+    meta:
+      Cat: 3
+      Rule_ID: SV-274068r1120192_rule
+      STIG_ID: AZLX-23-002020
+      Vul_ID: V-274068
+      Group_Title: SRG-OS-000341-GPOS-00132
+      CCI: CCI-001849
+      NIST800-53R4: AU-4
+{{ end }}

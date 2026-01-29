@@ -1,0 +1,71 @@
+---
+
+{{ if .Vars.az2023stig_002165 }}
+command:
+  azlx_23_002165_audit_rules_live:
+    title: AZLX-23-002165 | MEDIUM | Amazon Linux 2023 must generate audit records for all account creations, modifications, disabling, and termination events that affect /var/log/lastlog.
+    exec: auditctl -l | grep lastlog
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^-w /var/log/lastlog -p wa -k logins/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274097r1120279_rule
+      STIG_ID: AZLX-23-002165
+      Vul_ID: V-274097
+      Group_Title:
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000470-GPOS-00214
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000473-GPOS-00218
+      CCI:
+      - CCI-000130
+      - CCI-000135
+      - CCI-000169
+      - CCI-002884
+      - CCI-000172
+      NIST800-53R4:
+      - AU-3
+      - AU-12
+      - MA-4
+  azlx_23_002165_audit_rules_conf:
+    title: AZLX-23-002165 | MEDIUM | Amazon Linux 2023 must generate audit records for all account creations, modifications, disabling, and termination events that affect /var/log/lastlog.
+    exec: grep -w lastlog /etc/audit/rules.d/*
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:-w /var/log/lastlog -p wa -k logins/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274097r1120279_rule
+      STIG_ID: AZLX-23-002165
+      Vul_ID: V-274097
+      Group_Title:
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000470-GPOS-00214
+      - SRG-OS-000471-GPOS-00215
+      - SRG-OS-000473-GPOS-00218
+      CCI:
+      - CCI-000130
+      - CCI-000135
+      - CCI-000169
+      - CCI-002884
+      - CCI-000172
+      NIST800-53R4:
+      - AU-3
+      - AU-12
+      - MA-4
+{{ end }}

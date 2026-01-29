@@ -1,0 +1,18 @@
+---
+{{ if .Vars.az2023stig_001275 }}
+file:
+  azlx_23_001275_config:
+    title: AZLX-23-001275 | HIGH | Amazon Linux 2023 must implement DOD-approved encryption to protect the confidentiality of remote access sessions.
+    path: /etc/crypto-policies/back-ends/opensshserver.config
+    exists: true
+    contents:
+    - '/^Ciphers {{ .Vars.az2023stig_dod_ciphers }}/'
+    meta:
+      Cat: 1
+      Rule_ID: SV-274056r1120156_rule
+      STIG_ID: AZLX-23-001275
+      Vul_ID: V-274056
+      Group_Title: SRG-OS-000033-GPOS-00014
+      CCI: CCI-000068
+      NIST800-53R4: AC-17
+{{ end }}

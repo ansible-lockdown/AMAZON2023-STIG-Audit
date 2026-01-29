@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_002260 }}
+file:
+  auditd_conf_log_format:
+    title: AZLX-23-002260 | MEDIUM | Amazon Linux 2023 must produce audit records containing information to establish the identity of any individual or process associated with the event.
+    path: /etc/audit/auditd.conf
+    exists: true
+    contents:
+    - '/^\s*log_format\s*=\s*ENRICHED$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274115r1120333_rule
+      STIG_ID: AZLX-23-002260
+      Vul_ID: V-274115
+      Group_Title: SRG-OS-000255-GPOS-00096
+      CCI: CCI-001487
+      NIST800-53R4: AU-3
+{{ end }}

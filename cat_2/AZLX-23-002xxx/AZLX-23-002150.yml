@@ -1,0 +1,71 @@
+---
+
+{{ if .Vars.az2023stig_002150 }}
+command:
+  azlx_23_002150_audit_rules_live:
+    title: AZLX-23-002150 | MEDIUM | Amazon Linux 2023 must audit all uses of the rename, unlink, rmdir, renameat, and unlinkat system calls.
+    exec: auditctl -l | grep rename
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^-a always,exit -F arch=b64 -S rename,rmdir,unlink,unlinkat,renameat -F auid>=1000 -F auid!=-1 -F key=delete/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274094r1120270_rule
+      STIG_ID: AZLX-23-002150
+      Vul_ID: V-274094
+      Group_Title:
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000466-GPOS-00210
+      - SRG-OS-000467-GPOS-00211
+      - SRG-OS-000468-GPOS-00212
+      CCI:
+      - CCI-000130
+      - CCI-000135
+      - CCI-000169
+      - CCI-000172
+      - CCI-002884
+      NIST800-53R4:
+      - AU-3
+      - AU-12
+      - MA-4
+  azlx_23_002150_audit_rules_conf:
+    title: AZLX-23-002150 | MEDIUM | Amazon Linux 2023 must audit all uses of the rename, unlink, rmdir, renameat, and unlinkat system calls.
+    exec: grep -w rename /etc/audit/rules.d/*
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:-a always,exit -F arch=b64 -S rename,unlink,rmdir,renameat,unlinkat -F auid>=1000 -F auid!=unset -k delete/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274094r1120270_rule
+      STIG_ID: AZLX-23-002150
+      Vul_ID: V-274094
+      Group_Title:
+      - SRG-OS-000037-GPOS-00015
+      - SRG-OS-000042-GPOS-00020
+      - SRG-OS-000062-GPOS-00031
+      - SRG-OS-000392-GPOS-00172
+      - SRG-OS-000462-GPOS-00206
+      - SRG-OS-000466-GPOS-00210
+      - SRG-OS-000467-GPOS-00211
+      - SRG-OS-000468-GPOS-00212
+      CCI:
+      - CCI-000130
+      - CCI-000135
+      - CCI-000169
+      - CCI-000172
+      - CCI-002884
+      NIST800-53R4:
+      - AU-3
+      - AU-12
+      - MA-4
+{{ end }}

@@ -1,0 +1,33 @@
+---
+
+{{ if .Vars.az2023stig_000215 }}
+command:
+  azlx_23_000215_sysctl:
+    title: AZLX-23-000215 | MEDIUM | Amazon Linux 2023 must disable access to network bpf system call from nonprivileged processes.
+    exec: sysctl kernel.unprivileged_bpf_disabled
+    exit-status: 0
+    stdout:
+    - '/^kernel.unprivileged_bpf_disabled = 1$/'
+    - '!/^kernel.unprivileged_bpf_disabled = 0$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274004r1120000_rule
+      STIG_ID: AZLX-23-000215
+      Vul_ID: V-274004
+      Group_Title: SRG-OS-000132-GPOS-00067
+      CCI: CCI-001082
+      NIST800-53R4: SC-2
+kernel-param:
+  kernel.unprivileged_bpf_disabled:
+    title: AZLX-23-000215 | MEDIUM | Amazon Linux 2023 must disable access to network bpf system call from nonprivileged processes.
+    name: kernel.unprivileged_bpf_disabled
+    value: 1
+    meta:
+      Cat: 2
+      Rule_ID: SV-274004r1120000_rule
+      STIG_ID: AZLX-23-000215
+      Vul_ID: V-274004
+      Group_Title: SRG-OS-000132-GPOS-00067
+      CCI: CCI-001082
+      NIST800-53R4: SC-2
+{{ end }}

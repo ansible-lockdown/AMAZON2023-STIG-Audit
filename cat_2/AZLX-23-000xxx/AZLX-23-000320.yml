@@ -1,0 +1,17 @@
+---
+
+{{ if .Vars.az2023stig_000320 }}
+package:
+  gssproxy:
+    title: AZLX-23-000320 | MEDIUM | Amazon Linux 2023 must not have the gssproxy package installed.
+    name: gssproxy
+    installed: false
+    meta:
+      Cat: 2
+      Rule_ID: SV-274010r1120018_rule
+      STIG_ID: AZLX-23-000320
+      Vul_ID: V-274010
+      Group_Title: SRG-OS-000095-GPOS-00049
+      CCI: CCI-000381
+      NIST800-53R4: CM-7
+{{ end }}

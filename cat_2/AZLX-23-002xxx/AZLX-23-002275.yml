@@ -1,0 +1,23 @@
+---
+
+{{ if .Vars.az2023stig_002275 }}
+file:
+  auditd_conf_log_file_mode:
+    title: AZLX-23-002275 | MEDIUM | Amazon Linux 2023 audit logs file must have mode "0600" or less permissive to prevent unauthorized access to the audit log.
+    exists: true
+    path: /var/log/audit/audit.log
+    mode:
+      or:
+      - '0600'
+      - '0640'
+      - '0644'
+      - '0400'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274118r1120342_rule
+      STIG_ID: AZLX-23-002275
+      Vul_ID: V-274118
+      Group_Title: SRG-OS-000206-GPOS-00084
+      CCI: CCI-0001314
+      NIST800-53R4: SI-11
+{{ end }}

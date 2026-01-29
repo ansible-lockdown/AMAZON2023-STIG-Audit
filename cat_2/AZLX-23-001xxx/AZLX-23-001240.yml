@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_001240 }}
+command:
+  azlx_23_001240_config:
+    title: AZLX-23-001240 | MEDIUM | Amazon Linux 2023 must not permit direct logons to the root account using remote access via SSH.
+    exec: grep -E "PermitRootLogin" /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf
+    exit-status: 0
+    stdout:
+    - '/.*:PermitRootLogin no/'
+    - '!/(?i)^PermitRootLogin yes/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274049r1120135_rule
+      STIG_ID: AZLX-23-001240
+      Vul_ID: V-274049
+      Group_Title: SRG-OS-000109-GPOS-00056
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

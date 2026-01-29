@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002065 }}
+command:
+  azlx_23_002065_config:
+    title: AZLX-23-002065 | MEDIUM | Amazon Linux 2023 must authenticate the remote logging server for off-loading audit logs via rsyslog.
+    exec: grep -i '$ActionSendStreamDriverAuthMode' /etc/rsyslog.conf /etc/rsyslog.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:$ActionSendStreamDriverAuthMode x509\/.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274077r1120219_rule
+      STIG_ID: AZLX-23-002065
+      Vul_ID: V-274077
+      Group_Title: SRG-OS-000479-GPOS-000224
+      CCI: CCI-001851
+      NIST800-53R4: AU-4
+{{ end }}

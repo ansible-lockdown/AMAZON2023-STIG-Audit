@@ -1,0 +1,43 @@
+---
+
+{{ if .Vars.az2023stig_000200 }}
+command:
+  azlx_23_000200_sysctl:
+    title: AZLX-23-000200 | MEDIUM | Amazon Linux 2023 must restrict access to the kernel message buffer.
+    exec: sysctl kernel.dmesg_restrict
+    exit-status: 0
+    stdout:
+    - '/^kernel.dmesg_restrict = 1$/'
+    - '!/^kernel.dmesg_restrict = 0$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274001r1119991_rule
+      STIG_ID: AZLX-23-000200
+      Vul_ID: V-274001
+      Group_Title: SRG-OS-000132-GPOS-00067
+      CCI:
+      - CCI-001082
+      - CCI-001090
+      NIST800-53R4:
+      - SC-2
+      - SC-4
+kernel-param:
+  kernel.dmesg_restrict:
+    title: AZLX-23-000200 | MEDIUM | Amazon Linux 2023 must restrict access to the kernel message buffer.
+    name: kernel.dmesg_restrict
+    value: 1
+    meta:
+      Cat: 2
+      Rule_ID: SV-274001r1119991_rule
+      STIG_ID: AZLX-23-000200
+      Vul_ID: V-274001
+      Group_Title:
+      - SRG-OS-000132-GPOS-00067
+      - SRG-OS-000138-GPOS-00069
+      CCI:
+      - CCI-001082
+      - CCI-001090
+      NIST800-53R4:
+      - SC-2
+      - SC-4
+{{ end }}

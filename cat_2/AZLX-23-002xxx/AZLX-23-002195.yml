@@ -1,0 +1,28 @@
+---
+
+{{ if .Vars.az2023stig_002195 }}
+command:
+  azlx_23_002195_check:
+    title: AZLX-23-002195 | MEDIUM | Amazon Linux 2023 audit tools must be owned by root.
+    exec: sudo stat -c "%U %n" /sbin/auditctl /sbin/aureport /sbin/ausearch /sbin/autrace /sbin/auditd /sbin/rsyslogd /sbin/augenrules
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^root /sbin/auditctl$/'
+    - '/^root /sbin/aureport$/'
+    - '/^root /sbin/ausearch$/'
+    - '/^root /sbin/autrace$/'
+    - '/^root /sbin/auditd$/'
+    - '/^root /sbin/rsyslogd$/'
+    - '/^root /sbin/augenrules$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274102r1120294_rule
+      STIG_ID: AZLX-23-002195
+      Vul_ID: V-274102
+      Group_Title: SRG-OS-000256-GPOS-00097
+      CCI: CCI-001493
+      NIST800-53R4: AU-9
+{{ end }}

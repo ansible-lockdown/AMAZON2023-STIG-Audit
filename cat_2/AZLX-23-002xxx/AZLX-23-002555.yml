@@ -1,0 +1,18 @@
+---
+
+{{ if .Vars.az2023stig_002555 }}
+service:
+  azlx_23_002555_check_debug_shell_service:
+    title: AZLX-23-002555 | MEDIUM | Amazon Linux 2023 debug-shell systemd service must be disabled.
+    name: debug-shell.service
+    enabled: false
+    running: false
+    meta:
+      Cat: 2
+      Rule_ID: SV-274173r1120507_rule
+      STIG_ID: AZLX-23-002555
+      Vul_ID: V-274173
+      Group_Title: SRG-OS-000324-GPOS-00125
+      CCI: CCI-002235
+      NIST800-53R4: AC-6
+{{ end }}

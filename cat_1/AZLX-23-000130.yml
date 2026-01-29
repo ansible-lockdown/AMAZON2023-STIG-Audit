@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_000130 }}
+file:
+  azlx_23_000130_check:
+    title: AZLX-23-000130 | HIGH | Amazon Linux 2023 must be a vendor-supported release.
+    path: /etc/os-release
+    exists: true
+    contents:
+    - '/PRETTY_NAME="Amazon Linux 2023/'
+    meta:
+      Cat: 1
+      Rule_ID: SV-273999r1119985_rule
+      STIG_ID: AZLX-23-000130
+      Vul_ID: V-273999
+      Group_Title: SRG-OS-000439-GPOS-00195
+      CCI: CCI-002605
+      NIST800-53R4: SI-2
+{{ end }}

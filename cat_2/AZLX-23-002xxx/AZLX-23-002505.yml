@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002505 }}
+command:
+  azlx_23_002505_check_world_writable_dirs_owner:
+    title: AZLX-23-002505 | MEDIUM | Amazon Linux 2023 must ensure all world-writable directories be owned by root, sys, bin, or an application user.
+    exec: find / -xdev -type d -perm -0002 ! -user root ! -uid +999 -exec ls -ld {} +
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274165r1120483_rule
+      STIG_ID: AZLX-23-002505
+      Vul_ID: V-274165
+      Group_Title: SRG-OS-000138-GPOS-00069
+      CCI: CCI-001090
+      NIST800-53R4: SC-4
+{{ end }}

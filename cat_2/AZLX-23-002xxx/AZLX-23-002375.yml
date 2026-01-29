@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002375 }}
+command:
+  azlx_23_002375_config_minlen:
+    title: AZLX-23-002375 | MEDIUM | Amazon Linux 2023 must enforce a minimum 15-character password length
+    exec: grep minlen /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/.*\:minlen\s*=\s*(1[5-9]|[2-9][0-9])/'
+    - '!/.*\:minlen\s*=\s*([1-9]$|1[0-4])/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274137r1120725_rule
+      STIG_ID: AZLX-23-002375
+      Vul_ID: V-274137
+      Group_Title: SRG-OS-000072-GPOS-00046
+      NIST800-53R4: NA
+{{ end }}

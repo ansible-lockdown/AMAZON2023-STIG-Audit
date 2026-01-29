@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.az2023stig_000300 }}
+package:
+  vsftpd:
+    title: AZLX-23-000300 | HIGH | Amazon Linux 2023 must not have the vsftpd package installed.
+    name: vsftpd
+    installed: false
+    meta:
+      Cat: 1
+      Rule_ID: SV-274007r1120009_rule
+      STIG_ID: AZLX-23-000300
+      Vul_ID: V-274007
+      Group_Title: SRG-OS-000095-GPOS-00049
+      CCI:
+      - CCI-000197
+      - CCI-000381
+      NIST800-53R4:
+      - IA-5
+      - CM-7
+{{ end }}

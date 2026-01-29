@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_000125 }}
+command:
+  azlx_23_000125_check:
+    title: AZLX-23-000125 | HIGH | Amazon Linux 2023 must have GPG signature verification enabled for all software repositories.
+    exec: grep -E '.*gpgcheck.*=0' /etc/yum.repos.d/*.repo
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/.*[1-9][0-9]*$/'
+    meta:
+      Cat: 1
+      Rule_ID: SV-273998r1119982_rule
+      STIG_ID: AZLX-23-000125
+      Vul_ID: V-273998
+      Group_Title: SRG-OS-000366-GPOS-00153
+      CCI: NA
+      NIST800-53R4: NA
+{{ end }}

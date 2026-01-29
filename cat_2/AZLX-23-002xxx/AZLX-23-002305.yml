@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_002305 }}
+command:
+  library_dirs_owner:
+    title: AZLX-23-002305 | MEDIUM | Amazon Linux 2023 library directories must be owned by root.
+    exec: find /lib /lib64 /usr/lib /usr/lib64 ! -user root -type d
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '!/.*/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274124r1120360_rule
+      STIG_ID: AZLX-23-002305
+      Vul_ID: V-274124
+      Group_Title: SRG-OS-000259-GPOS-00100
+      CCI: CCI-001499
+      NIST800-53R4: CM-5
+{{ end }}

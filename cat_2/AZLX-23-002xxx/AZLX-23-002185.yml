@@ -1,0 +1,39 @@
+---
+
+{{ if .Vars.az2023stig_002185 }}
+command:
+  azlx_23_002185_audit_rules_live:
+    title: AZLX-23-002185 | Amazon Linux 2023 must audit all uses of the shutdown command.
+    exec: auditctl -l | grep shutdown
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^-a always,exit -S all -F path=/usr/sbin/shutdown -F perm=x -F auid>=1000 -F auid!=-1 -F key=privileged-shutdown/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274100r1120288_rule
+      STIG_ID: AZLX-23-002185
+      Vul_ID: V-274100
+      Group_Title: SRG-OS-000477-GPOS-00222
+      CCI: CCI-000172
+      NIST800-53R4: AU-12
+  azlx_23_002185_audit_rules_conf:
+    title: AZLX-23-002185 | Amazon Linux 2023 must audit all uses of the shutdown command.
+    exec: grep -w shutdown /etc/audit/rules.d/*
+    exit-status:
+      or:
+      - 0
+      - 1
+    stdout:
+    - '/^.*:-a always,exit -F path=/usr/sbin/shutdown -F perm=x -F auid>=1000 -F auid!=unset -k privileged-shutdown/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274100r1120288_rule
+      STIG_ID: AZLX-23-002185
+      Vul_ID: V-274100
+      Group_Title: SRG-OS-000477-GPOS-00222
+      CCI: CCI-000172
+      NIST800-53R4: AU-12
+{{ end }}

@@ -13,7 +13,7 @@ command:
     - '!/.*/'
     meta:
       Cat: 2
-      Rule_ID: SV-274164r1120480_rule
+      Rule_ID: SV-274164r1137695_rule
       STIG_ID: AZLX-23-002500
       Vul_ID: V-274164
       Group_Title: SRG-OS-000138-GPOS-00069

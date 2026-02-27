@@ -4,7 +4,7 @@
 command:
   library_files_group_owned:
     title: AZLX-23-002300 | MEDIUM | Amazon Linux 2023 library files must be group-owned by root or a system account.
-    exec: find /lib /lib64 /usr/lib /usr/lib64 ! -group root -type f
+    exec: find /lib /lib64 /usr/lib /usr/lib64 -type f -name '*.so*' ! -group root
     exit-status:
       or:
       - 0
@@ -13,7 +13,7 @@ command:
     - '!/.*/'
     meta:
       Cat: 2
-      Rule_ID: SV-274123r1120357_rule
+      Rule_ID: SV-274123r1155167_rule
       STIG_ID: AZLX-23-002300
       Vul_ID: V-274123
       Group_Title: SRG-OS-000259-GPOS-00100

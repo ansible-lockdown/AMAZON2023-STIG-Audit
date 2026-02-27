@@ -10,7 +10,7 @@ file:
     - '/PRETTY_NAME="Amazon Linux 2023/'
     meta:
       Cat: 1
-      Rule_ID: SV-273999r1119985_rule
+      Rule_ID: SV-273999r1155171_rule
       STIG_ID: AZLX-23-000130
       Vul_ID: V-273999
       Group_Title: SRG-OS-000439-GPOS-00195

@@ -11,7 +11,7 @@ command:
     - '!/(?i)^PermitRootLogin yes/'
     meta:
       Cat: 2
-      Rule_ID: SV-274049r1120135_rule
+      Rule_ID: SV-274049r1120747_rule
       STIG_ID: AZLX-23-001240
       Vul_ID: V-274049
       Group_Title: SRG-OS-000109-GPOS-00056

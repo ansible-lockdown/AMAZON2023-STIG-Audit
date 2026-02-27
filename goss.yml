@@ -9,6 +9,7 @@ gossfile:
   cat_2/AZLX-23-000xxx/*.yml: {}
   cat_2/AZLX-23-001xxx/*.yml: {}
   cat_2/AZLX-23-002xxx/*.yml: {}
+  cat_2/AZLX-23-005000.yml: {}
   {{ end }}
 
   {{ if .Vars.az2023stig_cat3 }}

@@ -1,0 +1,21 @@
+---
+
+{{ if .Vars.az2023stig_002625 }}
+file:
+  azlx_23_002625_check_pam_faillock_password_auth:
+    title: AZLX-23-002625 | MEDIUM | Amazon Linux 2023 must configure the use of the pam_faillock.so module in the /etc/pam.d/password-auth file.
+    path: /etc/pam.d/password-auth
+    exists: true
+    contents:
+    - '/^auth\s+required\s+pam_faillock.so preauth/'
+    - '/^auth\s+required\s+pam_faillock.so authfail/'
+    - '/^account\s+required\s+pam_faillock.so/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274187r1120549_rule
+      STIG_ID: AZLX-23-002625
+      Vul_ID: V-274187
+      Group_Title: SRG-OS-000021-GPOS-00005
+      CCI: CCI-000044
+      NIST800-53R4: AC-7
+{{ end }}

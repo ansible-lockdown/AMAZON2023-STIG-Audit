@@ -1,0 +1,22 @@
+---
+
+{{ if .Vars.az2023stig_001295 }}
+command:
+  azlx_23_001295_check:
+    title: AZLX-23-001295 | MEDIUM | Amazon Linux 2023 must map the authenticated identity to the user or group account for PKI-based authentication.
+    exec: grep -ir ldap_user_certificate /etc/sssd/sssd.conf /etc/sssd/conf.d/
+    exit-status:
+      or:
+      - 0
+      - 2
+    stdout:
+    - '/ldap_user_certificate/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274060r1120168_rule
+      STIG_ID: AZLX-23-001295
+      Vul_ID: V-274060
+      Group_Title: SRG-OS-000068-GPOS-00036
+      CCI: CCI-000187
+      NIST800-53R4: IA-2
+{{ end }}

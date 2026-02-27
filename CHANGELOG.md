@@ -1,6 +1,6 @@
 # Changelog - AMAZON2023-STIG-Audit
 
-## [v1.2.0] - 2026-02-26
+## [v1.2.0] - 2026-02-27
 
 #### Rule ID Updates (V1R1 -> V1R2)
 
@@ -22,8 +22,18 @@
 - AZLX-23-002300: Updated find command to target `*.so*` files specifically.
 - AZLX-23-002510: Changed from file content regex (1-900 range) to command check with `grep -i ^StopIdleSessionSec` expecting exactly `600` per V1R2 requirement.
 
+#### New Audit Files
+
+- AZLX-23-001295: Added audit check for PKI-based identity mapping
+- AZLX-23-002310: Added audit check for library directories group ownership
+- AZLX-23-002625: Added audit check for pam_faillock.so in /etc/pam.d/password-auth
+- AZLX-23-002630: Added audit check for pam_faillock.so in /etc/security/faillock.conf
+
 #### Bug Fixes
 
+- Deleted duplicate audit file `cat_2/AZLX-23-002xxx/AZLX-23-002450.yml` (was a copy of AZLX-23-002445 content; correct 002450 file exists in cat_1)
+- Added missing toggles to `vars/STIG.yml`: az2023stig_001295, az2023stig_002310, az2023stig_002625, az2023stig_002630
+- Added `cat_2/AZLX-23-005000.yml` to `goss.yml` include list
 - Fixed README typo `AMAZON20203` -> `AMAZON2023`
 
 #### Metadata

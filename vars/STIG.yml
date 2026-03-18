@@ -147,7 +147,6 @@ az2023stig_002290: true
 az2023stig_002295: true
 az2023stig_002300: true
 az2023stig_002305: true
-az2023stig_002310: true
 az2023stig_002315: true
 az2023stig_002320: true
 az2023stig_002325: true
@@ -206,8 +205,6 @@ az2023stig_002605: true
 az2023stig_002610: true
 az2023stig_002615: true
 az2023stig_002620: true
-az2023stig_002625: true
-az2023stig_002630: true
 # CAT_2 rules 0050xx
 az2023stig_005000: true
 

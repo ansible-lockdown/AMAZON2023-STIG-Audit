@@ -25,9 +25,6 @@
 #### New Audit Files
 
 - AZLX-23-001295: Added audit check for PKI-based identity mapping
-- AZLX-23-002310: Added audit check for library directories group ownership
-- AZLX-23-002625: Added audit check for pam_faillock.so in /etc/pam.d/password-auth
-- AZLX-23-002630: Added audit check for pam_faillock.so in /etc/security/faillock.conf
 
 #### Bug Fixes
 

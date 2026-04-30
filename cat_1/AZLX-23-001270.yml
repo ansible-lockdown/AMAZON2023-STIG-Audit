@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_001270 }}
 command:
   azlx_23_001270_check:
-    title: AZLX-23-001270 | MEDIUM | Amazon Linux 2023 must implement a FIPS 140-2/140-3 compliant systemwide cryptographic policy.
+    title: AZLX-23-001270 | HIGH | Amazon Linux 2023 must implement a FIPS 140-2/140-3 compliant systemwide cryptographic policy.
     exec: update-crypto-policies --show
     exit-status: 0
     stdout:
@@ -14,7 +14,7 @@ command:
     - '!LEGACY_FIPS'
     - '!LEGACY_FIPS_DEFAULT'
     meta:
-      Cat: 2
+      Cat: 1
       Rule_ID: SV-274055r1120153_rule
       STIG_ID: AZLX-23-001270
       Vul_ID: V-274055

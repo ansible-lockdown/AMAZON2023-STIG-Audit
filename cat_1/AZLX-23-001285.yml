@@ -4,13 +4,13 @@
 file:
   {{- range mkSlice "bind" "gnutls" "java" "javasystem" "krb5" "libreswan" "libssh" "openssh" "opensshserver" "openssl" "openssl_fips" "opensslcnf" }}
   {{ . }}:
-    title: AZLX-23-001285 | MEDIUM | Amazon Linux 2023 crypto policy must not be overridden.
+    title: AZLX-23-001285 | HIGH | Amazon Linux 2023 crypto policy must not be overridden.
     path: /etc/crypto-policies/back-ends/{{ . }}.config
     exists: true
     filetype: symlink
     linked-to: /usr/share/crypto-policies/FIPS/{{ . }}.txt
     meta:
-      Cat: 2
+      Cat: 1
       Rule_ID: SV-274058r1120162_rule
       STIG_ID: AZLX-23-001285
       Vul_ID: V-274058

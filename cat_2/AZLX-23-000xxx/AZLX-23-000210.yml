@@ -11,7 +11,7 @@ command:
     - '!/^kernel.kptr_restrict = 0$/'
     meta:
       Cat: 2
-      Rule_ID: SV-274003r1119997_rule
+      Rule_ID: SV-274003r1198253_rule
       STIG_ID: AZLX-23-000210
       Vul_ID: V-274003
       Group_Title:
@@ -30,7 +30,7 @@ kernel-param:
     value: 1
     meta:
       Cat: 2
-      Rule_ID: SV-274003r1119997_rule
+      Rule_ID: SV-274003r1198253_rule
       STIG_ID: AZLX-23-000210
       Vul_ID: V-274003
       Group_Title:

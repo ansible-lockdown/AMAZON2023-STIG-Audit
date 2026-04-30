@@ -11,7 +11,7 @@ file:
     - '!/^server(tick|tock|ntp2).(usno|usnogps).navy.mil.*maxpoll (1[7-9]|[2-9][0-9]|1[0-6])$/'
     meta:
       Cat: 2
-      Rule_ID: SV-274175r1120659_rule
+      Rule_ID: SV-274175r1190705_rule
       STIG_ID: AZLX-23-002565
       Vul_ID: V-274175
       Group_Title: SRG-OS-000359-GPOS-00146

@@ -13,7 +13,7 @@ command:
     - '!/Manual audit check required/'
     meta:
       Cat: 2
-      Rule_ID: SV-274158r1120727_rule
+      Rule_ID: SV-274158r1184031_rule
       STIG_ID: AZLX-23-002475
       Vul_ID: V-274158
       Group_Title:

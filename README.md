@@ -2,7 +2,7 @@
 
 ## Overview
 
-### Based on STIG Benchmark for AMAZON2023 Benchmark v1r2 - January 2026
+### Based on STIG Benchmark for AMAZON2023 Benchmark v1r3 - April 2026
 
 [DISA STIG]
 
@@ -35,7 +35,7 @@ The listed variable for every control/benchmark can be turned on/off or section
 
 If running as part of the ansible playbook, this will pull in the relevant branch for the version of benchmark you are remediating.
 
-- e.g. v1.2.0 will pull in branch benchmark-v1.2.0
+- e.g. v1.3.0 will pull in branch benchmark-v1.3.0
 
 Devel is normally the latest benchmark version, so maybe different from the version of benchmark you wish to test.
 Details will show in the README as part of the remediation as to the benchmark for the version it is written for.

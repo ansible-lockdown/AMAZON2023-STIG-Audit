@@ -11,7 +11,7 @@ file:
     - '!/^fail_interval\s*=\s*(0|[1-8][0-9]{2,})/'
     meta:
       Cat: 2
-      Rule_ID: SV-274156r1120456_rule
+      Rule_ID: SV-274156r1184029_rule
       STIG_ID: AZLX-23-002465
       Vul_ID: V-274156
       Group_Title: SRG-OS-000329-GPOS-00128

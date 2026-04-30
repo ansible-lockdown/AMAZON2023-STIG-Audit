@@ -218,9 +218,9 @@ az2023stig_002395: true
 az2023stig_aide_cron_file: /etc/cron.d/aide
 
 
-az2023stig_syslog_trustedcertificatefile: /etc/pki/tls/certs/ca-bundle.crt
-az2023stig_syslog_servercertificatefile: /etc/pki/tls/certs/localhost.crt
-az2023stig_syslog_serverkeyfile: /etc/pki/tls/private/localhost.key
+az2023stig_syslog_trustedcertificatefile: /etc/ssl/ca/trusted.pem
+az2023stig_syslog_servercertificatefile: /etc/ssl/certs/syslog.pem
+az2023stig_syslog_serverkeyfile: /etc/ssl/private/syslog.pem
 az2023stig_syslog_remote_log_server: syslog+tcp://127.0.0.1:514
 
 az2023stig_dod_ciphers:  aes256-gcm@openssh.com,aes256-ctr,aes128-gcm@openssh.com,aes128-ctr

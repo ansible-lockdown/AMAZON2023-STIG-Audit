@@ -11,7 +11,7 @@ file:
     linked-to: /usr/share/crypto-policies/FIPS/{{ . }}.txt
     meta:
       Cat: 1
-      Rule_ID: SV-274058r1120162_rule
+      Rule_ID: SV-274058r1186176_rule
       STIG_ID: AZLX-23-001285
       Vul_ID: V-274058
       Group_Title:

@@ -8,7 +8,7 @@ package:
     installed: true
     meta:
       Cat: 1
-      Rule_ID: SV-274040r1120108_rule
+      Rule_ID: SV-274040r1184011_rule
       STIG_ID: AZLX-23-001195
       Vul_ID: V-274040
       Group_Title:

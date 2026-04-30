@@ -27,6 +27,12 @@
 - Updated vars/STIG.yml toggle variables (187 rules)
 - Fixed LICENSE casing: MindPoint (capital P)
 
+#### QA Improvements
+
+- Updated 26 Rule_ID metadata lines to match V1R3 XCCDF revision numbers
+- Fixed syslog certificate paths in vars/STIG.yml to match remediation defaults
+- Updated README benchmark version v1r2 to v1r3
+
 ---
 
 ## [v1.2.0] - 2026-02-27

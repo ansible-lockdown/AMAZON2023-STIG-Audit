@@ -13,7 +13,7 @@ command:
     - '/^\/(etc|var).*\:(0|[0-5][0-9]) (0|[0-2][0-9]) \* \* \* root \/usr\/sbin\/aide --check/'
     meta:
       Cat: 2
-      Rule_ID: SV-274025r1120723_rule
+      Rule_ID: SV-274025r1192649_rule
       STIG_ID: AZLX-23-001065
       Vul_ID: V-274025
       Group_Title:
@@ -36,7 +36,7 @@ file:
     - '/^\/usr\/sbin\/aide --check \| \/bin\/mail -s \"\$HOSTNAME - Daily aide integrity check run\" .*@.*/'
     meta:
       Cat: 2
-      Rule_ID: SV-274025r1120723_rule
+      Rule_ID: SV-274025r1192649_rule
       STIG_ID: AZLX-23-001065
       Vul_ID: V-274025
       Group_Title:

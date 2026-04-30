@@ -10,7 +10,7 @@ file:
     - '/^banner-message-text={{ range .Vars.az2023stig_logon_banner }}{{ . }}{{ end }}/'
     meta:
       Cat: 2
-      Rule_ID: SV-274065r1120699_rule
+      Rule_ID: SV-274065r1184021_rule
       STIG_ID: AZLX-23-002000
       Vul_ID: V-274065
       Group_Title: SRG-OS-000023-GPOS-000006

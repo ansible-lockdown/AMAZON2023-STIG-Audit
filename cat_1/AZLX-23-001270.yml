@@ -15,7 +15,7 @@ command:
     - '!LEGACY_FIPS_DEFAULT'
     meta:
       Cat: 1
-      Rule_ID: SV-274055r1120153_rule
+      Rule_ID: SV-283452r1188500_rule
       STIG_ID: AZLX-23-001270
       Vul_ID: V-274055
       Group_Title:

@@ -10,7 +10,7 @@ command:
     - {{ .Vars.az2023stig_dod_ciphers }}
     meta:
       Cat: 1
-      Rule_ID: SV-274042r1120114_rule
+      Rule_ID: SV-274042r1184013_rule
       STIG_ID: AZLX-23-001205
       Vul_ID: V-274042
       Group_Title: SRG-OS-000250-GPOS-00093

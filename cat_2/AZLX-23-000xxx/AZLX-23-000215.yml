@@ -11,7 +11,7 @@ command:
     - '!/^kernel.unprivileged_bpf_disabled = 0$/'
     meta:
       Cat: 2
-      Rule_ID: SV-274004r1120000_rule
+      Rule_ID: SV-274004r1198253_rule
       STIG_ID: AZLX-23-000215
       Vul_ID: V-274004
       Group_Title: SRG-OS-000132-GPOS-00067
@@ -24,7 +24,7 @@ kernel-param:
     value: 1
     meta:
       Cat: 2
-      Rule_ID: SV-274004r1120000_rule
+      Rule_ID: SV-274004r1198253_rule
       STIG_ID: AZLX-23-000215
       Vul_ID: V-274004
       Group_Title: SRG-OS-000132-GPOS-00067

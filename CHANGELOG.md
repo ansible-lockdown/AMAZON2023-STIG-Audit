@@ -32,6 +32,9 @@
 - Updated 26 Rule_ID metadata lines to match V1R3 XCCDF revision numbers
 - Fixed syslog certificate paths in vars/STIG.yml to match remediation defaults
 - Updated README benchmark version v1r2 to v1r3
+- Fixed run_audit.sh OS detection for containers (added /etc/os-release fallback)
+- Fixed blank line after --- in 5 V1R3 audit test files
+- Aligned README with standard audit repo format
 
 ---
 

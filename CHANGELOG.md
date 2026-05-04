@@ -1,8 +1,8 @@
 # Changelog - AMAZON2023-STIG-Audit
 
-## [v1.3.0] - benchmark_v1.3.0
+## [v1.3.0]
 
-### Based on DISA STIG Amazon Linux 2023 V1R3 - 01 April 2026
+### Based on DISA STIG Amazon Linux 2023 V1R3 (01 April 2026) - benchmark_v1.3.0
 
 #### New Goss Tests (4 added)
 

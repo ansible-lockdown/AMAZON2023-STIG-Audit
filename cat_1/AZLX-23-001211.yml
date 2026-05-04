@@ -1,4 +1,5 @@
 ---
+
 {{ if .Vars.az2023stig_001211 }}
 file:
   azlx_23_001211_ssh_client_macs:

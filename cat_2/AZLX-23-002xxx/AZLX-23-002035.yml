@@ -10,7 +10,7 @@ file:
     - '/^space_left\s*=\s*25%$/'
     meta:
       Cat: 2
-      Rule_ID: SV-274071r1120201_rule
+      Rule_ID: SV-274071r1184023_rule
       STIG_ID: AZLX-23-002035
       Vul_ID: V-274071
       Group_Title: SRG-OS-000343-GPOS-000134

@@ -3,12 +3,12 @@
 {{ if .Vars.az2023stig_001195 }}
 package:
   crypto_policies:
-    title: AZLX-23-001195 | MEDIUM | Amazon Linux 2023 must have the crypto-policies package installed.
+    title: AZLX-23-001195 | HIGH | Amazon Linux 2023 must have the crypto-policies package installed.
     name: crypto-policies
     installed: true
     meta:
-      Cat: 2
-      Rule_ID: SV-274040r1120108_rule
+      Cat: 1
+      Rule_ID: SV-274040r1184011_rule
       STIG_ID: AZLX-23-001195
       Vul_ID: V-274040
       Group_Title:

@@ -15,7 +15,7 @@ command:
     - '/^auth\s+required\s+pam_faillock.so authfail dir=/var/log/faillock unlock_time=0/'
     meta:
       Cat: 2
-      Rule_ID: SV-274147r1120429_rule
+      Rule_ID: SV-274147r1184027_rule
       STIG_ID: AZLX-23-002420
       Vul_ID: V-274147
       Group_Title: SRG-OS-000021-GPOS-00005

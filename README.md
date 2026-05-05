@@ -1,81 +1,81 @@
-# AMAZON2023 STIG Goss config
+# Amazon Linux 2023 STIG Goss config
 
 ## Overview
 
-### Based on STIG Benchmark for AMAZON2023 Benchmark v1r2 - January 2026
+### Based on STIG Amazon Linux 2023 Benchmark v1r3 - April 2026
 
-[DISA STIG]
+Ability to audit a system using a lightweight binary to check the current state.
 
-This repository is set of configuration files and directories to run the audit of the relevant benchmark of AMAZON 2023 servers
+This is:
 
-This is configured in a directory structure level.
+- very small < 14MB
+- lightweight
+- self contained
 
-## variables
+It works using a set of configuration files and directories to audit STIG of Amazon Linux 2023 servers. These files/directories correlate to the STIG Level and STIG_ID.
 
-file: vars/{benchmark_type}.yml
+Feedback on any differences between OSs please raise an issue.
 
-Please refer to the file for all options and their meanings
+## Requirements
 
-The listed variable for every control/benchmark can be turned on/off or section
+You must have [goss](https://github.com/goss-org/goss/) available to your host you would like to test.
+
+You must have sudo/root access to the system as some commands require privilege information.
+
+Assuming you have already cloned this repository you can run goss from where you wish.
+
+Please refer to the audit documentation for usage.
+
+- [readthedocs](https://ansible-lockdown.readthedocs.io/en/latest/)
+
+This also works alongside the [Ansible Lockdown AMZN2023-STIG role](https://github.com/ansible-lockdown/AMZN2023-STIG)
+
+Which will:
+
+- install
+- audit
+- remediate
+- audit
+
+## Variables
+
+file: vars/STIG.yml
+
+Please refer to the file for all options and their meanings.
+
+The listed variable for every control/benchmark can be turned on/off or section.
 
 - Other controls
-  - enable_selinux
   - run_heavy_tasks
 
 - Bespoke options
 
   If a site has specific options e.g. password complexity these can also be set.
 
-## Requirements
-
-- goss >= 0.4.9
-- root privileges
-
 ## Branches
 
 If running as part of the ansible playbook, this will pull in the relevant branch for the version of benchmark you are remediating.
 
-- e.g. v1.2.0 will pull in branch benchmark-v1.2.0
+- e.g. v1.3.0 will pull in branch benchmark-v1.3.0
 
 Devel is normally the latest benchmark version, so maybe different from the version of benchmark you wish to test.
 Details will show in the README as part of the remediation as to the benchmark for the version it is written for.
 
-## Usage
+## Join us
 
-Fot the latest information on audit and how it can be used please visit
-
-[Read the Docs - Audit]
+On our [Discord Server](https://www.lockdownenterprise.com/discord) to ask questions, discuss features, or just chat with other Ansible-Lockdown users
 
 ## Extra settings
 
-Ability to add your own requirements is available in several sections
+Ability to add your own requirements is available in several sections.
 
 ## Support
 
-[Discord Community Discussions]
+- [Discord Community Discussions](https://www.lockdownenterprise.com/discord)
+- [Enterprise Support](https://lockdownenterprise.com#GH_LockdownReadMe)
+- [Tyto Athene](https://gotyto.com)
 
-[Enterprise Support]
+## Further information
 
-[Tyto Athene]
-
-## Links and Further information
-
-- [Goss]
-  - [Goss documentation]
-- [Centre For Internet Security]
-
-<!----
-README Links
----->
-
-[Centre For Internet Security]: (https://www.cisecurity.org)
-[Read the Docs - Audit]: https://ansible-lockdown.readthedocs.io/en/latest/audit/getting-started-audit.html
-
-[goss documentation]: (https://goss.readthedocs.io/en/stable/)
-
-[Goss]: (https://goss.rocks)
-[DISA STIG]: (https://public.cyber.mil/stigs)
-
-[Tyto Athene]: (https://gotyto.com)
-[Discord Community Discussions]: https://www.lockdownenterprise.com/discord
-[Enterprise Support]: https://lockdownenterprise.com#GH_LockdownReadMe
+- [goss documentation](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md#patterns)
+- [STIG standards](https://public.cyber.mil/stigs/)

@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: 'v1r2'
+benchmark_version: 'v1r3'
 benchmark: AMAZON2023-STIG
 
 # turn the categories on/off
@@ -12,6 +12,7 @@ run_heavy_tests: true
 timeout_ms: 120000
 
 # CAT_1 rules
+az2023stig_000050: true
 az2023stig_000100: true
 az2023stig_000115: true
 az2023stig_000120: true
@@ -20,10 +21,17 @@ az2023stig_000130: true
 az2023stig_000300: true
 az2023stig_001180: true
 az2023stig_001185: true
+az2023stig_001195: true
+az2023stig_001205: true
+az2023stig_001206: true
+az2023stig_001210: true
+az2023stig_001211: true
 az2023stig_001225: true
 az2023stig_001255: true
-az2023stig_001275: true
+az2023stig_001270: true
 az2023stig_001280: true
+az2023stig_001285: true
+az2023stig_001286: true
 az2023stig_002450: true
 
 # CAT_2 rules
@@ -57,7 +65,6 @@ az2023stig_001065: true
 az2023stig_001070: true
 az2023stig_001075: true
 az2023stig_001080: true
-az2023stig_001085: true
 az2023stig_001090: true
 az2023stig_001095: true
 az2023stig_001105: true
@@ -66,10 +73,6 @@ az2023stig_001115: true
 az2023stig_001120: true
 az2023stig_001125: true
 az2023stig_001130: true
-az2023stig_001195: true
-az2023stig_001200: true
-az2023stig_001205: true
-az2023stig_001210: true
 az2023stig_001215: true
 az2023stig_001220: true
 az2023stig_001230: true
@@ -77,10 +80,6 @@ az2023stig_001235: true
 az2023stig_001240: true
 az2023stig_001245: true
 az2023stig_001250: true
-az2023stig_001260: true
-az2023stig_001265: true
-az2023stig_001270: true
-az2023stig_001285: true
 az2023stig_001290: true
 az2023stig_001295: true
 az2023stig_001300: true
@@ -128,7 +127,6 @@ az2023stig_002195: true
 az2023stig_002200: true
 az2023stig_002205: true
 az2023stig_002210: true
-az2023stig_002215: true
 az2023stig_002220: true
 az2023stig_002225: true
 az2023stig_002230: true
@@ -140,7 +138,6 @@ az2023stig_002255: true
 az2023stig_002260: true
 az2023stig_002265: true
 az2023stig_002270: true
-az2023stig_002275: true
 az2023stig_002280: true
 az2023stig_002285: true
 az2023stig_002290: true
@@ -192,9 +189,7 @@ az2023stig_002520: true
 az2023stig_002535: true
 az2023stig_002540: true
 az2023stig_002555: true
-az2023stig_002560: true
 az2023stig_002565: true
-az2023stig_002570: true
 az2023stig_002575: true
 az2023stig_002580: true
 az2023stig_002585: true
@@ -223,9 +218,9 @@ az2023stig_002395: true
 az2023stig_aide_cron_file: /etc/cron.d/aide
 
 
-az2023stig_syslog_trustedcertificatefile: /etc/pki/tls/certs/ca-bundle.crt
-az2023stig_syslog_servercertificatefile: /etc/pki/tls/certs/localhost.crt
-az2023stig_syslog_serverkeyfile: /etc/pki/tls/private/localhost.key
+az2023stig_syslog_trustedcertificatefile: /etc/ssl/ca/trusted.pem
+az2023stig_syslog_servercertificatefile: /etc/ssl/certs/syslog.pem
+az2023stig_syslog_serverkeyfile: /etc/ssl/private/syslog.pem
 az2023stig_syslog_remote_log_server: syslog+tcp://127.0.0.1:514
 
 az2023stig_dod_ciphers:  aes256-gcm@openssh.com,aes256-ctr,aes128-gcm@openssh.com,aes128-ctr

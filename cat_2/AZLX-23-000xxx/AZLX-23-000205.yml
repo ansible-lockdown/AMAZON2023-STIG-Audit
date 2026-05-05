@@ -11,7 +11,7 @@ command:
     - '!/^kernel.perf_event_paranoid = ([[0-1]|[3-9])$/'
     meta:
       Cat: 2
-      Rule_ID: SV-274002r1119994_rule
+      Rule_ID: SV-274002r1198253_rule
       STIG_ID: AZLX-23-000205
       Vul_ID: V-274002
       Group_Title:
@@ -30,7 +30,7 @@ kernel-param:
     value: 2
     meta:
       Cat: 2
-      Rule_ID: SV-274002r1119994_rule
+      Rule_ID: SV-274002r1198253_rule
       STIG_ID: AZLX-23-000205
       Vul_ID: V-274002
       Group_Title: SRG-OS-000138-GPOS-00069

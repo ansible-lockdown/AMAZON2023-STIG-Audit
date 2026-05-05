@@ -1,0 +1,19 @@
+---
+
+{{ if .Vars.az2023stig_001206 }}
+file:
+  azlx_23_001206_ssh_client_ciphers:
+    title: AZLX-23-001206 | HIGH | The Amazon Linux 2023 SSH client must be configured to use only DOD-approved encryption ciphers employing FIPS 140-3-validated cryptographic hash algorithms to protect the confidentiality of SSH client connections.
+    path: /etc/crypto-policies/back-ends/openssh.config
+    exists: true
+    contents:
+    - '/Ciphers/'
+    meta:
+      Cat: 1
+      Rule_ID: SV-283442r1192640_rule
+      STIG_ID: AZLX-23-001206
+      Vul_ID: V-283442
+      Group_Title: SRG-OS-000250-GPOS-00093
+      CCI: CCI-001453
+      NIST800-53R4: AC-17
+{{ end }}

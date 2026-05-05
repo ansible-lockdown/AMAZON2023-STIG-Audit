@@ -1,0 +1,26 @@
+---
+
+{{ if .Vars.az2023stig_001286 }}
+command:
+  bind_installed_check:
+    title: AZLX-23-001286 | HIGH | Amazon Linux 2023 must implement DOD-approved encryption in the bind package.
+    exec: |
+      if rpm -q bind > /dev/null 2>&1; then
+        grep 'include "/etc/crypto-policies/back-ends/bind.config"' /etc/named.conf
+      else
+        echo "bind not installed - Not Applicable"
+      fi
+    exit-status: 0
+    stdout:
+      or:
+      - '/crypto-policies/'
+      - '/Not Applicable/'
+    meta:
+      Cat: 1
+      Rule_ID: SV-283440r1192648_rule
+      STIG_ID: AZLX-23-001286
+      Vul_ID: V-283440
+      Group_Title: SRG-OS-000423-GPOS-00187
+      CCI: CCI-002418
+      NIST800-53R4: SC-8
+{{ end }}

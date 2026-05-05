@@ -14,7 +14,7 @@ command:
     - '!/^.*:Defaults\s*timestamp_timeout\s*=\s*-\d/'
     meta:
       Cat: 2
-      Rule_ID: SV-274043r1120030_rule
+      Rule_ID: SV-274014r1120030_rule
       STIG_ID: AZLX-23-001010
       Vul_ID: V-274014
       Group_Title: SRG-OS-000373-GPOS-00157

@@ -11,7 +11,7 @@ command:
     - '!/^kernel.dmesg_restrict = 0$/'
     meta:
       Cat: 2
-      Rule_ID: SV-274001r1119991_rule
+      Rule_ID: SV-274001r1198253_rule
       STIG_ID: AZLX-23-000200
       Vul_ID: V-274001
       Group_Title: SRG-OS-000132-GPOS-00067
@@ -28,7 +28,7 @@ kernel-param:
     value: 1
     meta:
       Cat: 2
-      Rule_ID: SV-274001r1119991_rule
+      Rule_ID: SV-274001r1198253_rule
       STIG_ID: AZLX-23-000200
       Vul_ID: V-274001
       Group_Title:

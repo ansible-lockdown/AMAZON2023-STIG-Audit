@@ -9,7 +9,7 @@ service:
     running: true
     meta:
       Cat: 2
-      Rule_ID: SV-274028r1120072_rule
+      Rule_ID: SV-274028r1190806_rule
       STIG_ID: AZLX-23-001080
       Vul_ID: V-274028
       Group_Title:

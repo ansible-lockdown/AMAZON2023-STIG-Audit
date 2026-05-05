@@ -10,7 +10,7 @@ file:
     - '/^\/dev\/shm\s+.*\s+defaults\s+.*nosuid/'
     meta:
       Cat: 2
-      Rule_ID: SV-274180r1120528_rule
+      Rule_ID: SV-274180r1198347_rule
       STIG_ID: AZLX-23-002590
       Vul_ID: V-274180
       Group_Title: SRG-OS-000368-GPOS-00154

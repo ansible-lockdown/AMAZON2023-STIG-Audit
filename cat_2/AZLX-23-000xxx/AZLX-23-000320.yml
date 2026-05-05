@@ -8,7 +8,7 @@ package:
     installed: false
     meta:
       Cat: 2
-      Rule_ID: SV-274010r1120018_rule
+      Rule_ID: SV-274011r1184000_rule
       STIG_ID: AZLX-23-000320
       Vul_ID: V-274010
       Group_Title: SRG-OS-000095-GPOS-00049

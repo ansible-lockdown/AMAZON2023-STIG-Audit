@@ -26,7 +26,7 @@
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=STIG # Benchmark Name aligns to the audit
-BENCHMARK_VER=1.2.0
+BENCHMARK_VER=1.3.0
 BENCHMARK_OS=AMAZON2023
 
 # Goss host Variables
@@ -87,7 +87,7 @@ fi
 
 # Discover OS version aligning with audit
 # Define os_vendor variable
-if [ "$(uname -a | grep -c amzn)" -ge 1 ]; then
+if [ "$(uname -a | grep -c amzn)" -ge 1 ] || [ "$(grep -Ec 'amzn|Amazon Linux' /etc/os-release)" != 0 ]; then
     os_vendor="AMAZON"
 elif [ "$(grep -Ec "rhel|oracle" /etc/os-release)" != 0 ]; then
   os_vendor="RHEL"

@@ -8,27 +8,7 @@ package:
     installed: true
     meta:
       Cat: 2
-      Rule_ID: SV-274020r1193303_rule
-      STIG_ID: AZLX-23-001040
-      Vul_ID: V-274020
-      Group_Title:
-      - SRG-OS-000051-GPOS-00024
-      - SRG-OS-000479-GPOS-00224
-      CCI:
-      - CCI-000154
-      - CCI-001851
-      NIST800-53R4:
-      - AU-4
-      - AU-6
-
-service:
-  rsyslog:
-    title: AZLX-23-001040 | MEDIUM | Amazon Linux 2023 must have the rsyslog service enabled.
-    enabled: true
-    running: true
-    meta:
-      Cat: 2
-      Rule_ID: SV-274020r1193303_rule
+      Rule_ID: SV-274020r1208263_rule
       STIG_ID: AZLX-23-001040
       Vul_ID: V-274020
       Group_Title:

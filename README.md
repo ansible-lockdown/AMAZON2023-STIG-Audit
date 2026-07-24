@@ -2,7 +2,7 @@
 
 ## Overview
 
-### Based on STIG Amazon Linux 2023 Benchmark v1r3 - April 2026
+### Based on STIG Amazon Linux 2023 Benchmark v1r4 - July 2026
 
 Ability to audit a system using a lightweight binary to check the current state.
 
@@ -18,7 +18,7 @@ Feedback on any differences between OSs please raise an issue.
 
 ## Requirements
 
-You must have [goss](https://github.com/goss-org/goss/) available to your host you would like to test.
+You must have [goss](https://github.com/krameff/goss) available to your host you would like to test.
 
 You must have sudo/root access to the system as some commands require privilege information.
 
@@ -56,7 +56,7 @@ The listed variable for every control/benchmark can be turned on/off or section.
 
 If running as part of the ansible playbook, this will pull in the relevant branch for the version of benchmark you are remediating.
 
-- e.g. v1.3.0 will pull in branch benchmark-v1.3.0
+- e.g. v1.4.0 will pull in branch benchmark-v1.4.0
 
 Devel is normally the latest benchmark version, so maybe different from the version of benchmark you wish to test.
 Details will show in the README as part of the remediation as to the benchmark for the version it is written for.
@@ -77,5 +77,5 @@ Ability to add your own requirements is available in several sections.
 
 ## Further information
 
-- [goss documentation](https://github.com/aelsabbahy/goss/blob/master/docs/manual.md#patterns)
+- [goss documentation](https://github.com/krameff/goss/blob/devel/docs/index.md)
 - [STIG standards](https://public.cyber.mil/stigs/)

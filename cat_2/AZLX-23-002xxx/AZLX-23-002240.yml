@@ -4,7 +4,7 @@
 command:
   azlx_23_002240_file:
     title: AZLX-23-002240 | MEDIUM | Amazon Linux 2023 must allow only the information system security manager (ISSM) (or individuals or roles appointed by the ISSM) to select which auditable events are to be audited.
-    exec: find /etc/audit/rules.d/ /etc/audit/audit.rules /etc/audit/auditd.conf -type f -perm /137
+    exec: find /etc/audit/rules.d/ /etc/audit/audit.rules /etc/audit/auditd.conf -type f -perm /177
     exit-status:
       or:
       - 0
@@ -13,7 +13,7 @@ command:
     - '!/.*/'
     meta:
       Cat: 2
-      Rule_ID: SV-274111r1120321_rule
+      Rule_ID: SV-274111r1210984_rule
       STIG_ID: AZLX-23-002240
       Vul_ID: V-274111
       Group_Title: SRG-OS-000063-GPOS-00032

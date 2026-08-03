@@ -26,12 +26,12 @@
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=STIG # Benchmark Name aligns to the audit
-BENCHMARK_VER=1.3.0
+BENCHMARK_VER=1.4.0
 BENCHMARK_OS=AMAZON2023
 
 # Goss host Variables
 AUDIT_BIN="${AUDIT_BIN:-/usr/local/bin/goss}"  # location of the goss executable
-AUDIT_BIN_MIN_VER="0.4.4"
+AUDIT_BIN_MIN_VER="0.4.8"
 AUDIT_FILE="${AUDIT_FILE:-goss.yml}"  # the default goss file used by the audit provided by the audit configuration
 AUDIT_CONTENT_LOCATION="${AUDIT_CONTENT_LOCATION:-/opt}"  # Location of the audit configuration file as available to the OS
 
@@ -98,7 +98,7 @@ else
   fi
 fi
 
-os_maj_ver="$(grep -w VERSION_ID= /etc/os-release | awk -F\" '{print $2}' | cut -d '.' -f1)"
+os_maj_ver="$(grep "^VERSION_ID=" /etc/os-release | awk -F\" '{print $2}' | cut -d '.' -f1)"
 audit_content_version=$os_vendor$os_maj_ver-$BENCHMARK-Audit
 audit_content_dir=$AUDIT_CONTENT_LOCATION/$audit_content_version
 audit_vars=vars/${BENCHMARK}.yml
@@ -164,12 +164,12 @@ echo
 export FAILURE=0
 if [ -s "${AUDIT_BIN}" ]; then
   echo "OK - Audit binary $AUDIT_BIN is available"
-  goss_installed_version="$($AUDIT_BIN -v | awk '{print $NF}' | cut -dv -f2)"
+  goss_installed_version="$($AUDIT_BIN -v | awk 'NR==1{print $NF}' | cut -dv -f2)"
   newer_version=$(echo -e "$goss_installed_version\n$AUDIT_BIN_MIN_VER" | sort -V | tail -n 1)
   if [ "$goss_installed_version" = "$newer_version" ] || [ "$goss_installed_version" = "$AUDIT_BIN_MIN_VER" ]; then
     echo "OK - Goss is installed and version is ok ($goss_installed_version >= $AUDIT_BIN_MIN_VER)"
   else
-    echo "WARNING - Goss installed = ${goss_installed_version}, does not met minimum of ${AUDIT_BIN_MIN_VER}"
+    echo "WARNING - Goss installed = ${goss_installed_version}, does not meet minimum of ${AUDIT_BIN_MIN_VER}"
     export FAILURE=2
   fi
 else

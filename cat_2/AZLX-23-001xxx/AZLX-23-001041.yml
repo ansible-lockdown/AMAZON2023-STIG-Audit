@@ -1,0 +1,20 @@
+---
+
+{{ if .Vars.az2023stig_001041 }}
+service:
+  rsyslog:
+    title: AZLX-23-001041 | MEDIUM | Amazon Linux 2023 must ensure that the rsyslog service is running and persistent.
+    enabled: true
+    running: true
+    meta:
+      Cat: 2
+      Rule_ID: SV-284944r1208267_rule
+      STIG_ID: AZLX-23-001041
+      Vul_ID: V-284944
+      Group_Title:
+      - SRG-OS-000479-GPOS-00224
+      CCI:
+      - CCI-001851
+      NIST800-53R4:
+      - AU-4
+{{ end }}

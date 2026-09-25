@@ -20,6 +20,9 @@ Benchmark bump 187 -> 187 (1 added, 1 removed; PDF-verified). Version strings: v
 - run_audit.sh: goss version parse awk '{print $NF}' -> awk 'NR==1{print $NF}' (krameff goss emits a 2-line banner); AUDIT_BIN_MIN_VER 0.4.4 -> 0.4.8; OS detection grep -w VERSION_ID= -> grep "^VERSION_ID="; fixed "does not met" typo.
 - README: goss links repointed from goss-org/aelsabbahy to github.com/krameff/goss (availability + goss-documentation).
 
+#### Other Changes
+- README: the Support section link to the parent company repointed from Tyto Athene at gotyto.com to Quantum Sky at www.quantumsky.com, following the company rename. The old domain is still live; the link now names the current company.
+
 ## [v1.3.0]
 
 ### Based on DISA STIG Amazon Linux 2023 V1R3 (01 April 2026) - benchmark_v1.3.0

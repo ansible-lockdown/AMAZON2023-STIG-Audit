@@ -73,7 +73,7 @@ Ability to add your own requirements is available in several sections.
 
 - [Discord Community Discussions](https://www.lockdownenterprise.com/discord)
 - [Enterprise Support](https://lockdownenterprise.com#GH_LockdownReadMe)
-- [Tyto Athene](https://gotyto.com)
+- [Quantum Sky](https://www.quantumsky.com)
 
 ## Further information
 

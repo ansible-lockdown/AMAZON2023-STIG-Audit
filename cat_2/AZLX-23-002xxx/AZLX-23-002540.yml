@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002540 }}
 command:
   azlx_23_002540_check_protected_symlinks:
-    title: AZLX-23-002540 | MEDIUM | Amazon Linux 2023 must enable discretionary access control on symlinks.
+    title: AZLX-23-002540 | MEDIUM | Amazon Linux 2023 must enable kernel parameters to enforce discretionary access control on symlinks.
     exec: sysctl fs.protected_symlinks
     exit-status:
       or:
@@ -28,7 +28,7 @@ command:
       - AC-6
 kernel-param:
   fs.protected_symlinks:
-    title: AZLX-23-002540 | MEDIUM | Amazon Linux 2023 must enable discretionary access control on symlinks.
+    title: AZLX-23-002540 | MEDIUM | Amazon Linux 2023 must enable kernel parameters to enforce discretionary access control on symlinks.
     value: '1'
     meta:
       Cat: 2

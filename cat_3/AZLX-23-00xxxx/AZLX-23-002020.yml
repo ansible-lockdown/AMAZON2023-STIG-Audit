@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002020 }}
 mount:
   azlx_23_002020_check_audit_data_path:
-    title: AZLX-23-002020 | LOW| Amazon Linux 2023 must use a separate file system for the system audit data path.
+    title: AZLX-23-002020 | LOW | Amazon Linux 2023 must use a separate file system for the system audit data path.
     mountpoint: /var/log/audit
     exists: true
     meta:

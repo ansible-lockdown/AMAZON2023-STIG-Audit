@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_001185 }}
 service:
   sshd_service:
-    title: AZLX-23-001185 | HIGH | Amazon Linux 2023 must have SSH installed.
+    title: AZLX-23-001185 | HIGH | Amazon Linux 2023 must implement SSH to protect the confidentiality and integrity of transmitted and received information, as well as information during preparation for transmission.
     name: sshd
     enabled: true
     running: true
@@ -12,7 +12,9 @@ service:
       Rule_ID: SV-274039r1120105_rule
       STIG_ID: AZLX-23-001185
       Vul_ID: V-274039
-      Group_Title: SRG-OS-000426-GPOS-00190
+      Group_Title:
+      - SRG-OS-000112-GPOS-00057
+      - SRG-OS-000426-GPOS-00190
       CCI:
       - CCI-001941
       - CCI-002418

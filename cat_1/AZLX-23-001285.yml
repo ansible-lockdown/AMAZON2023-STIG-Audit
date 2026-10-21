@@ -22,11 +22,12 @@ file:
       - SRG-OS-000394-GPOS-00174
       - SRG-OS-000424-GPOS-00188
       CCI:
+      - CCI-000803
+      - CCI-002421
       - CCI-002450
       - CCI-002890
       - CCI-003123
-      - CCI-002421
-      - CCI-000803
+      - CCI-004062
       NIST800-53R4:
       - IA-7
       - SC-13

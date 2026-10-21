@@ -11,7 +11,9 @@ package:
       Rule_ID: SV-274038r1120102_rule
       STIG_ID: AZLX-23-001180
       Vul_ID: V-274038
-      Group_Title: SRG-OS-000426-GPOS-00190
+      Group_Title:
+      - SRG-OS-000112-GPOS-00057
+      - SRG-OS-000426-GPOS-00190
       CCI:
       - CCI-001941
       - CCI-002418

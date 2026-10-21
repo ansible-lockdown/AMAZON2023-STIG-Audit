@@ -21,6 +21,8 @@ command:
       CCI:
       - CCI-000185
       - CCI-002470
+      - CCI-004068
+      - CCI-004909
       NIST800-53R4:
       - IA-5
       - SC-23

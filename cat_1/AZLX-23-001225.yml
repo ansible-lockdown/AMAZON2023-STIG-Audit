@@ -13,7 +13,9 @@ command:
       Rule_ID: SV-274046r1120126_rule
       STIG_ID: AZLX-23-001225
       Vul_ID: V-274046
-      Group_Title: SRG-OS-000424-GPOS-00188
+      Group_Title:
+      - SRG-OS-000423-GPOS-00187
+      - SRG-OS-000424-GPOS-00188
       CCI:
       - CCI-002418
       - CCI-000068

@@ -18,5 +18,6 @@ package:
       CCI:
       - CCI-001953
       - CCI-001954
+      - CCI-004046
       NIST800-53R4: IA-2
 {{ end }}

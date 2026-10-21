@@ -16,7 +16,7 @@ command:
       Rule_ID: SV-274077r1120219_rule
       STIG_ID: AZLX-23-002065
       Vul_ID: V-274077
-      Group_Title: SRG-OS-000479-GPOS-000224
+      Group_Title: SRG-OS-000479-GPOS-00224
       CCI: CCI-001851
       NIST800-53R4: AU-4
 {{ end }}

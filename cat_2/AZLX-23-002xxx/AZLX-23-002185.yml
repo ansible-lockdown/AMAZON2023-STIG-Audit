@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002185 }}
 command:
   azlx_23_002185_audit_rules_live:
-    title: AZLX-23-002185 | Amazon Linux 2023 must audit all uses of the shutdown command.
+    title: AZLX-23-002185 | MEDIUM | Amazon Linux 2023 must audit all uses of the shutdown command.
     exec: auditctl -l | grep shutdown
     exit-status:
       or:
@@ -20,7 +20,7 @@ command:
       CCI: CCI-000172
       NIST800-53R4: AU-12
   azlx_23_002185_audit_rules_conf:
-    title: AZLX-23-002185 | Amazon Linux 2023 must audit all uses of the shutdown command.
+    title: AZLX-23-002185 | MEDIUM | Amazon Linux 2023 must audit all uses of the shutdown command.
     exec: grep -w shutdown /etc/audit/rules.d/*
     exit-status:
       or:

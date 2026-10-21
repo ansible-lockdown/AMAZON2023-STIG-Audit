@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002180 }}
 command:
   azlx_23_002180_audit_rules_live:
-    title: AZLX-23-002180 | Amazon Linux 2023 must audit all uses of the reboot command.
+    title: AZLX-23-002180 | MEDIUM | Amazon Linux 2023 must audit all uses of the reboot command.
     exec: auditctl -l | grep reboot
     exit-status:
       or:
@@ -20,7 +20,7 @@ command:
       CCI: CCI-000172
       NIST800-53R4: AU-12
   azlx_23_002180_audit_rules_conf:
-    title: AZLX-23-002180 | Amazon Linux 2023 must audit all uses of the reboot command.
+    title: AZLX-23-002180 | MEDIUM | Amazon Linux 2023 must audit all uses of the reboot command.
     exec: grep -w reboot /etc/audit/rules.d/*
     exit-status:
       or:

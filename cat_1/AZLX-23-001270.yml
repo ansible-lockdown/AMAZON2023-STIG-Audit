@@ -17,7 +17,7 @@ command:
       Cat: 1
       Rule_ID: SV-283452r1188500_rule
       STIG_ID: AZLX-23-001270
-      Vul_ID: V-274055
+      Vul_ID: V-283452
       Group_Title:
       - SRG-OS-000120-GPOS-00061
       - SRG-OS-000396-GPOS-00176

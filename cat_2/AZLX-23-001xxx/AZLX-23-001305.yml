@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_001305 }}
 command:
   azlx_23_001305_config:
-    title: AZLX-23-001305 | MEDIUM | Amazon Linux 2023 must prohibit the use of cached authenticators after one day
+    title: AZLX-23-001305 | MEDIUM | Amazon Linux 2023 must prohibit the use of cached authenticators after one day.
     exec: grep -ir _credentials /etc/sssd/sssd.conf /etc/sssd/conf.d/ | grep -v "^#"
     exit-status:
       or:

@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002120 }}
 command:
   azlx_23_002120_audit_rules_live:
-    title: AZLX-23-002120 | MEDIUM | Amazon Linux 2023 must audit all uses of the chown, fchown, fchownat, and lchown system calls
+    title: AZLX-23-002120 | MEDIUM | Amazon Linux 2023 must audit all uses of the chown, fchown, fchownat, and lchown system calls.
     exec: auditctl -l | grep chown
     exit-status:
       or:
@@ -37,7 +37,7 @@ command:
       - AU-12
       - MA-4
 azlx_23_002120_audit_rules_conf:
-    title: AZLX-23-002120 | MEDIUM | Amazon Linux 2023 must audit all uses of the chown, fchown, fchownat, and lchown system calls
+    title: AZLX-23-002120 | MEDIUM | Amazon Linux 2023 must audit all uses of the chown, fchown, fchownat, and lchown system calls.
     exec: grep -w chown /etc/audit/rules.d/*
     exit-status:
       or:

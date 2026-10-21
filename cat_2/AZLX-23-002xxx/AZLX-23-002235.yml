@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002235 }}
 command:
   azlx_23_002235_file:
-    title: AZLX-23-002235 | MEDIUM | Amazon Linux 2023 audit logs file must have mode "0600" or less permissive to prevent unauthorized access to the audit log
+    title: AZLX-23-002235 | MEDIUM | Amazon Linux 2023 audit logs file must have mode "0600" or less permissive to prevent unauthorized access to the audit log.
     exec: find /var/log/audit/ -type f -perm /177
     exit-status:
       or:

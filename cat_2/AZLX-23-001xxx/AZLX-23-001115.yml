@@ -12,5 +12,6 @@ package:
       STIG_ID: AZLX-23-001115
       Vul_ID: V-274034
       Group_Title: SRG-OS-000375-GPOS-00160
+      CCI: CCI-004046
       NIST800-53R4: NA
 {{ end }}

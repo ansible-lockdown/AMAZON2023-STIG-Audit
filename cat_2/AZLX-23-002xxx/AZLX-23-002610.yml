@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002610 }}
 command:
   azlx_23_002610_check_nonexecutable_data:
-    title: AZLX-23-002610 | Amazon Linux 2023 must implement nonexecutable data to protect its memory from unauthorized code execution.
+    title: AZLX-23-002610 | MEDIUM | Amazon Linux 2023 must implement nonexecutable data to protect its memory from unauthorized code execution.
     exec: dmesg | grep -i "execute disable"
     exit-status:
       or:

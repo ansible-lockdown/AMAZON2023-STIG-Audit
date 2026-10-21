@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002480 }}
 command:
   azlx_23_002480_check_interactive_users_primary_group:
-    title: AZLX-23-002480 | Amazon Linux 2023 must insure all interactive users have a primary group that exists.
+    title: AZLX-23-002480 | MEDIUM | Amazon Linux 2023 must insure all interactive users have a primary group that exists.
     exec: pwck -qr
     exit-status:
       or:

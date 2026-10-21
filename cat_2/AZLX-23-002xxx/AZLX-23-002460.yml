@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002460 }}
 file:
   azlx_23_002460_config_even_deny_root:
-    title: AZLX-23-002460 | Amazon Linux 2023 must automatically lock the root account until the root account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period.
+    title: AZLX-23-002460 | MEDIUM | Amazon Linux 2023 must automatically lock the root account until the root account is released by an administrator when three unsuccessful logon attempts occur during a 15-minute time period.
     path: /etc/security/faillock.conf
     exists: true
     contents:

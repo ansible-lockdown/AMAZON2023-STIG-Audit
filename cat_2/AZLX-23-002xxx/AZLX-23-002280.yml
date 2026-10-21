@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002280 }}
 command:
   library_dirs_group_owned:
-    title: AZLX-23-002280 | AAmazon Linux 2023 library directories must be group-owned by root or a system account.
+    title: AZLX-23-002280 | MEDIUM | Amazon Linux 2023 library directories must be group-owned by root or a system account.
     exec: find /lib /lib64 /usr/lib /usr/lib64 ! -group root -type d ! -user root
     exit-status:
       or:
@@ -17,6 +17,6 @@ command:
       STIG_ID: AZLX-23-002280
       Vul_ID: V-274119
       Group_Title: SRG-OS-000259-GPOS-00100
-      CCI: CCI-0001499
+      CCI: CCI-001499
       NIST800-53R4: CM-5
 {{ end }}

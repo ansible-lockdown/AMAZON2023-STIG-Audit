@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002105 }}
 command:
   azlx_23_002105_audit_rules_live:
-    title: AZLX-23-002105 | MEDIUM | Amazon Linux 2023 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd.
+    title: AZLX-23-002105 | MEDIUM | Amazon Linux 2023 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/opasswd.
     exec: auditctl -l | grep opasswd
     exit-status:
       or:
@@ -49,7 +49,7 @@ command:
       - AU-12
       - MA-4
   azlx_23_002105_audit_rules_conf:
-    title: AZLX-23-002105 | MEDIUM | Amazon Linux 2023 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/passwd.
+    title: AZLX-23-002105 | MEDIUM | Amazon Linux 2023 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/opasswd.
     exec: grep -w opasswd /etc/audit/rules.d/*
     exit-status:
       or:

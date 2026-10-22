@@ -6,14 +6,11 @@ gossfile:
   {{ end }}
 
   {{ if .Vars.az2023stig_cat2 }}
-  cat_2/AZLX-23-000xxx/*.yml: {}
-  cat_2/AZLX-23-001xxx/*.yml: {}
-  cat_2/AZLX-23-002xxx/*.yml: {}
-  cat_2/AZLX-23-005000.yml: {}
+  cat_2/*.yml: {}
   {{ end }}
 
   {{ if .Vars.az2023stig_cat3 }}
-  cat_3/AZLX-23-00xxxx/*.yml: {}
+  cat_3/*.yml: {}
   {{ end }}
 
 command:

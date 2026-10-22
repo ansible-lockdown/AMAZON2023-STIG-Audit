@@ -36,15 +36,15 @@ command:
       - AU-3
       - AU-12
       - MA-4
-azlx_23_002120_audit_rules_conf:
+  azlx_23_002120_audit_rules_conf:
     title: AZLX-23-002120 | MEDIUM | Amazon Linux 2023 must audit all uses of the chown, fchown, fchownat, and lchown system calls.
-    exec: grep -w chown /etc/audit/rules.d/*
+    exec: grep -Hw chown /etc/audit/rules.d/*
     exit-status:
       or:
       - 0
       - 1
     stdout:
-    - '/^.*:-a always,exit -F arch=b64 -S chown,fchown,fchownat,lchown -F auid>=1000 -F auid!=-1 -k perm_chown/'
+    - '/^.*:-a always,exit -F arch=b64 -S chown,fchown,fchownat,lchown -F auid>=1000 -F auid!=unset (-k |-F key=)perm_mod\b/'
     meta:
       Cat: 2
       Rule_ID: SV-274088r1120252_rule

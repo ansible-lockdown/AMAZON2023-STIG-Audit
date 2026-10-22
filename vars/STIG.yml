@@ -1,5 +1,5 @@
 ## metadata for Audit benchmark
-benchmark_version: 'v1r4'
+benchmark_version: 'v1r5'
 benchmark: AMAZON2023-STIG
 
 # turn the categories on/off
@@ -28,6 +28,7 @@ az2023stig_001210: true
 az2023stig_001211: true
 az2023stig_001225: true
 az2023stig_001255: true
+az2023stig_001260: true
 az2023stig_001270: true
 az2023stig_001285: true
 az2023stig_001286: true
@@ -136,7 +137,6 @@ az2023stig_002245: true
 az2023stig_002250: true
 az2023stig_002255: true
 az2023stig_002260: true
-az2023stig_002265: true
 az2023stig_002270: true
 az2023stig_002280: true
 az2023stig_002285: true
@@ -243,4 +243,4 @@ az2023stig_logon_banner:
 
 az2023stig_audit_log_filesystem: /var/log/audit
 
-az2023stig_pass_max_days: 60
+az2023stig_pass_max_days: 180

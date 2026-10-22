@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002425 }}
 file:
   azlx_23_002425_config_pass_max_days:
-    title: AZLX-23-002425 | MEDIUM | Amazon Linux 2023 must be able to enforce a 60-day maximum password lifetime restriction.
+    title: AZLX-23-002425 | MEDIUM | Amazon Linux 2023 must be able to enforce a 180-day maximum password lifetime restriction.
     path: /etc/login.defs
     exists: true
     contents:
@@ -12,7 +12,7 @@ file:
     - '!/^PASS_MAX_DAYS\s*-1/'
     meta:
       Cat: 2
-      Rule_ID: SV-274148r1120432_rule
+      Rule_ID: SV-274148r1261378_rule
       STIG_ID: AZLX-23-002425
       Vul_ID: V-274148
       Group_Title: SRG-OS-000076-GPOS-00044
@@ -20,8 +20,8 @@ file:
       NIST800-53R4: NA
 command:
   azlx_23_002425_users_pass_max_days:
-    title: AZLX-23-002425 | MEDIUM | Amazon Linux 2023 must be able to enforce a 60-day maximum password lifetime restriction.
-    exec: "awk -F: '(/^[^:]+:[^!*]/ && ($5>60 || $5<=0)){print $1}' /etc/shadow"
+    title: AZLX-23-002425 | MEDIUM | Amazon Linux 2023 must be able to enforce a 180-day maximum password lifetime restriction.
+    exec: "awk -F: '(/^[^:]+:[^!*]/ && ($5>{{ .Vars.az2023stig_pass_max_days }} || $5<=0)){print $1}' /etc/shadow"
     exit-status:
       or:
       - 0
@@ -30,7 +30,7 @@ command:
     - '!/.*/'
     meta:
       Cat: 2
-      Rule_ID: SV-274148r1120432_rule
+      Rule_ID: SV-274148r1261378_rule
       STIG_ID: AZLX-23-002425
       Vul_ID: V-274148
       Group_Title: SRG-OS-000076-GPOS-00044

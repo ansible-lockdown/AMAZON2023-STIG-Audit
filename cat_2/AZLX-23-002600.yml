@@ -1,0 +1,33 @@
+---
+
+{{ if .Vars.az2023stig_002600 }}
+service:
+  azlx_23_002600_check_automount_function:
+    title: AZLX-23-002600 | MEDIUM | Amazon Linux 2023 file system automount function must be disabled.
+    name: autofs
+    enabled: false
+    running: false
+    meta:
+      Cat: 2
+      Rule_ID: SV-274182r1261388_rule
+      STIG_ID: AZLX-23-002600
+      Vul_ID: V-274182
+      Group_Title: SRG-OS-000378-GPOS-00163
+      CCI: CCI-001958
+      NIST800-53R4: IA-3
+command:
+  azlx_23_002600_check_automount_function_is_enabled:
+    title: AZLX-23-002600 | MEDIUM | Amazon Linux 2023 file system automount function must be disabled.
+    exec: systemctl is-enabled autofs 2>&1 || true
+    exit-status: 0
+    stdout:
+    - '/^(masked|disabled|not-found)$|Failed to get unit file state for autofs\.service/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274182r1261388_rule
+      STIG_ID: AZLX-23-002600
+      Vul_ID: V-274182
+      Group_Title: SRG-OS-000378-GPOS-00163
+      CCI: CCI-001958
+      NIST800-53R4: IA-3
+{{ end }}

@@ -26,7 +26,7 @@
 
 # Goss benchmark variables (these should not need changing unless new release)
 BENCHMARK=STIG # Benchmark Name aligns to the audit
-BENCHMARK_VER=1.4.0
+BENCHMARK_VER=1.5.0
 BENCHMARK_OS=AMAZON2023
 
 # Goss host Variables

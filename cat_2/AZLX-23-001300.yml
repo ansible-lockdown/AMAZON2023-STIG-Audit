@@ -13,7 +13,7 @@ command:
     - '/^certificate_verification = ocsp_dgst=sha512/'
     meta:
       Cat: 2
-      Rule_ID: SV-274061r1120171_rule
+      Rule_ID: SV-274061r1261411_rule
       STIG_ID: AZLX-23-001300
       Vul_ID: V-274061
       Group_Title:

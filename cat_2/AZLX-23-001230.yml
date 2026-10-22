@@ -11,7 +11,7 @@ command:
     - '!/(?i)^PubkeyAuthentication no/'
     meta:
       Cat: 2
-      Rule_ID: SV-274047r1120129_rule
+      Rule_ID: SV-274047r1261407_rule
       STIG_ID: AZLX-23-001230
       Vul_ID: V-274047
       Group_Title:

@@ -10,7 +10,7 @@ command:
     - 'True'
     meta:
       Cat: 2
-      Rule_ID: SV-274063r1120712_rule
+      Rule_ID: SV-274063r1261413_rule
       STIG_ID: AZLX-23-001310
       Vul_ID: V-274063
       Group_Title:

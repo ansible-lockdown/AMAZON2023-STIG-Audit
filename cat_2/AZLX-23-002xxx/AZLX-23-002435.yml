@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002435 }}
 command:
   azlx_23_002435_temporary_accounts_check:
-    title: AZLX-23-002435 | Amazon Linux 2023 must automatically expire temporary accounts within 72 hours. | Manual
+    title: AZLX-23-002435 | MEDIUM | Amazon Linux 2023 must automatically expire temporary accounts within 72 hours. | Manual
     exec: echo "Manual audit check required"
     exit-status:
       or:

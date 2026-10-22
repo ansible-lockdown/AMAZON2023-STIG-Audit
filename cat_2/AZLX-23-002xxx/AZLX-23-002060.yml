@@ -13,7 +13,7 @@ file:
       Rule_ID: SV-274076r1120216_rule
       STIG_ID: AZLX-23-002060
       Vul_ID: V-274076
-      Group_Title: SRG-OS-000479-GPOS-000224
+      Group_Title: SRG-OS-000479-GPOS-00224
       CCI: CCI-001851
       NIST800-53R4: AU-4
 {{ end }}

@@ -20,6 +20,7 @@ command:
       - SRG-OS-000096-GPOS-00050
       - SRG-OS-000297-GPOS-00115
       CCI:
+      - CCI-000381
       - CCI-000382
       - CCI-002314
       NIST800-53R4:

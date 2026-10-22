@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002485 }}
 command:
   azlx_23_002485_check_unique_uids:
-    title: AZLX-23-002485 | Amazon Linux 2023 must insure all interactive users have a unique user ID (UIDs).
+    title: AZLX-23-002485 | MEDIUM | Amazon Linux 2023 must ensure all interactive users have unique User IDs (UIDs).
     exec: awk -F ":" 'list[$3]++{print $1, $3}' /etc/passwd
     exit-status:
       or:

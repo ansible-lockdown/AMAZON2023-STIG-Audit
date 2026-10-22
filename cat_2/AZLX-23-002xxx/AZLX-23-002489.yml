@@ -17,5 +17,6 @@ file:
       CCI:
       - CCI-000192
       - CCI-000193
+      - CCI-004066
       NIST800-53R4: IA-5
 {{ end }}

@@ -49,7 +49,7 @@ command:
       - AU-12
       - MA-4
   audit_rules_sudoers_d_conf:
-    title: AZLX-23-002085 | MEDIUM | Amazon Linux 2023 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/sudoers.d/.
+    title: AZLX-23-002085 | MEDIUM | Amazon Linux 2023 must generate audit records for all account creations, modifications, disabling, and termination events that affect /etc/sudoers.
     exec: grep -w sudoers /etc/audit/rules.d/*
     exit-status:
       or:

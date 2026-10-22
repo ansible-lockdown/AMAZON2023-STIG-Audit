@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_001125 }}
 package:
   opensc:
-    title: AZLX-23-001125 | MEDIUM | Amazon Linux 2023 must have the packages required for encrypting off-loaded audit logs installed.
+    title: AZLX-23-001125 | MEDIUM | Amazon Linux 2023 must have the opensc package installed.
     name: opensc
     installed: true
     meta:
@@ -14,6 +14,8 @@ package:
       Group_Title:
       - SRG-OS-000375-GPOS-00160
       - SRG-OS-000376-GPOS-00161
-      CCI: CCI-001953
+      CCI:
+      - CCI-001953
+      - CCI-004046
       NIST800-53R4: IA-2
 {{ end }}

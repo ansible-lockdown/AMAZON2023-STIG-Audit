@@ -7,7 +7,7 @@ file:
     path: /etc/pam.d/system-auth
     exists: true
     contents:
-    - '/^password\s+(required|requisite|sufficient)\s+pam_unix.so\s+sha512.*rounds=10000'
+    - '/^password\s+(required|requisite|sufficient)\s+pam_unix\.so\s+sha512.*\brounds=[1-9][0-9]{5,}\b/'
     meta:
       Cat: 2
       Rule_ID: SV-274163r1120477_rule
@@ -16,6 +16,8 @@ file:
       Group_Title:
       - SRG-OS-000120-GPOS-00061
       - SRG-OS-000073-GPOS-00041
-      CCI: CCI-000803
+      CCI:
+      - CCI-000803
+      - CCI-004062
       NIST800-53R4: IA-7
 {{ end }}

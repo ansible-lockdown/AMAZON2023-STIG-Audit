@@ -20,6 +20,8 @@ command:
       Group_Title:
       - SRG-OS-000480-GPOS-00225
       - SRG-OS-000710-GPOS-00160
-      CCI: CCI-000366
+      CCI:
+      - CCI-000366
+      - CCI-004061
       NIST800-53R4: CM-6
 {{ end }}

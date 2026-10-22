@@ -10,7 +10,7 @@ package:
       Cat: 2
       Rule_ID: SV-274011r1184000_rule
       STIG_ID: AZLX-23-000320
-      Vul_ID: V-274010
+      Vul_ID: V-274011
       Group_Title: SRG-OS-000095-GPOS-00049
       CCI: CCI-000381
       NIST800-53R4: CM-7

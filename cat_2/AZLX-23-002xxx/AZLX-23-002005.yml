@@ -13,7 +13,7 @@ file:
       Rule_ID: SV-274066r1120186_rule
       STIG_ID: AZLX-23-002005
       Vul_ID: V-274066
-      Group_Title: SRG-OS-000228-GPOS-000088
+      Group_Title: SRG-OS-000228-GPOS-00088
       CCI:
       - CCI-001384
       - CCI-001385

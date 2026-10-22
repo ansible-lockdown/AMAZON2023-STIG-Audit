@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_001065 }}
 command:
   azlx_23_001065_check:
-    title: AZLX-23-001065 | MEDIUM | Amazon Linux 2023 must routinely check the baseline configuration for unauthorized changes and notify the system administrator when anomalies in the operation of any security functions are discovered.
+    title: AZLX-23-001065 | MEDIUM | Amazon Linux 2023 must routinely check the baseline configuration for unauthorized changes and notify the system administrator (SA) when anomalies in the operation of any security functions are discovered.
     exec: grep -R aide /etc/cron.* /etc/crontab etc/cron.d/* /var/spool/cron/*
     exit-status:
       or:
@@ -29,7 +29,7 @@ command:
       - SI-6
 file:
   azlx_23_001065_config:
-    title: AZLX-23-001065 | MEDIUM | Amazon Linux 2023 must routinely check the baseline configuration for unauthorized changes and notify the system administrator when anomalies in the operation of any security functions are discovered.
+    title: AZLX-23-001065 | MEDIUM | Amazon Linux 2023 must routinely check the baseline configuration for unauthorized changes and notify the system administrator (SA) when anomalies in the operation of any security functions are discovered.
     path: {{ .Vars.az2023stig_aide_cron_file }}
     exists: true
     contents:

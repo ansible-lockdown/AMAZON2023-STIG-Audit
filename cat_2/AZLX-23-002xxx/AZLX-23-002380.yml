@@ -20,6 +20,8 @@ command:
       Group_Title:
       - SRG-OS-000266-GPOS-00101
       - SRG-OS-000725-GPOS-00180
-      CCI: NA
+      CCI:
+      - CCI-004064
+      - CCI-004066
       NIST800-53R4: NA
 {{ end }}

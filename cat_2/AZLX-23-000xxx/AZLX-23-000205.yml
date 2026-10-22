@@ -33,7 +33,11 @@ kernel-param:
       Rule_ID: SV-274002r1198253_rule
       STIG_ID: AZLX-23-000205
       Vul_ID: V-274002
-      Group_Title: SRG-OS-000138-GPOS-00069
-      CCI: CCI-001082, CCI-001090
+      Group_Title:
+      - SRG-OS-000132-GPOS-00067
+      - SRG-OS-000138-GPOS-00069
+      CCI:
+      - CCI-001082
+      - CCI-001090
       NIST800-53R4: SC-2, SC-4
 {{ end }}

@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_001245 }}
 command:
   azlx_23_001245_config:
-    title: AZLX-23-001245 | MEDIUM | Amazon Linux 2023 must configure SSH to only allow session key renegotiation after 15 minutes or less.
+    title: AZLX-23-001245 | MEDIUM | Amazon Linux 2023 must be configured so that all network connections associated with SSH traffic are terminated after 10 minutes of becoming unresponsive.
     exec: grep -i ClientAliveInterval /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*.conf
     exit-status:
       or:

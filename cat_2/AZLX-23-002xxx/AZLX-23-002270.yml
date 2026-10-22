@@ -13,6 +13,6 @@ file:
       STIG_ID: AZLX-23-002270
       Vul_ID: V-274117
       Group_Title: SRG-OS-000206-GPOS-00084
-      CCI: CCI-0001314
+      CCI: CCI-001314
       NIST800-53R4: SI-11
 {{ end }}

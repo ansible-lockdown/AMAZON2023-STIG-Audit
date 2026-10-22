@@ -10,19 +10,18 @@ command:
       - 0
       - 2
     stdout:
-    - '/^(?#)enforce_for_root/'
+    - '/^[^:]+:\s*enforce_for_root\b/'
     meta:
       Cat: 2
       Rule_ID: SV-274139r1120405_rule
       STIG_ID: AZLX-23-002385
       Vul_ID: V-274139
       Group_Title:
+      - SRG-OS-000072-GPOS-00040
       - SRG-OS-000069-GPOS-00037
       - SRG-OS-000070-GPOS-00038
       - SRG-OS-000071-GPOS-00039
-      - SRG-OS-000072-GPOS-00040
-      - SRG-OS-000072-GPOS-00046
       - SRG-OS-000266-GPOS-00101
-      CCI: NA
+      CCI: CCI-004066
       NIST800-53R4: NA
 {{ end }}

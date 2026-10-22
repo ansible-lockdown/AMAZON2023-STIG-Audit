@@ -18,5 +18,8 @@ command:
       STIG_ID: AZLX-23-002370
       Vul_ID: V-274136
       Group_Title: SRG-OS-000072-GPOS-00040
+      CCI:
+      - CCI-004064
+      - CCI-004066
       NIST800-53R4: NA
 {{ end }}

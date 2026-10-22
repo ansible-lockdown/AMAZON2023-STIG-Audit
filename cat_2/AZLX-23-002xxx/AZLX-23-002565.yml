@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_002565 }}
 file:
   azlx_23_002565_check_chrony_interval:
-    title: AZLX-23-002565 | Amazon Linux 2023 must synchronize internal information system clocks to the authoritative time source at least every 24 hours.
+    title: AZLX-23-002565 | MEDIUM | Amazon Linux 2023 must synchronize internal information system clocks to the authoritative time source at least every 24 hours.
     path: /etc/chrony.conf
     exists: true
     contents:
@@ -14,7 +14,13 @@ file:
       Rule_ID: SV-274175r1190705_rule
       STIG_ID: AZLX-23-002565
       Vul_ID: V-274175
-      Group_Title: SRG-OS-000359-GPOS-00146
-      CCI: CCI-001890
+      Group_Title:
+      - SRG-OS-000356-GPOS-00144
+      - SRG-OS-000359-GPOS-00146
+      CCI:
+      - CCI-001890
+      - CCI-004922
+      - CCI-004923
+      - CCI-004926
       NIST800-53R4: AU-8
 {{ end }}

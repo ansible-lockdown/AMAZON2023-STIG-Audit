@@ -3,7 +3,7 @@
 {{ if .Vars.az2023stig_000310 }}
 package:
   nfs_utils:
-    title: AZLX-23-000310 | MEDIUM | Amazon Linux 2023 must not have the nfs-utils package installed
+    title: AZLX-23-000310 | MEDIUM | Amazon Linux 2023 must not have the nfs-utils package installed.
     name: nfs-utils
     installed: false
     meta:

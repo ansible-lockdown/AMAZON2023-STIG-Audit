@@ -17,7 +17,7 @@ file:
       Rule_ID: SV-274125r1120363_rule
       STIG_ID: AZLX-23-002315
       Vul_ID: V-274125
-      Group_Title: SRG-OS-000259-GPOS-00084
+      Group_Title: SRG-OS-000206-GPOS-00084
       CCI: CCI-001314
       NIST800-53R4: SI-11
 {{ end }}

@@ -10,7 +10,7 @@ file:
     - '/^password\s+(required|requisite|sufficient)\s+pam_unix\.so\b.*\brounds=[1-9][0-9]{5,}\b/'
     meta:
       Cat: 2
-      Rule_ID: SV-274163r1120477_rule
+      Rule_ID: SV-274163r1261421_rule
       STIG_ID: AZLX-23-002495
       Vul_ID: V-274163
       Group_Title:

@@ -10,7 +10,7 @@ command:
     - '/^StopIdleSessionSec\s*=\s*600$/'
     meta:
       Cat: 2
-      Rule_ID: SV-274166r1155170_rule
+      Rule_ID: SV-274166r1261383_rule
       STIG_ID: AZLX-23-002510
       Vul_ID: V-274166
       Group_Title: SRG-OS-000163-GPOS-00072

@@ -14,7 +14,7 @@ command:
     - '!/(?i)^pam_cert_auth = False/'
     meta:
       Cat: 2
-      Rule_ID: SV-274059r1120165_rule
+      Rule_ID: SV-274059r1261409_rule
       STIG_ID: AZLX-23-001290
       Vul_ID: V-274059
       Group_Title:

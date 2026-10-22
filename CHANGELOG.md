@@ -1,5 +1,27 @@
 # Changelog - AMAZON2023-STIG-Audit
 
+## [v1.5.0]
+
+### Based on DISA STIG Amazon Linux 2023 V1R5 (30 September 2026) - benchmark_v1.5.0
+
+Benchmark bump 187 -> 187 (1 added, 1 removed; checked against the V1R5 revision history). Version strings: vars/STIG.yml v1r5, run_audit.sh BENCHMARK_VER 1.5.0, README banner and branch reference v1.5.0.
+
+#### Rule delta
+- AZLX-23-001260 (SV-288814, CAT I, DoW-approved encryption in the OpenSSL package) ADDED: new cat_1 check that /etc/pki/tls/openssl.cnf carries `.include = /etc/crypto-policies/back-ends/opensslcnf.config`, plus the az2023stig_001260 toggle.
+- AZLX-23-002265 (V-274116, audit logs group-owned by root or a restricted group) REMOVED as a duplicate of AZLX-23-002225; deleted the check and its toggle.
+- AZLX-23-001010 (reauthentication when using sudo): only `timestamp_timeout=0` on an active `Defaults` line passes; any other value, a commented-out or missing setting, or matches in more than one file location fail.
+- AZLX-23-001270 (FIPS systemwide crypto policy): the policy must be exactly `FIPS`; subpolicies such as `FIPS:OSPP` now fail.
+- AZLX-23-002240 (only the ISSM selects audited events): checks `*.rules` files in /etc/audit/rules.d/ plus /etc/audit/audit.rules and /etc/audit/auditd.conf for a mode of 0600 or less.
+- AZLX-23-002425 (maximum password lifetime): 60 -> 180 days; `az2023stig_pass_max_days` default 60 -> 180, and the /etc/shadow check compares against the variable instead of a fixed 60.
+- AZLX-23-002600 (automount disabled): `systemctl is-enabled autofs` must return masked, disabled or not-found, so a host without autofs passes; this replaces the masked-symlink test.
+- AZLX-23-002510 (terminate idle sessions): V1R5 adds a not-applicable note for cloud-hosted systems with ClientAliveInterval set; the check is unchanged, as the assessor decides applicability.
+- Rule_ID revisions on the 29 changed rules; titles updated on 10 (DOD -> DoW, FIPS 140-2/140-3 hyphenation, AZLX-23-002425 and AZLX-23-002600).
+
+#### Other Changes
+- Layout: cat_2 and cat_3 subfolders flattened, so every check lives directly in cat_1/, cat_2/ or cat_3/; goss.yml includes one glob per category. The result set is unchanged (453 results, identical, on the same host).
+- AZLX-23-002110, AZLX-23-002120, AZLX-23-002130 and AZLX-23-002135: the audit rules file test in each was indented at the top level, so the audit binary ignored it with a warning and only the live `auditctl -l` test ran. It now runs. `grep -H` keeps the file name in the output when /etc/audit/rules.d/ holds a single file, and the patterns take the rule form from the check text (`-k <key>` or `-F key=<key>`); AZLX-23-002110 and AZLX-23-002120 previously expected `-F key=execpriv` and `auid!=-1 -k perm_chown`.
+- README: branch example uses `benchmark_v1.5.0`.
+
 ## [v1.4.0]
 
 ### Based on DISA STIG Amazon Linux 2023 V1R4 (01 July 2026) - benchmark_v1.4.0

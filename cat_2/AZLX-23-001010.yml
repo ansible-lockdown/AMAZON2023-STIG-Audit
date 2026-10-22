@@ -5,16 +5,27 @@ command:
   azlx_23_001010_config:
     title: AZLX-23-001010 | MEDIUM | Amazon Linux 2023 must require reauthentication when using the "sudo" command.
     exec: grep -ir 'timestamp_timeout' /etc/sudoers /etc/sudoers.d/
-    exit-status:
-      or:
-      - 0
-      - 1
+    exit-status: 0
     stdout:
-    - '/^.*:Defaults\s*timestamp_timeout=[0-9]\d*$/'
-    - '!/^.*:Defaults\s*timestamp_timeout\s*=\s*-\d/'
+    - '/^[^:]+:\s*Defaults\b.*\btimestamp_timeout\s*=\s*0\s*(,|$)/'
+    - '!/^[^:]+:\s*Defaults\b.*\btimestamp_timeout\s*=\s*(-|0*[1-9])/'
     meta:
       Cat: 2
-      Rule_ID: SV-274014r1120030_rule
+      Rule_ID: SV-274014r1261391_rule
+      STIG_ID: AZLX-23-001010
+      Vul_ID: V-274014
+      Group_Title: SRG-OS-000373-GPOS-00157
+      CCI: CCI-002038
+      NIST800-53R4: IA-11
+  azlx_23_001010_single_location:
+    title: AZLX-23-001010 | MEDIUM | Amazon Linux 2023 must require reauthentication when using the "sudo" command.
+    exec: grep -irl 'timestamp_timeout' /etc/sudoers /etc/sudoers.d/ | wc -l
+    exit-status: 0
+    stdout:
+    - '/^1$/'
+    meta:
+      Cat: 2
+      Rule_ID: SV-274014r1261391_rule
       STIG_ID: AZLX-23-001010
       Vul_ID: V-274014
       Group_Title: SRG-OS-000373-GPOS-00157

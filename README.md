@@ -1,8 +1,8 @@
-# Amazon Linux 2023 STIG Goss config
+# Amazon Linux 2023 STIG Syver config
 
 ## Overview
 
-### Based on STIG Amazon Linux 2023 Benchmark v1r4 - July 2026
+### Based on STIG Amazon Linux 2023 Benchmark v1r5 - September 2026
 
 Ability to audit a system using a lightweight binary to check the current state.
 
@@ -18,11 +18,11 @@ Feedback on any differences between OSs please raise an issue.
 
 ## Requirements
 
-You must have [goss](https://github.com/krameff/goss) available to your host you would like to test.
+You must have [syver](https://github.com/krameff/syver) >= 0.13.0 available to the host you would like to test. The audit content uses the goss file format, which syver reads unchanged.
 
 You must have sudo/root access to the system as some commands require privilege information.
 
-Assuming you have already cloned this repository you can run goss from where you wish.
+Assuming you have already cloned this repository you can run syver from where you wish.
 
 Please refer to the audit documentation for usage.
 
@@ -56,7 +56,7 @@ The listed variable for every control/benchmark can be turned on/off or section.
 
 If running as part of the ansible playbook, this will pull in the relevant branch for the version of benchmark you are remediating.
 
-- e.g. v1.4.0 will pull in branch benchmark-v1.4.0
+- e.g. v1.5.0 will pull in branch benchmark_v1.5.0
 
 Devel is normally the latest benchmark version, so maybe different from the version of benchmark you wish to test.
 Details will show in the README as part of the remediation as to the benchmark for the version it is written for.
@@ -73,9 +73,16 @@ Ability to add your own requirements is available in several sections.
 
 - [Discord Community Discussions](https://www.lockdownenterprise.com/discord)
 - [Enterprise Support](https://lockdownenterprise.com#GH_LockdownReadMe)
-- [Tyto Athene](https://gotyto.com)
+- [Quantum Sky](https://www.quantumsky.com)
+
+## Contributing
+
+Bug reports and feature requests are welcome from everyone, please raise an issue.
+
+Pull requests are accepted from approved contributors only. To be onboarded, join the [Discord Server](https://www.lockdownenterprise.com/discord) and request contributor access. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full process.
 
 ## Further information
 
-- [goss documentation](https://github.com/krameff/goss/blob/devel/docs/index.md)
+- [Syver documentation](https://github.com/krameff/syver/blob/main/docs/index.md)
+- [goss vs Syver](https://github.com/krameff/syver/blob/main/docs/goss-vs-syver.md)
 - [STIG standards](https://public.cyber.mil/stigs/)
